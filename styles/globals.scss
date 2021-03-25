@@ -62,10 +62,12 @@ img {
   margin: 0 auto;
 }
 
-// Header Section Styles
+/**** Header Section Styles ****/
 
 #header-section {
   background-color: $color-dark;
+
+  // Navbar Styles
 
   .navbar {
     display: flex;
@@ -111,10 +113,10 @@ img {
   }
 }
 
-// Jumbo Section Styles
+/**** Jumbo Section Styles ****/
 
 #jumbo-section {
-  height: 80vh;
+  padding: 10em 0;
   background: $color-dark;
 
   .jumbo-hero__text {
@@ -124,6 +126,8 @@ img {
     color: $color-white;
     position: relative;
     top: 100px;
+
+    // Jumbo Message Container
 
     .jumbo-hero__message-container {
       display: block;
@@ -135,14 +139,14 @@ img {
         font-weight: 600;
         word-break: break-word;
         line-height: 1.5em;
-        margin-bottom: 0.3em;
+        margin-bottom: 0.5em;
       }
 
       .jumbo-hero__message {
         font-size: 1rem;
         font-weight: 300;
         word-break: break-word;
-        margin-bottom: 2em;
+        margin-bottom: 3em;
       }
 
       .jumbo-hero__text-btn {
@@ -160,6 +164,8 @@ img {
       }
     }
 
+    // Jumbo Image
+
     .jumbo-hero__img {
       height: 550px;
       width: 50%;
@@ -167,10 +173,10 @@ img {
   }
 }
 
-// About Section Styles
+/**** About Section Styles ****/
 
 #about-section {
-  padding: 8em 0;
+  padding: 10em 0;
   color: $color-white;
   background-color: $color-dark;
 
@@ -180,6 +186,8 @@ img {
     align-items: center;
     position: relative;
 
+    // About Image Styles
+
     .about-section__img {
       width: 50%;
       height: 500px;
@@ -187,11 +195,12 @@ img {
       left: 0;
     }
 
+    // About Text Styles
+
     .about-section__text {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      vertical-align: middle;
       width: 50%;
       margin-right: 10em;
       position: absolute;
@@ -202,12 +211,257 @@ img {
       .about-section__text-title {
         font-family: "Playfair Display", sans-serif;
         font-size: 3.5rem;
+        word-break: break-word;
         margin: 0 0 0.8em 4rem;
       }
 
       .about-section__text-info {
         margin-left: 4em;
         line-height: 1.6rem;
+      }
+    }
+  }
+}
+
+/**** Ingredient Section Styles ****/
+
+#ingredient-section {
+  display: flex;
+  align-items: center;
+  color: $color-white;
+  background-color: $color-dark;
+  height: 800px;
+
+  .ingredient-section__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    // Ingredient Text
+
+    .ingredient-section__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      position: absolute;
+      left: 0;
+      height: 400px;
+      margin-left: 10em;
+      background-color: $color-dark;
+      z-index: 10;
+
+      .ingredient-section__title {
+        font-family: "Playfair Display", sans-serif;
+        font-size: 3.5rem;
+        word-break: break-word;
+        margin: 0 0.3rem 0.8em 0;
+      }
+
+      .ingredient-section__info {
+        line-height: 1.6rem;
+      }
+    }
+
+    // Ingredient Image
+
+    .ingredient-section__img-container {
+      width: 50%;
+      position: absolute;
+      right: 0;
+
+      .ingredient-section__image {
+        height: 500px;
+      }
+    }
+  }
+}
+
+/**** Menu Section Styles ****/
+
+#menu-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $color-white;
+  background-color: $color-dark;
+  height: 800px;
+
+  // Menu Content Styles
+  .menu-section__content {
+    margin-top: 6em;
+
+    // Menu Title Styles
+    .menu-section__title {
+      text-align: center;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 3.5rem;
+      word-break: break-word;
+      margin: 0 0.3rem 0.8em 0;
+    }
+
+    // Menu Filter Styles
+    .menu-section__filter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 25%;
+      margin-bottom: 5em;
+
+      &--breakfast {
+        color: $color-white;
+        padding: 0.6rem 1.2rem;
+        border: 1px solid $color-white;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          color: $color-dark;
+          background-color: $color-white;
+        }
+      }
+
+      &--lunch {
+        color: $color-white;
+        padding: 0.6rem 1.2rem;
+        border: 1px solid $color-white;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          color: $color-dark;
+          background-color: $color-white;
+        }
+      }
+
+      &--dinner {
+        color: $color-white;
+        padding: 0.6rem 1.2rem;
+        border: 1px solid $color-white;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          color: $color-dark;
+          background-color: $color-white;
+        }
+      }
+    }
+
+    // Menu Grid Container Styles
+    .menu-section__menu-grid {
+      position: relative;
+
+      // Menu Breakfast Styles
+      &__breakfast {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        z-index: 30;
+        opacity: 1;
+
+        .menu-section__menu-grid__item {
+          color: $color-dark;
+          background-color: $color-white;
+          text-align: center;
+          width: 22%;
+          padding: 2em;
+          border-radius: 20px;
+          transition: all 0.4s ease-in-out;
+
+          &__image {
+            div {
+              height: 200px;
+              width: 200px;
+            }
+          }
+
+          &__title {
+            font-size: 1.5rem;
+            margin: 1em 0;
+          }
+
+          &__info {
+            line-height: 1.5rem;
+          }
+        }
+      }
+
+      // Menu Lunch Styles
+      &__lunch {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        z-index: 20;
+        opacity: 0;
+
+        .menu-section__menu-grid__item {
+          color: $color-dark;
+          background-color: $color-white;
+          text-align: center;
+          width: 22%;
+          padding: 2em;
+          border-radius: 20px;
+          transition: all 0.4s ease-in-out;
+
+          &__image {
+            div {
+              height: 200px;
+              width: 200px;
+            }
+          }
+
+          &__title {
+            font-size: 1.5rem;
+            margin: 1em 0;
+          }
+
+          &__info {
+            line-height: 1.5rem;
+          }
+        }
+      }
+
+      // Menu Dinner Styles
+      &__dinner {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        z-index: 10;
+        opacity: 0;
+
+        .menu-section__menu-grid__item {
+          color: $color-dark;
+          background-color: $color-white;
+          text-align: center;
+          width: 22%;
+          padding: 2em;
+          border-radius: 20px;
+          transition: all 0.4s ease-in-out;
+
+          &__image {
+            div {
+              height: 200px;
+              width: 200px;
+            }
+          }
+
+          &__title {
+            font-size: 1.5rem;
+            margin: 1em 0;
+          }
+
+          &__info {
+            line-height: 1.5rem;
+          }
+        }
       }
     }
   }
