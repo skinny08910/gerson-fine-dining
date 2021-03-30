@@ -42,6 +42,13 @@ img {
   object-fit: cover;
 }
 
+input,
+textarea,
+select {
+  padding: 0.6em;
+  outline: none;
+}
+
 .row {
   display: flex;
   justify-content: space-between;
@@ -98,6 +105,7 @@ img {
 
         &--reservation {
           color: $color-white;
+          background-color: $color-dark;
           padding: 0.6rem 1.2rem;
           border: 1px solid $color-white;
           border-radius: 50px;
@@ -151,6 +159,7 @@ img {
 
       .jumbo-hero__text-btn {
         color: $color-white;
+        background-color: $color-dark;
         padding: 0.6rem 1.2rem;
         border: 1px solid $color-white;
         border-radius: 50px;
@@ -311,6 +320,7 @@ img {
 
       &--breakfast {
         color: $color-white;
+        background-color: $color-dark;
         padding: 0.6rem 1.2rem;
         border: 1px solid $color-white;
         border-radius: 50px;
@@ -326,6 +336,7 @@ img {
 
       &--lunch {
         color: $color-white;
+        background-color: $color-dark;
         padding: 0.6rem 1.2rem;
         border: 1px solid $color-white;
         border-radius: 50px;
@@ -341,6 +352,7 @@ img {
 
       &--dinner {
         color: $color-white;
+        background-color: $color-dark;
         padding: 0.6rem 1.2rem;
         border: 1px solid $color-white;
         border-radius: 50px;
@@ -460,6 +472,488 @@ img {
 
           &__info {
             line-height: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**** Review Section Styles ****/
+
+#review-section {
+  color: $color-white;
+  background-color: $color-dark;
+  height: 800px;
+
+  // Review Section Content Styles
+  .review-section__content {
+    padding-top: 10em;
+
+    // Review Section Content Title Styles
+    &__title {
+      text-align: center;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 3.5rem;
+      word-break: break-word;
+      margin: 0 0.3rem 2em 0;
+    }
+
+    // Review Section Content Grid Styles
+    &__grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      // Review Section Content Container Styles
+      &__container {
+        display: flex;
+        align-items: center;
+        width: 60%;
+        height: 300px;
+        color: $color-dark;
+        background-color: $color-white;
+        border-radius: 20px;
+        position: relative;
+
+        .review-section__content__grid__item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          border-radius: 50px;
+          padding: 1.5em;
+          position: absolute;
+
+          &__image {
+            width: 100px;
+            height: 100px;
+
+            img {
+              border-radius: 50%;
+            }
+          }
+
+          &__name {
+            font-size: 1.5rem;
+            margin: 1em 0;
+          }
+
+          &__comment {
+            line-height: 1.5rem;
+          }
+        }
+
+        .review-section__content__grid__item--1 {
+          transition: all 0.3s ease-in-out;
+          z-index: 40;
+          opacity: 1;
+        }
+
+        .review-section__content__grid__item--2 {
+          transition: all 0.3s ease-in-out;
+          z-index: 30;
+          opacity: 0;
+        }
+
+        .review-section__content__grid__item--3 {
+          transition: all 0.3s ease-in-out;
+          z-index: 20;
+          opacity: 0;
+        }
+
+        .review-section__content__grid__item--4 {
+          transition: all 0.3s ease-in-out;
+          z-index: 10;
+          opacity: 0;
+        }
+      }
+
+      // Review Section Content Left Button Styles
+      &__button-left {
+        display: flex;
+        justify-content: flex-end;
+        width: 10%;
+
+        &__icon {
+          width: 45px;
+          height: 45px;
+          padding: 0.6rem 1rem;
+          border: 1px solid $color-white;
+          border-radius: 50%;
+          transition: all 0.3s ease-in-out;
+          outline: none;
+          cursor: pointer;
+
+          &:hover {
+            color: $color-dark;
+            border: 1px solid $color-dark;
+            background-color: $color-white;
+          }
+        }
+      }
+
+      // Review Section Content Right Button Styles
+      &__button-right {
+        display: flex;
+        justify-content: flex-start;
+        width: 10%;
+
+        &__icon {
+          width: 45px;
+          height: 45px;
+          padding: 0.6rem 1rem;
+          border: 1px solid $color-white;
+          border-radius: 50%;
+          transition: all 0.3s ease-in-out;
+          outline: none;
+          cursor: pointer;
+
+          &:hover {
+            color: $color-dark;
+            border: 1px solid $color-dark;
+            background-color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**** Reservation Section Styles ****/
+
+#reservation-section {
+  height: 1200px;
+  color: $color-white;
+  background-color: $color-dark;
+
+  // Reservation Section Content Styles
+  .reservation-section__content {
+    padding-top: 7em;
+
+    // Reservation Section Content Title Styles
+    &__title {
+      text-align: center;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 3.5rem;
+      word-break: break-word;
+      margin: 0 0.3rem 2em 0;
+    }
+
+    // Reservation Section Content Grid Styles
+    &__grid {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 800px;
+      position: relative;
+
+      // Reservation Section Content Grid Container Styles
+      &__form-container {
+        width: 50%;
+        position: absolute;
+        right: 0;
+        margin-right: 10em;
+        z-index: 10;
+        background-color: $color-dark;
+
+        .reservation-section__content__grid__form {
+          padding: 5em 2em;
+
+          // Global Label Styles
+          label {
+            margin-bottom: 1em;
+          }
+
+          // Global Input, Textarea Styles
+          input,
+          textarea,
+          select {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $color-white;
+            outline: none;
+            transition: all 0.4s ease-in-out;
+
+            &:focus {
+              background-color: $color-white;
+            }
+
+            &:active {
+              background-color: $color-white;
+            }
+          }
+
+          // Reservation Section Content Grid Container First and Last Name Styles
+          &__first-last-name {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3em;
+
+            .reservation-section__content__grid__form__first-name {
+              display: flex;
+              flex-direction: column;
+              width: 50%;
+            }
+
+            .reservation-section__content__grid__form__last-name {
+              display: flex;
+              flex-direction: column;
+              width: 50%;
+              margin-left: 4em;
+            }
+          }
+
+          // Reservation Section Content Grid Container Email Address Styles
+          &__email-address-phone {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3em;
+
+            .reservation-section__content__grid__form__email-address {
+              display: flex;
+              flex-direction: column;
+              width: 50%;
+            }
+
+            .reservation-section__content__grid__form__phone {
+              display: flex;
+              flex-direction: column;
+              width: 50%;
+              margin-left: 4em;
+            }
+          }
+
+          // Reservation Section Content Grid Container Date Time, Number Styles
+          &__date-time-number {
+            display: flex;
+            align-items: center;
+            // flex-direction: column;
+            margin-bottom: 3em;
+
+            .reservation-section__content__grid__form__date {
+              display: flex;
+              flex-direction: column;
+              width: 30%;
+            }
+
+            .reservation-section__content__grid__form__time {
+              display: flex;
+              flex-direction: column;
+              width: 30%;
+              margin-left: 4em;
+            }
+
+            .reservation-section__content__grid__form__number {
+              display: flex;
+              flex-direction: column;
+              width: 30%;
+              margin-left: 4em;
+            }
+          }
+
+          // Reservation Section Content Grid Container Notes Styles
+          &__note {
+            display: flex;
+            flex-direction: column;
+            height: 150px;
+            margin-bottom: 3em;
+
+            textarea {
+              width: 100%;
+              height: inherit;
+              resize: none;
+            }
+          }
+
+          // Reservation Section Content Grid Container Submit Button Styles
+          &__submit-button {
+            color: $color-white;
+            background-color: $color-dark;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid $color-white;
+            border-radius: 50px;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 3em;
+            outline: none;
+            cursor: pointer;
+
+            &:hover {
+              color: $color-dark;
+              background-color: $color-white;
+            }
+          }
+
+          // Reservation Section Content Grid Container Notice Styles
+          &__notice {
+            line-height: 1.5rem;
+
+            span {
+              font-weight: bold;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      // Reservation Section Content Grid Image Styles
+      &__image {
+        width: 50%;
+        height: 800px;
+        position: absolute;
+
+        div {
+          height: inherit;
+        }
+      }
+    }
+  }
+}
+
+/**** Contact Section Styles ****/
+
+#contact-section {
+  // height: 1200px;
+  padding: 10em 0;
+  color: $color-white;
+  background-color: $color-dark;
+
+  // Contact Section Content Styles
+  .contact-section__content {
+    padding-top: 7em;
+
+    // Contact Section Content Title Styles
+    &__title {
+      text-align: center;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 3.5rem;
+      word-break: break-word;
+      margin: 0 0.3rem 2em 0;
+    }
+
+    // Contact Section Content Grid Styles
+    &__grid {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 800px;
+      position: relative;
+
+      // Contact Section Content Grid Image Styles
+      &__image {
+        width: 50%;
+        height: 800px;
+        position: absolute;
+        right: 0;
+
+        div {
+          height: inherit;
+        }
+      }
+
+      // Contact Section Content Grid Container Styles
+      &__form-container {
+        width: 50%;
+        position: absolute;
+        left: 0;
+        margin-left: 10em;
+        z-index: 10;
+        background-color: $color-dark;
+
+        .contact-section__content__grid__form {
+          padding: 5em 2em;
+
+          // Global Label Styles
+          label {
+            margin-bottom: 1em;
+          }
+
+          // Global Input, Textarea Styles
+          input,
+          textarea,
+          select {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $color-white;
+            outline: none;
+            transition: all 0.4s ease-in-out;
+
+            &:focus {
+              background-color: $color-white;
+            }
+
+            &:active {
+              background-color: $color-white;
+            }
+          }
+
+          // Contact Section Content Grid Container First and Last Name Styles
+          &__first-last-name {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3em;
+
+            .contact-section__content__grid__form__first-name {
+              display: flex;
+              flex-direction: column;
+              width: 50%;
+            }
+
+            .contact-section__content__grid__form__last-name {
+              display: flex;
+              flex-direction: column;
+              width: 50%;
+              margin-left: 4em;
+            }
+          }
+
+          // Contact Section Content Grid Container Email Address Styles
+          &__email-address {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3em;
+          }
+
+          // Contact Section Content Grid Container Notes Styles
+          &__note {
+            display: flex;
+            flex-direction: column;
+            height: 150px;
+            margin-bottom: 3em;
+
+            textarea {
+              width: 100%;
+              height: inherit;
+              resize: none;
+            }
+          }
+
+          // Contact Section Content Grid Container Submit Button Styles
+          &__submit-button {
+            color: $color-white;
+            background-color: $color-dark;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid $color-white;
+            border-radius: 50px;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 3em;
+            outline: none;
+            cursor: pointer;
+
+            &:hover {
+              color: $color-dark;
+              background-color: $color-white;
+            }
+          }
+
+          // Contact Section Content Grid Container Notice Styles
+          &__notice {
+            line-height: 1.5rem;
+
+            span {
+              font-weight: bold;
+              cursor: pointer;
+            }
           }
         }
       }

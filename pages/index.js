@@ -3,14 +3,45 @@ import Link from "next/link";
 import Image from "next/image";
 import react from "react";
 import { useState } from "react";
-// import styles from "../styles/_index.scss";
+
+// FontAwesomeIcon
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home() {
   return (
     <div>
       <Head>
+        {/* Favicon */}
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/img/logo/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/img/logofavicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/img/logo/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/img/logo/site.webmanifest" />
+        <link
+          rel="mask-icon"
+          href="/img/logo/safari-pinned-tab.svg"
+          color="#5bbad5"
+        />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        {/* Title */}
         <title>GSF - Get your next meal at Gerson's Fine Dining</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/***********************************  Header Section */}
@@ -285,7 +316,7 @@ export default function Home() {
                   </h2>
 
                   <p className="menu-section__menu-grid__item__info">
-                    Made with brown beans, some egg and some garlic bred.
+                    Made with brown beans, some egg and some garlic bread.
                   </p>
                 </div>
               </div>
@@ -479,13 +510,23 @@ export default function Home() {
         <div className="container">
           {/* Review Section Content */}
           <div className="review-section__content">
+            {/* Review Section Content Title */}
+            <h2 className="review-section__content__title">
+              What Our Regulars are Saying About Us
+            </h2>
+
             {/* Review Section Content Grid */}
             <div className="review-section__content__grid">
               {/* Review Section Content Grid Button Left */}
-              <div className="review-section__content__grid__button-left"></div>
+              <div className="review-section__content__grid__button-left">
+                <FontAwesomeIcon
+                  className="review-section__content__grid__button-left__icon"
+                  icon={faChevronLeft}
+                />
+              </div>
 
               {/* Review Section Content Grid Items */}
-              <div className="review-section__content__grid-container">
+              <div className="review-section__content__grid__container">
                 {/* Review Section Content Grid Item - 1 */}
                 <div className="review-section__content__grid__item review-section__content__grid__item--1">
                   <div
@@ -499,9 +540,14 @@ export default function Home() {
                     />
                   </div>
 
-                  <h2 className="review-section__content__grid__item__name"></h2>
+                  <h3 className="review-section__content__grid__item__name">
+                    Beyonce Lees
+                  </h3>
 
-                  <p className="review-section__content__grid__item__comment"></p>
+                  <p className="review-section__content__grid__item__comment">
+                    The menu is simple, the food is delicious, great price for a
+                    good portion, I will definitely come back for more.
+                  </p>
                 </div>
 
                 {/* Review Section Content Grid Item - 2 */}
@@ -517,9 +563,15 @@ export default function Home() {
                     />
                   </div>
 
-                  <h2 className="review-section__content__grid__item__name"></h2>
+                  <h3 className="review-section__content__grid__item__name">
+                    Keon Cousins
+                  </h3>
 
-                  <p className="review-section__content__grid__item__comment"></p>
+                  <p className="review-section__content__grid__item__comment">
+                    Going to GSF is one of the best decision in my life, the
+                    food there are one of the best I've ever tasted, definitely
+                    worth trying.
+                  </p>
                 </div>
 
                 {/* Review Section Content Grid Item - 3 */}
@@ -535,9 +587,15 @@ export default function Home() {
                     />
                   </div>
 
-                  <h2 className="review-section__content__grid__item__name"></h2>
+                  <h3 className="review-section__content__grid__item__name">
+                    Rodrigo Gould
+                  </h3>
 
-                  <p className="review-section__content__grid__item__comment"></p>
+                  <p className="review-section__content__grid__item__comment">
+                    Went there once now I've been a regular customer ever since,
+                    great customer service, great food, waiter/waitress responds
+                    to your every request, you feel at home.
+                  </p>
                 </div>
 
                 {/* Review Section Content Grid Item - 4 */}
@@ -553,14 +611,257 @@ export default function Home() {
                     />
                   </div>
 
-                  <h2 className="review-section__content__grid__item__name"></h2>
+                  <h3 className="review-section__content__grid__item__name">
+                    Keiran Hatfield
+                  </h3>
 
-                  <p className="review-section__content__grid__item__comment"></p>
+                  <p className="review-section__content__grid__item__comment">
+                    Love this restaurant!! I and my whole family eat there every
+                    weekend, great food, great price, they are worth it!
+                  </p>
+                </div>
+              </div>
+              {/* Review Section Content Grid Button Right */}
+              <div className="review-section__content__grid__button-right">
+                <FontAwesomeIcon
+                  className="review-section__content__grid__button-right__icon"
+                  icon={faChevronRight}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/***********************************  Reservation Section */}
+
+      <section id="reservation-section">
+        {/* Global Container */}
+        <div className="container">
+          {/* Reservation Section Content */}
+          <div className="reservation-section__content">
+            {/* Reservation Section title  */}
+            <h2 className="reservation-section__content__title">
+              Make a Reservation
+            </h2>
+
+            {/* Reservation Section Grid  */}
+            <div className="reservation-section__content__grid">
+              {/* Reservation Section Grid Image */}
+              <div className="reservation-section__content__grid__image">
+                <div
+                  style={{
+                    position: "relative",
+                    objectFit: "cover",
+                  }}
+                >
+                  <Image
+                    src="/img/reservation.jpeg"
+                    layout="fill"
+                    alt="Image of a dining room"
+                  />
                 </div>
               </div>
 
-              {/* Review Section Content Grid Button Right */}
-              <div className="review-section__content__grid__button-right"></div>
+              {/* Reservation Section Grid Form Container */}
+              <div className="reservation-section__content__grid__form-container">
+                {/* Reservation Section Grid Form */}
+                <form className="reservation-section__content__grid__form">
+                  {/* Reservation Section Grid Form First and Last name*/}
+                  <div className="reservation-section__content__grid__form__first-last-name">
+                    {/* Reservation Section Grid Form First Name */}
+                    <div className="reservation-section__content__grid__form__first-name">
+                      <label htmlFor="first-name">First Name *</label>
+                      <input id="first-name" name="first-name" required />
+                    </div>
+
+                    {/* Reservation Section Grid Form Last Name */}
+                    <div className="reservation-section__content__grid__form__last-name">
+                      <label htmlFor="last-name">Last Name *</label>
+                      <input id="last-name" name="last-name" required />
+                    </div>
+                  </div>
+
+                  {/* Reservation Section Grid Form Email Address And Phone Number */}
+                  <div className="reservation-section__content__grid__form__email-address-phone">
+                    {/* Reservation Section Grid Form Email Address */}
+                    <div className="reservation-section__content__grid__form__email-address">
+                      <label htmlFor="email-address">Email Address *</label>
+                      <input
+                        id="email-address"
+                        name="email-address"
+                        type="email"
+                        required
+                      />
+                    </div>
+
+                    {/* Reservation Section Grid Form Phone */}
+                    <div className="reservation-section__content__grid__form__phone">
+                      <label htmlFor="email-address">Phone Number *</label>
+                      <input
+                        id="email-address"
+                        name="email-address"
+                        type="number"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Reservation Section Grid Form Date, Time, and Number of people */}
+                  <div className="reservation-section__content__grid__form__date-time-number">
+                    {/* Reservation Section Grid Form Date */}
+                    <div className="reservation-section__content__grid__form__date">
+                      <label htmlFor="date">Date *</label>
+                      <input
+                        id="date"
+                        type="date"
+                        required
+                        placeholder="dd/mm/yyyy"
+                        required
+                      />
+                    </div>
+
+                    {/* Reservation Section Grid Form Time */}
+                    <div className="reservation-section__content__grid__form__time">
+                      <label htmlFor="time">Time *</label>
+                      <input
+                        id="time"
+                        type="time"
+                        required
+                        placeholder="00/00 am/pm"
+                      />
+                    </div>
+
+                    {/* Reservation Section Grid Form Number of people */}
+                    <div className="reservation-section__content__grid__form__number">
+                      <label htmlFor="number-of-people">
+                        Number of people*
+                      </label>
+                      <select
+                        id="number-of-people"
+                        name="number-of-people"
+                        required
+                      >
+                        <option>Select</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Reservation Section Grid Form Note */}
+                  <div className="reservation-section__content__grid__form__note">
+                    <label htmlFor="note">Note</label>
+                    <textarea row="10" cols="58" id="note"></textarea>
+                  </div>
+
+                  {/* Revervation Section Grid Form Submit button */}
+
+                  <button
+                    className="reservation-section__content__grid__form__submit-button"
+                    name="submit-button"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+
+                  {/* Revervation Section Grid Form Notice */}
+                  <p className="reservation-section__content__grid__form__notice">
+                    *For people of 6 or more please send us a message to{" "}
+                    <span>reservation@gsf.com</span> or call us at{" "}
+                    <span>+966 13 554 9087.</span> By clicking submit you agree
+                    to our <span>terms of privacy.</span>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/***********************************  Contact Section */}
+
+      <section id="contact-section">
+        {/* Global Container */}
+        <div className="container">
+          {/* Contact Section Content */}
+          <div className="contact-section__content">
+            {/* Contact Section Content Title */}
+            <h2 className="contact-section__content__title">Contact Us</h2>
+
+            <div className="contact-section__content__grid">
+              {/* Contact Section Grid Form Container */}
+              <div className="contact-section__content__grid__form-container">
+                {/* Contact Section Grid Form */}
+                <form className="contact-section__content__grid__form">
+                  {/* Contact Section Grid Form First and Last name*/}
+                  <div className="contact-section__content__grid__form__first-last-name">
+                    {/* Contact Section Grid Form First Name */}
+                    <div className="contact-section__content__grid__form__first-name">
+                      <label htmlFor="first-name">First Name *</label>
+                      <input id="first-name" name="first-name" required />
+                    </div>
+
+                    {/* Contact Section Grid Form Last Name */}
+                    <div className="contact-section__content__grid__form__last-name">
+                      <label htmlFor="last-name">Last Name *</label>
+                      <input id="last-name" name="last-name" required />
+                    </div>
+                  </div>
+
+                  {/* Contact Section Grid Form Email Address */}
+                  <div className="contact-section__content__grid__form__email-address">
+                    <label htmlFor="email-address">Email Address *</label>
+                    <input
+                      id="email-address"
+                      name="email-address"
+                      type="email"
+                      required
+                    />
+                  </div>
+
+                  {/* Contact Section Grid Form Note */}
+                  <div className="contact-section__content__grid__form__note">
+                    <label htmlFor="note">Note</label>
+                    <textarea row="10" cols="58" id="note"></textarea>
+                  </div>
+
+                  {/* Contact Section Grid Form Submit button */}
+
+                  <button
+                    className="contact-section__content__grid__form__submit-button"
+                    name="submit-button"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+
+                  {/* Contact Section Grid Form Notice */}
+                  <p className="contact-section__content__grid__form__notice">
+                    By clicking submit you agree to our{" "}
+                    <span>terms of privacy.</span>
+                  </p>
+                </form>
+              </div>
+
+              {/* Contact Section Grid Image */}
+              <div className="contact-section__content__grid__image">
+                <div
+                  style={{
+                    position: "relative",
+                    objectFit: "cover",
+                  }}
+                >
+                  <Image
+                    src="/img/contact-us-img.jpeg"
+                    layout="fill"
+                    alt="Image of a dining room"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
