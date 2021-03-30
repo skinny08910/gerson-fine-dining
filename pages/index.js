@@ -23,7 +23,7 @@ export default function Home() {
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/img/logofavicon-32x32.png"
+          href="/img/logo/favicon-32x32.png"
         />
         <link
           rel="icon"
@@ -39,6 +39,22 @@ export default function Home() {
         />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+
+        {/* Meta Tags */}
+        <meta
+          name="keywords"
+          content="food,
+            kitchen,
+            steak,
+            breakfast,
+            lunch,
+            dinner,
+            fine dining"
+        />
+        <meta
+          name="descripton"
+          content="Come stop by Gerson's Simple Food, one of the best restaurant in the country."
+        />
 
         {/* Title */}
         <title>GSF - Get your next meal at Gerson's Fine Dining</title>
