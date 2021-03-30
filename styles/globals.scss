@@ -212,6 +212,7 @@ select {
       justify-content: center;
       width: 50%;
       margin-right: 10em;
+      border-radius: 10px;
       position: absolute;
       right: 0;
       height: 400px;
@@ -254,6 +255,7 @@ select {
       flex-direction: column;
       justify-content: center;
       width: 50%;
+      border-radius: 10px;
       position: absolute;
       left: 0;
       height: 400px;
@@ -385,7 +387,7 @@ select {
           text-align: center;
           width: 22%;
           padding: 2em;
-          border-radius: 20px;
+          border-radius: 10px;
           transition: all 0.4s ease-in-out;
 
           &__image {
@@ -420,7 +422,7 @@ select {
           text-align: center;
           width: 22%;
           padding: 2em;
-          border-radius: 20px;
+          border-radius: 10px;
           transition: all 0.4s ease-in-out;
 
           &__image {
@@ -455,7 +457,7 @@ select {
           text-align: center;
           width: 22%;
           padding: 2em;
-          border-radius: 20px;
+          border-radius: 10px;
           transition: all 0.4s ease-in-out;
 
           &__image {
@@ -513,7 +515,7 @@ select {
         height: 300px;
         color: $color-dark;
         background-color: $color-white;
-        border-radius: 20px;
+        border-radius: 10px;
         position: relative;
 
         .review-section__content__grid__item {
@@ -521,7 +523,7 @@ select {
           flex-direction: column;
           align-items: center;
           width: 100%;
-          border-radius: 50px;
+          border-radius: 10px;
           padding: 1.5em;
           position: absolute;
 
@@ -656,6 +658,7 @@ select {
         margin-right: 10em;
         z-index: 10;
         background-color: $color-dark;
+        border-radius: 10px;
 
         .reservation-section__content__grid__form {
           padding: 5em 2em;
@@ -728,7 +731,6 @@ select {
           &__date-time-number {
             display: flex;
             align-items: center;
-            // flex-direction: column;
             margin-bottom: 3em;
 
             .reservation-section__content__grid__form__date {
@@ -859,6 +861,7 @@ select {
         margin-left: 10em;
         z-index: 10;
         background-color: $color-dark;
+        border-radius: 10px;
 
         .contact-section__content__grid__form {
           padding: 5em 2em;
@@ -957,6 +960,73 @@ select {
           }
         }
       }
+    }
+  }
+}
+
+/**** Footer Section Styles ****/
+
+#footer-section {
+  color: $color-white;
+  background-color: $color-dark;
+  padding: 5em 0;
+
+  .footer-section__content {
+    padding-top: 4em;
+    border-top: 1px solid $color-white;
+
+    &__grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3em;
+
+      .footer-section__logo {
+        display: block;
+        font-size: 2.8rem;
+      }
+
+      .footer-section__about-us-links {
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+          font-size: 1.5rem;
+          margin-bottom: 1em;
+        }
+
+        .footer-section__about-us-links__menu {
+          margin-bottom: 1em;
+        }
+      }
+
+      .footer-section__reservation-link {
+        &__title {
+          font-size: 1.5rem;
+          margin-bottom: 1em;
+        }
+      }
+
+      .footer-section__contact-us {
+        &__title {
+          font-size: 1.5rem;
+          margin-bottom: 1em;
+        }
+
+        &__phone-email-address {
+          span {
+            display: block;
+
+            &:not(:last-child) {
+              margin-bottom: 1em;
+            }
+          }
+        }
+      }
+    }
+
+    &__copyright {
+      text-align: center;
     }
   }
 }

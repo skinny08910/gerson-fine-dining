@@ -882,6 +882,73 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/*********************************** Footer Section */}
+
+      <footer id="footer-section">
+        {/* Global Container */}
+        <div className="container">
+          {/* Footer Section Content */}
+          <div className="footer-section__content">
+            {/* Footer Section Content Grid */}
+            <div className="footer-section__content__grid">
+              {/* Footer Section Content Grid Logo */}
+              <div className="footer-section__logo">
+                <Link href="/">
+                  <a className="logo">GSF</a>
+                </Link>
+              </div>
+
+              {/* Footer Section Content Grid About Us links */}
+              <div className="footer-section__about-us-links">
+                <h2 className="footer-section__about-us-links__title">
+                  About Us
+                </h2>
+
+                <Link href="#menu-section">
+                  <a className="footer-section__about-us-links__menu">
+                    Our Menu
+                  </a>
+                </Link>
+
+                <Link href="#review-section">
+                  <a className="footer-section__about-us-links__review">
+                    Reviews
+                  </a>
+                </Link>
+              </div>
+
+              {/* Footer Section Content Grid Reservation Link */}
+              <div className="footer-section__reservation-link">
+                <h2 className="footer-section__reservation-link__title">
+                  Reservation
+                </h2>
+
+                <Link href="#reservation-section">
+                  <a className="footer-section__reservation-link__resevation">
+                    Reservation
+                  </a>
+                </Link>
+              </div>
+
+              {/* Footer Section Content Grid Contact Us */}
+              <div className="footer-section__contact-us">
+                <h2 className="footer-section__contact-us__title">Contact</h2>
+
+                <p className="footer-section__contact-us__phone-email-address">
+                  <span>+966 13 554 9087</span>
+                  <span>reservation@gsf.com</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Footer Section Copyright */}
+            <p className="footer-section__content__copyright">
+              &copy; Gerson's Simple Food. All right reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
