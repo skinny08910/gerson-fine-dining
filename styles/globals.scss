@@ -388,7 +388,7 @@ select {
           width: 22%;
           padding: 2em;
           border-radius: 10px;
-          transition: all 0.4s ease-in-out;
+          // transition: all 0.4s ease-in-out;
 
           &__image {
             div {
@@ -423,7 +423,7 @@ select {
           width: 22%;
           padding: 2em;
           border-radius: 10px;
-          transition: all 0.4s ease-in-out;
+          // transition: all 0.4s ease-in-out;
 
           &__image {
             div {
@@ -458,7 +458,7 @@ select {
           width: 22%;
           padding: 2em;
           border-radius: 10px;
-          transition: all 0.4s ease-in-out;
+          // transition: all 0.4s ease-in-out;
 
           &__image {
             div {
@@ -678,7 +678,8 @@ select {
             outline: none;
             transition: all 0.4s ease-in-out;
 
-            &:focus {
+            &:focus,
+            ::-moz-focus-inner {
               background-color: $color-white;
             }
 
@@ -815,15 +816,12 @@ select {
 /**** Contact Section Styles ****/
 
 #contact-section {
-  // height: 1200px;
   padding: 10em 0;
   color: $color-white;
   background-color: $color-dark;
 
   // Contact Section Content Styles
   .contact-section__content {
-    padding-top: 7em;
-
     // Contact Section Content Title Styles
     &__title {
       text-align: center;
@@ -881,7 +879,8 @@ select {
             outline: none;
             transition: all 0.4s ease-in-out;
 
-            &:focus {
+            &:focus,
+            ::-moz-focus-inner {
               background-color: $color-white;
             }
 
@@ -995,7 +994,7 @@ select {
           margin-bottom: 1em;
         }
 
-        .footer-section__about-us-links__menu {
+        &__menu {
           margin-bottom: 1em;
         }
       }

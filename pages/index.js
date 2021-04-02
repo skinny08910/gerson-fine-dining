@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
-import react from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 // FontAwesomeIcon
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
@@ -10,8 +9,151 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home() {
+  const [state, setState] = useState({
+    breakfast: {
+      zIndex: 30,
+      opacity: 1,
+    },
+
+    lunch: {
+      zIndex: 20,
+      opacity: 0,
+    },
+
+    dinner: {
+      zIndex: 10,
+      opacity: 0,
+    },
+  });
+
+  //****  Initiating the Refs for the filter buttons
+  const breakfastRef = React.createRef();
+  const lunchRef = React.createRef();
+  const dinnerRef = React.createRef();
+
+  //****  Function for the Breakfast filter
+  const clickedBreakfast = () => {
+    setState({
+      breakfast: {
+        zIndex: 30,
+        opacity: 1,
+      },
+
+      lunch: {
+        zIndex: 20,
+        opacity: 0,
+      },
+
+      dinner: {
+        zIndex: 10,
+        opacity: 0,
+      },
+    });
+
+    setTimeout(() => {
+      if (state.breakfast.opacity === 1 && state.breakfast.zIndex === 30) {
+        breakfastRef.current.style.zIndex = 30;
+        breakfastRef.current.style.opacity = 1;
+        breakfastRef.current.style.transition =
+          "zIndex, opacity 0.3s ease-in-out";
+
+        lunchRef.current.style.zIndex = 20;
+        lunchRef.current.style.opacity = 0;
+        lunchRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
+
+        dinnerRef.current.style.zIndex = 10;
+        dinnerRef.current.style.opacity = 0;
+        dinnerRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
+      }
+    }, 0);
+  };
+
+  //****  Function for the Lunch filter
+  const clickedLunch = () => {
+    setState({
+      breakfast: {
+        zIndex: 20,
+        opacity: 0,
+      },
+
+      lunch: {
+        zIndex: 30,
+        opacity: 1,
+      },
+
+      dinner: {
+        zIndex: 10,
+        opacity: 0,
+      },
+    });
+
+    setTimeout(() => {
+      if (state.lunch.opacity === 1 && state.lunch.zIndex === 30) {
+        breakfastRef.current.style.zIndex = 20;
+        breakfastRef.current.style.opacity = 0;
+        breakfastRef.current.style.transition =
+          "zIndex, opacity 0.3s ease-in-out";
+
+        lunchRef.current.style.zIndex = 30;
+        lunchRef.current.style.opacity = 1;
+        lunchRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
+
+        dinnerRef.current.style.zIndex = 10;
+        dinnerRef.current.style.opacity = 0;
+        dinnerRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
+      }
+    }, 0);
+  };
+
+  //****  Function for the Dinner filter
+  const clickedDinner = () => {
+    setState({
+      breakfast: {
+        zIndex: 20,
+        opacity: 0,
+      },
+
+      lunch: {
+        zIndex: 10,
+        opacity: 0,
+      },
+
+      dinner: {
+        zIndex: 30,
+        opacity: 1,
+      },
+    });
+
+    setTimeout(() => {
+      if (state.dinner.opacity === 1 && state.dinner.zIndex === 30) {
+        // breakfastRef.current.style.zIndex = 20;
+        breakfastRef.current.style.backgroundColor = "red";
+
+        breakfastRef.current.style.opacity = 0;
+        breakfastRef.current.style.transition =
+          "zIndex, opacity 0.3s ease-in-out";
+
+        lunchRef.current.style.zIndex = 10;
+        lunchRef.current.style.opacity = 0;
+        lunchRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
+
+        dinnerRef.current.style.zIndex = 30;
+        dinnerRef.current.style.opacity = 1;
+        dinnerRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
+      }
+    }, 0);
+  };
+
+  console.log(state);
+
+  // Scroll to top function
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
-    <div>
+    <>
       <Head>
         {/* Favicon */}
         <link
@@ -49,7 +191,8 @@ export default function Home() {
             breakfast,
             lunch,
             dinner,
-            fine dining"
+            fine dining,
+            simple good food"
         />
         <meta
           name="descripton"
@@ -67,47 +210,90 @@ export default function Home() {
           {/* Navbar */}
           <nav className="navbar">
             <div className="navbar__logo">
-              <Link href="/">
-                <a className="logo">GSF</a>
+              <Link href="/" className="logo">
+                GSF
               </Link>
             </div>
 
             <ul className="navbar__links">
               <li>
-                <Link href="/">
-                  <a className="navbar__link">Home</a>
+                <Link href="/" className="navbar__link">
+                  Home
                 </Link>
               </li>
 
               <li>
-                <Link href="#about-section">
-                  <a className="navbar__link">About Us</a>
+                <Link
+                  href="#about-section"
+                  activeClass="active"
+                  to="about-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="navbar__link"
+                >
+                  About Us
                 </Link>
               </li>
 
               <li>
-                <Link href="#">
-                  <a className="navbar__link">Our Menu</a>
+                <Link
+                  href="#menu-section"
+                  activeClass="active"
+                  to="menu-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="navbar__link"
+                >
+                  Our Menu
                 </Link>
               </li>
 
               <li>
-                <Link href="#">
-                  <a className="navbar__link">Reviews</a>
+                <Link
+                  href="#review-section"
+                  activeClass="active"
+                  to="review-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="navbar__link"
+                >
+                  Reviews
                 </Link>
               </li>
 
               <li>
-                <Link href="#">
-                  <a className="navbar__link navbar__link--reservation">
-                    Reservations
-                  </a>
+                <Link
+                  href="#reservation-section"
+                  activeClass="active"
+                  to="reservation-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="navbar__link navbar__link--reservation"
+                >
+                  Reservations
                 </Link>
               </li>
 
               <li>
-                <Link href="#">
-                  <a className="navbar__link">Contact Us</a>
+                <Link
+                  href="#contact-section"
+                  activeClass="active"
+                  to="contact-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="navbar__link"
+                >
+                  Contact Us
                 </Link>
               </li>
             </ul>
@@ -132,8 +318,17 @@ export default function Home() {
                 bar.
               </p>
 
-              <Link href="#menu-section">
-                <a className="jumbo-hero__text-btn">Our Simple Menu</a>
+              <Link
+                href="#menu-section"
+                activeClass="active"
+                to="menu-section"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}
+                className="jumbo-hero__text-btn"
+              >
+                Our Simple Menu
               </Link>
             </div>
 
@@ -234,15 +429,27 @@ export default function Home() {
 
             {/* Menu Section Filter */}
             <div className="menu-section__filter">
-              <div className="menu-section__filter__item menu-section__filter--breakfast">
+              <div
+                className="menu-section__filter__item menu-section__filter--breakfast"
+                ref={breakfastRef}
+                onClick={clickedBreakfast}
+              >
                 Breakfast
               </div>
 
-              <div className="menu-section__filter__item menu-section__filter--lunch">
+              <div
+                className="menu-section__filter__item menu-section__filter--lunch"
+                ref={lunchRef}
+                onClick={clickedLunch}
+              >
                 Lunch
               </div>
 
-              <div className="menu-section__filter__item menu-section__filter--dinner">
+              <div
+                className="menu-section__filter__item menu-section__filter--dinner"
+                ref={dinnerRef}
+                onClick={clickedDinner}
+              >
                 Dinner
               </div>
             </div>
@@ -894,7 +1101,7 @@ export default function Home() {
             <div className="footer-section__content__grid">
               {/* Footer Section Content Grid Logo */}
               <div className="footer-section__logo">
-                <Link href="/">
+                <Link href="/" onClick={scrollToTop}>
                   <a className="logo">GSF</a>
                 </Link>
               </div>
@@ -905,16 +1112,30 @@ export default function Home() {
                   About Us
                 </h2>
 
-                <Link href="#menu-section">
-                  <a className="footer-section__about-us-links__menu">
-                    Our Menu
-                  </a>
+                <Link
+                  href="#menu-section"
+                  activeClass="active"
+                  to="menu-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="footer-section__about-us-links__menu"
+                >
+                  Our Menu
                 </Link>
 
-                <Link href="#review-section">
-                  <a className="footer-section__about-us-links__review">
-                    Reviews
-                  </a>
+                <Link
+                  href="#review-section"
+                  activeClass="active"
+                  to="review-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="footer-section__about-us-links__review"
+                >
+                  Reviews
                 </Link>
               </div>
 
@@ -924,10 +1145,17 @@ export default function Home() {
                   Reservation
                 </h2>
 
-                <Link href="#reservation-section">
-                  <a className="footer-section__reservation-link__resevation">
-                    Reservation
-                  </a>
+                <Link
+                  href="#reservation-section"
+                  activeClass="active"
+                  to="reservation-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="footer-section__reservation-link__resevation"
+                >
+                  Reservation
                 </Link>
               </div>
 
@@ -949,6 +1177,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
