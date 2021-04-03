@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 // FontAwesomeIcon
@@ -26,10 +26,15 @@ export default function Home() {
     },
   });
 
+  //****  Initiating the Refs for the menu sections
+  const breakfastRef = React.useRef();
+  const lunchRef = React.useRef();
+  const dinnerRef = React.useRef();
+
   //****  Initiating the Refs for the filter buttons
-  const breakfastRef = React.createRef();
-  const lunchRef = React.createRef();
-  const dinnerRef = React.createRef();
+  const breakfastFilterRef = React.useRef();
+  const lunchFilterRef = React.useRef();
+  const dinnerFilterRef = React.useRef();
 
   //****  Function for the Breakfast filter
   const clickedBreakfast = () => {
@@ -49,23 +54,6 @@ export default function Home() {
         opacity: 0,
       },
     });
-
-    setTimeout(() => {
-      if (state.breakfast.opacity === 1 && state.breakfast.zIndex === 30) {
-        breakfastRef.current.style.zIndex = 30;
-        breakfastRef.current.style.opacity = 1;
-        breakfastRef.current.style.transition =
-          "zIndex, opacity 0.3s ease-in-out";
-
-        lunchRef.current.style.zIndex = 20;
-        lunchRef.current.style.opacity = 0;
-        lunchRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
-
-        dinnerRef.current.style.zIndex = 10;
-        dinnerRef.current.style.opacity = 0;
-        dinnerRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
-      }
-    }, 0);
   };
 
   //****  Function for the Lunch filter
@@ -86,23 +74,6 @@ export default function Home() {
         opacity: 0,
       },
     });
-
-    setTimeout(() => {
-      if (state.lunch.opacity === 1 && state.lunch.zIndex === 30) {
-        breakfastRef.current.style.zIndex = 20;
-        breakfastRef.current.style.opacity = 0;
-        breakfastRef.current.style.transition =
-          "zIndex, opacity 0.3s ease-in-out";
-
-        lunchRef.current.style.zIndex = 30;
-        lunchRef.current.style.opacity = 1;
-        lunchRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
-
-        dinnerRef.current.style.zIndex = 10;
-        dinnerRef.current.style.opacity = 0;
-        dinnerRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
-      }
-    }, 0);
   };
 
   //****  Function for the Dinner filter
@@ -123,28 +94,79 @@ export default function Home() {
         opacity: 1,
       },
     });
-
-    setTimeout(() => {
-      if (state.dinner.opacity === 1 && state.dinner.zIndex === 30) {
-        // breakfastRef.current.style.zIndex = 20;
-        breakfastRef.current.style.backgroundColor = "red";
-
-        breakfastRef.current.style.opacity = 0;
-        breakfastRef.current.style.transition =
-          "zIndex, opacity 0.3s ease-in-out";
-
-        lunchRef.current.style.zIndex = 10;
-        lunchRef.current.style.opacity = 0;
-        lunchRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
-
-        dinnerRef.current.style.zIndex = 30;
-        dinnerRef.current.style.opacity = 1;
-        dinnerRef.current.style.transition = "zIndex, opacity 0.3s ease-in-out";
-      }
-    }, 0);
   };
 
-  console.log(state);
+  // useEffect for the menu filters
+
+  useEffect(() => {
+    // If Statement for the Breakfast filter
+    if (state.breakfast.opacity === 1 && state.breakfast.zIndex === 30) {
+      breakfastRef.current.style.zIndex = 30;
+      breakfastRef.current.style.opacity = 1;
+      breakfastRef.current.style.transition =
+        "zIndex, opacity 0.4s ease-in-out";
+
+      breakfastFilterRef.current.classList.add("active");
+
+      lunchRef.current.style.zIndex = 20;
+      lunchRef.current.style.opacity = 0;
+      lunchRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
+
+      lunchFilterRef.current.classList.remove("active");
+
+      dinnerRef.current.style.zIndex = 10;
+      dinnerRef.current.style.opacity = 0;
+      dinnerRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
+
+      dinnerFilterRef.current.classList.remove("active");
+    }
+
+    // If Statement for the Lunch filter
+
+    if (state.lunch.opacity === 1 && state.lunch.zIndex === 30) {
+      breakfastRef.current.style.zIndex = 20;
+      breakfastRef.current.style.opacity = 0;
+      breakfastRef.current.style.transition =
+        "zIndex, opacity 0.4s ease-in-out";
+
+      breakfastFilterRef.current.classList.remove("active");
+
+      lunchRef.current.style.zIndex = 30;
+      lunchRef.current.style.opacity = 1;
+      lunchRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
+
+      lunchFilterRef.current.classList.add("active");
+
+      dinnerRef.current.style.zIndex = 10;
+      dinnerRef.current.style.opacity = 0;
+      dinnerRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
+
+      dinnerFilterRef.current.classList.remove("active");
+    }
+
+    // If Statement for the Dinner filter
+
+    if (state.dinner.opacity === 1 && state.dinner.zIndex === 30) {
+      breakfastRef.current.style.zIndex = 20;
+      breakfastRef.current.style.opacity = 0;
+      breakfastRef.current.style.transition =
+        "zIndex, opacity 0.4s ease-in-out";
+
+      breakfastFilterRef.current.classList.remove("active");
+
+      lunchRef.current.style.zIndex = 10;
+      lunchRef.current.style.opacity = 0;
+      lunchRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
+
+      lunchFilterRef.current.classList.remove("active");
+
+      dinnerRef.current.style.zIndex = 30;
+      dinnerRef.current.style.opacity = 1;
+      dinnerRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
+
+      dinnerFilterRef.current.classList.add("active");
+    }
+  });
 
   // Scroll to top function
 
@@ -431,24 +453,24 @@ export default function Home() {
             <div className="menu-section__filter">
               <div
                 className="menu-section__filter__item menu-section__filter--breakfast"
-                ref={breakfastRef}
                 onClick={clickedBreakfast}
+                ref={breakfastFilterRef}
               >
                 Breakfast
               </div>
 
               <div
                 className="menu-section__filter__item menu-section__filter--lunch"
-                ref={lunchRef}
                 onClick={clickedLunch}
+                ref={lunchFilterRef}
               >
                 Lunch
               </div>
 
               <div
                 className="menu-section__filter__item menu-section__filter--dinner"
-                ref={dinnerRef}
                 onClick={clickedDinner}
+                ref={dinnerFilterRef}
               >
                 Dinner
               </div>
@@ -457,7 +479,10 @@ export default function Home() {
             {/* Menu Section Grid Container */}
             <div className="menu-section__menu-grid">
               {/* Menu Section Breakfast */}
-              <div className="menu-section__menu-grid__breakfast">
+              <div
+                className="menu-section__menu-grid__breakfast"
+                ref={breakfastRef}
+              >
                 {/**** Menu Section Breakfast Menu Grid Item - 1 ****/}
                 <div className="menu-section__menu-grid__item">
                   <div className="menu-section__menu-grid__item__image">
@@ -545,7 +570,7 @@ export default function Home() {
               </div>
 
               {/* Menu Section Lunch */}
-              <div className="menu-section__menu-grid__lunch">
+              <div className="menu-section__menu-grid__lunch" ref={lunchRef}>
                 {/**** Menu Section Lunch Menu Grid Item - 1 ****/}
                 <div className="menu-section__menu-grid__item">
                   <div className="menu-section__menu-grid__item__image">
@@ -635,7 +660,7 @@ export default function Home() {
               </div>
 
               {/* Menu Section Dinner */}
-              <div className="menu-section__menu-grid__dinner">
+              <div className="menu-section__menu-grid__dinner" ref={dinnerRef}>
                 {/**** Menu Section Dinner Menu Grid Item - 1 ****/}
                 <div className="menu-section__menu-grid__item">
                   <div className="menu-section__menu-grid__item__image">

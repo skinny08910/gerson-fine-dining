@@ -329,6 +329,12 @@ select {
         transition: all 0.3s ease-in-out;
         outline: none;
         cursor: pointer;
+        transition: color, background-color, 0.4s ease-in-out;
+
+        &.active {
+          color: $color-dark;
+          background-color: $color-white;
+        }
 
         &:hover {
           color: $color-dark;
@@ -345,6 +351,12 @@ select {
         transition: all 0.3s ease-in-out;
         outline: none;
         cursor: pointer;
+        transition: color, background-color, 0.4s ease-in-out;
+
+        &.active {
+          color: $color-dark;
+          background-color: $color-white;
+        }
 
         &:hover {
           color: $color-dark;
@@ -361,6 +373,12 @@ select {
         transition: all 0.3s ease-in-out;
         outline: none;
         cursor: pointer;
+        transition: color, background-color, 0.4s ease-in-out;
+
+        &.active {
+          color: $color-dark;
+          background-color: $color-white;
+        }
 
         &:hover {
           color: $color-dark;
