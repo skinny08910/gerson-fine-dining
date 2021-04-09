@@ -3,13 +3,28 @@ import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
-// FontAwesomeIcon
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+// Font Awesome
+
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// React Caroousel
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+
 export default function Home() {
-  const [state, setState] = useState({
+  //**  Initiating the Refs for the menu sections
+  const breakfastRef = React.useRef();
+  const lunchRef = React.useRef();
+  const dinnerRef = React.useRef();
+
+  //**  Initiating the Refs for the filter buttons
+  const breakfastFilterRef = React.useRef();
+  const lunchFilterRef = React.useRef();
+  const dinnerFilterRef = React.useRef();
+
+  // ***** Hook for the menu section
+  const [menu, setMenu] = useState({
     breakfast: {
       zIndex: 30,
       opacity: 1,
@@ -26,19 +41,9 @@ export default function Home() {
     },
   });
 
-  //****  Initiating the Refs for the menu sections
-  const breakfastRef = React.useRef();
-  const lunchRef = React.useRef();
-  const dinnerRef = React.useRef();
-
-  //****  Initiating the Refs for the filter buttons
-  const breakfastFilterRef = React.useRef();
-  const lunchFilterRef = React.useRef();
-  const dinnerFilterRef = React.useRef();
-
   //****  Function for the Breakfast filter
   const clickedBreakfast = () => {
-    setState({
+    setMenu({
       breakfast: {
         zIndex: 30,
         opacity: 1,
@@ -58,7 +63,7 @@ export default function Home() {
 
   //****  Function for the Lunch filter
   const clickedLunch = () => {
-    setState({
+    setMenu({
       breakfast: {
         zIndex: 20,
         opacity: 0,
@@ -78,7 +83,7 @@ export default function Home() {
 
   //****  Function for the Dinner filter
   const clickedDinner = () => {
-    setState({
+    setMenu({
       breakfast: {
         zIndex: 20,
         opacity: 0,
@@ -96,11 +101,11 @@ export default function Home() {
     });
   };
 
-  // useEffect for the menu filters
+  // useEffect for the menu section/
 
   useEffect(() => {
-    // If Statement for the Breakfast filter
-    if (state.breakfast.opacity === 1 && state.breakfast.zIndex === 30) {
+    // If statement for the Breakfast filter
+    if (menu.breakfast.opacity === 1 && menu.breakfast.zIndex === 30) {
       breakfastRef.current.style.zIndex = 30;
       breakfastRef.current.style.opacity = 1;
       breakfastRef.current.style.transition =
@@ -123,7 +128,7 @@ export default function Home() {
 
     // If Statement for the Lunch filter
 
-    if (state.lunch.opacity === 1 && state.lunch.zIndex === 30) {
+    if (menu.lunch.opacity === 1 && menu.lunch.zIndex === 30) {
       breakfastRef.current.style.zIndex = 20;
       breakfastRef.current.style.opacity = 0;
       breakfastRef.current.style.transition =
@@ -146,7 +151,7 @@ export default function Home() {
 
     // If Statement for the Dinner filter
 
-    if (state.dinner.opacity === 1 && state.dinner.zIndex === 30) {
+    if (menu.dinner.opacity === 1 && menu.dinner.zIndex === 30) {
       breakfastRef.current.style.zIndex = 20;
       breakfastRef.current.style.opacity = 0;
       breakfastRef.current.style.transition =
@@ -168,8 +173,99 @@ export default function Home() {
     }
   });
 
-  // Scroll to top function
+  // ***** Hook for the inputfields
+  const [inputfield, setInputfield] = useState([]);
 
+  // ***** Hook for the active inputfields
+  const [activeInputfield, setActiveInputfield] = useState({
+    inputfield: "",
+  });
+
+  //****  Initiating Ref for the inputs and text area
+  // Global Refs
+  const inputRef = React.useRef([]);
+
+  // Refs 1
+  const inputRef_1 = React.useRef();
+
+  // Refs 2
+  const inputRef_2 = React.useRef();
+
+  // Refs 3
+  const inputRef_3 = React.useRef();
+
+  // Refs 4
+  const inputRef_4 = React.useRef();
+
+  // Refs 5
+  const inputRef_5 = React.useRef();
+
+  // Refs 6
+  const inputRef_6 = React.useRef();
+
+  // Refs 7
+  const inputRef_7 = React.useRef();
+
+  // Refs 8
+  const inputRef_8 = React.useRef();
+
+  // Refs 9
+  const inputRef_9 = React.useRef();
+
+  // Refs 10
+  const inputRef_10 = React.useRef();
+
+  // Refs 11
+  const inputRef_11 = React.useRef();
+
+  // Refs 12
+  const inputRef_12 = React.useRef();
+
+  // Function to for each input field
+  const eachInput = () => {
+    inputRef.current.forEach((input) => {
+      input.forEach((index) => {
+        if (index.current.value !== "") {
+          index.current.style.color = "white";
+          index.current.style.borderBottom = "1px solid white";
+        } else {
+          index.current.style.borderBottom = "";
+        }
+      });
+    });
+  };
+
+  // Setting the states for the activeInputfield hook
+  const inputfieldOn = () => {
+    setActiveInputfield({
+      inputfield: eachInput(),
+    });
+  };
+
+  useEffect(() => {
+    // Putting the individual Ref into the Ref which is an array
+    let inputfield = [
+      inputRef_1,
+      inputRef_2,
+      inputRef_3,
+      inputRef_4,
+      inputRef_5,
+      inputRef_6,
+      inputRef_7,
+      inputRef_8,
+      inputRef_9,
+      inputRef_10,
+      inputRef_11,
+      inputRef_12,
+    ];
+
+    inputRef.current = new Array(inputfield);
+
+    // Setting the state
+    setInputfield(inputfield);
+  }, []);
+
+  // Scroll to top function
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
@@ -588,7 +684,7 @@ export default function Home() {
                   </h2>
 
                   <p className="menu-section__menu-grid__item__info">
-                    Yellow pasta, make with pasta with yellow sauce, simple but
+                    Yellow pasta, made with pasta with yellow sauce, simple but
                     delicious.
                   </p>
                 </div>
@@ -765,116 +861,215 @@ export default function Home() {
 
             {/* Review Section Content Grid */}
             <div className="review-section__content__grid">
-              {/* Review Section Content Grid Button Left */}
-              <div className="review-section__content__grid__button-left">
-                <FontAwesomeIcon
-                  className="review-section__content__grid__button-left__icon"
-                  icon={faChevronLeft}
-                />
-              </div>
-
               {/* Review Section Content Grid Items */}
               <div className="review-section__content__grid__container">
-                {/* Review Section Content Grid Item - 1 */}
-                <div className="review-section__content__grid__item review-section__content__grid__item--1">
-                  <div
-                    className="review-section__content__grid__item__image"
-                    style={{ position: "relative", objectFit: "cover" }}
-                  >
-                    <Image
-                      src="/img/profile-picture-1.jpeg"
-                      layout="fill"
-                      alt="Profile Picture"
-                    />
+                {/***** Alice Carousel ********/}
+                <AliceCarousel disableDotsControls>
+                  {/* Review Section Content Grid Item - 1 */}
+                  <div className="review-section__content__grid__item review-section__content__grid__item--1">
+                    <div
+                      className="review-section__content__grid__item__image"
+                      style={{ position: "relative", objectFit: "cover" }}
+                    >
+                      <Image
+                        src="/img/profile-picture-1.jpeg"
+                        layout="fill"
+                        alt="Profile Picture"
+                      />
+                    </div>
+
+                    <h3 className="review-section__content__grid__item__name">
+                      Beyonce Lees
+                    </h3>
+
+                    <p className="review-section__content__grid__item__comment">
+                      The menu is simple, the food is delicious, great price for
+                      a good portion, I will definitely come back for more.
+                    </p>
+
+                    <p className="review-section__content__grid__item__star">
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+                    </p>
                   </div>
 
-                  <h3 className="review-section__content__grid__item__name">
-                    Beyonce Lees
-                  </h3>
+                  {/* Review Section Content Grid Item - 2 */}
 
-                  <p className="review-section__content__grid__item__comment">
-                    The menu is simple, the food is delicious, great price for a
-                    good portion, I will definitely come back for more.
-                  </p>
-                </div>
+                  <div className="review-section__content__grid__item review-section__content__grid__item--2">
+                    <div
+                      className="review-section__content__grid__item__image"
+                      style={{ position: "relative", objectFit: "cover" }}
+                    >
+                      <Image
+                        src="/img/profile-picture-2.jpeg"
+                        layout="fill"
+                        alt="Profile Picture"
+                      />
+                    </div>
 
-                {/* Review Section Content Grid Item - 2 */}
-                <div className="review-section__content__grid__item review-section__content__grid__item--2">
-                  <div
-                    className="review-section__content__grid__item__image"
-                    style={{ position: "relative", objectFit: "cover" }}
-                  >
-                    <Image
-                      src="/img/profile-picture-2.jpeg"
-                      layout="fill"
-                      alt="Profile Picture"
-                    />
+                    <h3 className="review-section__content__grid__item__name">
+                      Keon Cousins
+                    </h3>
+
+                    <p className="review-section__content__grid__item__comment">
+                      Going to GSF is one of the best decision in my life, the
+                      food there are one of the best I've ever tasted,
+                      definitely worth trying.
+                    </p>
+
+                    <p className="review-section__content__grid__item__star">
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+                    </p>
                   </div>
 
-                  <h3 className="review-section__content__grid__item__name">
-                    Keon Cousins
-                  </h3>
+                  {/* Review Section Content Grid Item - 3 */}
 
-                  <p className="review-section__content__grid__item__comment">
-                    Going to GSF is one of the best decision in my life, the
-                    food there are one of the best I've ever tasted, definitely
-                    worth trying.
-                  </p>
-                </div>
+                  <div className="review-section__content__grid__item review-section__content__grid__item--3">
+                    <div
+                      className="review-section__content__grid__item__image"
+                      style={{ position: "relative", objectFit: "cover" }}
+                    >
+                      <Image
+                        src="/img/profile-picture-3.jpeg"
+                        layout="fill"
+                        alt="Profile Picture"
+                      />
+                    </div>
 
-                {/* Review Section Content Grid Item - 3 */}
-                <div className="review-section__content__grid__item review-section__content__grid__item--3">
-                  <div
-                    className="review-section__content__grid__item__image"
-                    style={{ position: "relative", objectFit: "cover" }}
-                  >
-                    <Image
-                      src="/img/profile-picture-3.jpeg"
-                      layout="fill"
-                      alt="Profile Picture"
-                    />
+                    <h3 className="review-section__content__grid__item__name">
+                      Rodrigo Gould
+                    </h3>
+
+                    <p className="review-section__content__grid__item__comment">
+                      Went there once now I've been a regular customer ever
+                      since, great customer service, great food, waiter/waitress
+                      responds to your every request, you feel at home.
+                    </p>
+
+                    <p className="review-section__content__grid__item__star">
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+                    </p>
                   </div>
 
-                  <h3 className="review-section__content__grid__item__name">
-                    Rodrigo Gould
-                  </h3>
+                  {/* Review Section Content Grid Item - 4 */}
 
-                  <p className="review-section__content__grid__item__comment">
-                    Went there once now I've been a regular customer ever since,
-                    great customer service, great food, waiter/waitress responds
-                    to your every request, you feel at home.
-                  </p>
-                </div>
+                  <div className="review-section__content__grid__item review-section__content__grid__item--4">
+                    <div
+                      className="review-section__content__grid__item__image"
+                      style={{ position: "relative", objectFit: "cover" }}
+                    >
+                      <Image
+                        src="/img/profile-picture-4.jpeg"
+                        layout="fill"
+                        alt="Profile Picture"
+                      />
+                    </div>
 
-                {/* Review Section Content Grid Item - 4 */}
-                <div className="review-section__content__grid__item review-section__content__grid__item--4">
-                  <div
-                    className="review-section__content__grid__item__image"
-                    style={{ position: "relative", objectFit: "cover" }}
-                  >
-                    <Image
-                      src="/img/profile-picture-4.jpeg"
-                      layout="fill"
-                      alt="Profile Picture"
-                    />
+                    <h3 className="review-section__content__grid__item__name">
+                      Keiran Hatfield
+                    </h3>
+
+                    <p className="review-section__content__grid__item__comment">
+                      Love this restaurant!! I and my whole family eat there
+                      every weekend, great food, great price, they are worth it!
+                    </p>
+
+                    <p className="review-section__content__grid__item__star">
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+
+                      <FontAwesomeIcon
+                        className="review-section__content__grid__item__star__icon"
+                        icon={faStar}
+                      />
+                    </p>
                   </div>
-
-                  <h3 className="review-section__content__grid__item__name">
-                    Keiran Hatfield
-                  </h3>
-
-                  <p className="review-section__content__grid__item__comment">
-                    Love this restaurant!! I and my whole family eat there every
-                    weekend, great food, great price, they are worth it!
-                  </p>
-                </div>
-              </div>
-              {/* Review Section Content Grid Button Right */}
-              <div className="review-section__content__grid__button-right">
-                <FontAwesomeIcon
-                  className="review-section__content__grid__button-right__icon"
-                  icon={faChevronRight}
-                />
+                </AliceCarousel>
               </div>
             </div>
           </div>
@@ -920,13 +1115,27 @@ export default function Home() {
                     {/* Reservation Section Grid Form First Name */}
                     <div className="reservation-section__content__grid__form__first-name">
                       <label htmlFor="first-name">First Name *</label>
-                      <input id="first-name" name="first-name" required />
+                      <input
+                        ref={inputRef_1}
+                        id="first-name"
+                        name="first-name"
+                        required
+                        onChange={inputfieldOn}
+                        // onPaste={inputfieldOn}
+                      />
                     </div>
 
                     {/* Reservation Section Grid Form Last Name */}
                     <div className="reservation-section__content__grid__form__last-name">
                       <label htmlFor="last-name">Last Name *</label>
-                      <input id="last-name" name="last-name" required />
+                      <input
+                        ref={inputRef_2}
+                        id="last-name"
+                        name="last-name"
+                        required
+                        onChange={inputfieldOn}
+                        onPaste={inputfieldOn}
+                      />
                     </div>
                   </div>
 
@@ -936,10 +1145,13 @@ export default function Home() {
                     <div className="reservation-section__content__grid__form__email-address">
                       <label htmlFor="email-address">Email Address *</label>
                       <input
+                        ref={inputRef_3}
                         id="email-address"
                         name="email-address"
                         type="email"
                         required
+                        onChange={inputfieldOn}
+                        onPaste={inputfieldOn}
                       />
                     </div>
 
@@ -947,10 +1159,13 @@ export default function Home() {
                     <div className="reservation-section__content__grid__form__phone">
                       <label htmlFor="email-address">Phone Number *</label>
                       <input
+                        ref={inputRef_4}
                         id="email-address"
                         name="email-address"
                         type="number"
                         required
+                        onChange={inputfieldOn}
+                        onPaste={inputfieldOn}
                       />
                     </div>
                   </div>
@@ -961,11 +1176,14 @@ export default function Home() {
                     <div className="reservation-section__content__grid__form__date">
                       <label htmlFor="date">Date *</label>
                       <input
+                        ref={inputRef_5}
                         id="date"
                         type="date"
                         required
                         placeholder="dd/mm/yyyy"
                         required
+                        onChange={inputfieldOn}
+                        onPaste={inputfieldOn}
                       />
                     </div>
 
@@ -973,10 +1191,13 @@ export default function Home() {
                     <div className="reservation-section__content__grid__form__time">
                       <label htmlFor="time">Time *</label>
                       <input
+                        ref={inputRef_6}
                         id="time"
                         type="time"
                         required
                         placeholder="00/00 am/pm"
+                        onChange={inputfieldOn}
+                        onPaste={inputfieldOn}
                       />
                     </div>
 
@@ -986,9 +1207,12 @@ export default function Home() {
                         Number of people*
                       </label>
                       <select
+                        ref={inputRef_7}
                         id="number-of-people"
                         name="number-of-people"
                         required
+                        onChange={inputfieldOn}
+                        onPaste={inputfieldOn}
                       >
                         <option>Select</option>
                         <option>1</option>
@@ -1003,7 +1227,14 @@ export default function Home() {
                   {/* Reservation Section Grid Form Note */}
                   <div className="reservation-section__content__grid__form__note">
                     <label htmlFor="note">Note</label>
-                    <textarea row="10" cols="58" id="note"></textarea>
+                    <textarea
+                      ref={inputRef_8}
+                      row="10"
+                      cols="58"
+                      id="note"
+                      onChange={inputfieldOn}
+                      onPaste={inputfieldOn}
+                    ></textarea>
                   </div>
 
                   {/* Revervation Section Grid Form Submit button */}
@@ -1012,6 +1243,7 @@ export default function Home() {
                     className="reservation-section__content__grid__form__submit-button"
                     name="submit-button"
                     type="submit"
+                    onClick={(e) => e.preventDefault()}
                   >
                     Submit
                   </button>
@@ -1050,13 +1282,27 @@ export default function Home() {
                     {/* Contact Section Grid Form First Name */}
                     <div className="contact-section__content__grid__form__first-name">
                       <label htmlFor="first-name">First Name *</label>
-                      <input id="first-name" name="first-name" required />
+                      <input
+                        ref={inputRef_9}
+                        id="first-name"
+                        name="first-name"
+                        required
+                        onChange={inputfieldOn}
+                        onPaste={inputfieldOn}
+                      />
                     </div>
 
                     {/* Contact Section Grid Form Last Name */}
                     <div className="contact-section__content__grid__form__last-name">
                       <label htmlFor="last-name">Last Name *</label>
-                      <input id="last-name" name="last-name" required />
+                      <input
+                        ref={inputRef_10}
+                        id="last-name"
+                        name="last-name"
+                        required
+                        onChange={inputfieldOn}
+                        onPaste={inputfieldOn}
+                      />
                     </div>
                   </div>
 
@@ -1064,17 +1310,27 @@ export default function Home() {
                   <div className="contact-section__content__grid__form__email-address">
                     <label htmlFor="email-address">Email Address *</label>
                     <input
+                      ref={inputRef_11}
                       id="email-address"
                       name="email-address"
                       type="email"
                       required
+                      onChange={inputfieldOn}
+                      onPaste={inputfieldOn}
                     />
                   </div>
 
                   {/* Contact Section Grid Form Note */}
                   <div className="contact-section__content__grid__form__note">
                     <label htmlFor="note">Note</label>
-                    <textarea row="10" cols="58" id="note"></textarea>
+                    <textarea
+                      ref={inputRef_12}
+                      row="10"
+                      cols="58"
+                      id="note"
+                      onChange={inputfieldOn}
+                      onPaste={inputfieldOn}
+                    ></textarea>
                   </div>
 
                   {/* Contact Section Grid Form Submit button */}
@@ -1083,6 +1339,7 @@ export default function Home() {
                     className="contact-section__content__grid__form__submit-button"
                     name="submit-button"
                     type="submit"
+                    onClick={(e) => e.preventDefault()}
                   >
                     Submit
                   </button>

@@ -45,8 +45,13 @@ img {
 input,
 textarea,
 select {
-  padding: 0.6em;
+  font-family: "Roboto", sans-serif;
+  padding: 0.6em 0.2em;
   outline: none;
+
+  &::-moz-focus-inner {
+    outline: none;
+  }
 }
 
 .row {
@@ -522,32 +527,34 @@ select {
     // Review Section Content Grid Styles
     &__grid {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      position: relative;
 
       // Review Section Content Container Styles
       &__container {
-        display: flex;
-        align-items: center;
         width: 60%;
         height: 300px;
         color: $color-dark;
         background-color: $color-white;
         border-radius: 10px;
-        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
 
         .review-section__content__grid__item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          display: inline-block;
+          text-align: center;
           width: 100%;
+          height: inherit;
           border-radius: 10px;
           padding: 1.5em;
-          position: absolute;
+          white-space: normal;
+          transition: all 0.3s ease-in-out;
 
           &__image {
             width: 100px;
             height: 100px;
+            margin: 0 auto;
 
             img {
               border-radius: 50%;
@@ -561,78 +568,107 @@ select {
 
           &__comment {
             line-height: 1.5rem;
+            margin-bottom: 1em;
+          }
+
+          &__star {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10%;
+            margin: 0 auto;
           }
         }
 
-        .review-section__content__grid__item--1 {
-          transition: all 0.3s ease-in-out;
-          z-index: 40;
-          opacity: 1;
-        }
+        // Alice Carousel
 
-        .review-section__content__grid__item--2 {
-          transition: all 0.3s ease-in-out;
-          z-index: 30;
-          opacity: 0;
-        }
+        .alice-carousel {
+          position: static;
 
-        .review-section__content__grid__item--3 {
-          transition: all 0.3s ease-in-out;
-          z-index: 20;
-          opacity: 0;
-        }
-
-        .review-section__content__grid__item--4 {
-          transition: all 0.3s ease-in-out;
-          z-index: 10;
-          opacity: 0;
-        }
-      }
-
-      // Review Section Content Left Button Styles
-      &__button-left {
-        display: flex;
-        justify-content: flex-end;
-        width: 10%;
-
-        &__icon {
-          width: 45px;
-          height: 45px;
-          padding: 0.6rem 1rem;
-          border: 1px solid $color-white;
-          border-radius: 50%;
-          transition: all 0.3s ease-in-out;
-          outline: none;
-          cursor: pointer;
-
-          &:hover {
-            color: $color-dark;
-            border: 1px solid $color-dark;
-            background-color: $color-white;
+          div {
+            margin-top: 6px;
           }
         }
-      }
 
-      // Review Section Content Right Button Styles
-      &__button-right {
-        display: flex;
-        justify-content: flex-start;
-        width: 10%;
+        // Preview and next buttons from Alice Carousel
 
-        &__icon {
-          width: 45px;
-          height: 45px;
-          padding: 0.6rem 1rem;
-          border: 1px solid $color-white;
-          border-radius: 50%;
-          transition: all 0.3s ease-in-out;
-          outline: none;
-          cursor: pointer;
+        // Preview button
+        .alice-carousel__prev-btn {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          width: 10%;
+          position: absolute;
+          top: 40%;
+          left: 0;
 
-          &:hover {
-            color: $color-dark;
-            border: 1px solid $color-dark;
-            background-color: $color-white;
+          .alice-carousel__prev-btn-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            border: 1px solid $color-white;
+            border-radius: 50%;
+            transition: all 0.3s ease-in-out;
+            outline: none;
+            cursor: pointer;
+
+            span {
+              color: $color-white;
+              font-size: 3em;
+              transition: color 0.4s ease-in-out;
+            }
+
+            &:hover {
+              color: $color-dark;
+              border: 1px solid $color-dark;
+              background-color: $color-white;
+
+              span {
+                color: $color-dark;
+              }
+            }
+          }
+        }
+
+        // Next Button
+        .alice-carousel__next-btn {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 10%;
+          position: absolute;
+          top: 40%;
+          right: 0;
+
+          .alice-carousel__next-btn-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            border: 1px solid $color-white;
+            border-radius: 50%;
+            transition: all 0.3s ease-in-out;
+            outline: none;
+            cursor: pointer;
+
+            span {
+              color: $color-white;
+              font-size: 3em;
+              transition: color 0.4s ease-in-out;
+            }
+
+            &:hover {
+              color: $color-dark;
+              border: 1px solid $color-dark;
+              background-color: $color-white;
+
+              span {
+                color: $color-dark;
+              }
+            }
           }
         }
       }
@@ -692,17 +728,13 @@ select {
           select {
             background-color: transparent;
             border: none;
-            border-bottom: 1px solid $color-white;
+            border-bottom: 1px solid $color-grey;
             outline: none;
-            transition: all 0.4s ease-in-out;
+            transition: border-bottom 0.4s ease-in-out;
 
-            &:focus,
-            ::-moz-focus-inner {
-              background-color: $color-white;
-            }
-
-            &:active {
-              background-color: $color-white;
+            &:focus {
+              color: $color-white;
+              border-bottom: 1px solid $color-white;
             }
           }
 
@@ -893,17 +925,13 @@ select {
           select {
             background-color: transparent;
             border: none;
-            border-bottom: 1px solid $color-white;
+            border-bottom: 1px solid $color-grey;
             outline: none;
-            transition: all 0.4s ease-in-out;
+            transition: border-bottom 0.4s ease-in-out;
 
-            &:focus,
-            ::-moz-focus-inner {
-              background-color: $color-white;
-            }
-
-            &:active {
-              background-color: $color-white;
+            &:focus {
+              color: $color-white;
+              border-bottom: 1px solid $color-white;
             }
           }
 
