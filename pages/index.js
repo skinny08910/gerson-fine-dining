@@ -313,7 +313,7 @@ export default function Home() {
             simple good food"
         />
         <meta
-          name="descripton"
+          name="description"
           content="Come stop by Gerson's Simple Food, one of the best restaurant in the country."
         />
 
@@ -1114,10 +1114,12 @@ export default function Home() {
                   <div className="reservation-section__content__grid__form__first-last-name">
                     {/* Reservation Section Grid Form First Name */}
                     <div className="reservation-section__content__grid__form__first-name">
-                      <label htmlFor="first-name">First Name *</label>
+                      <label htmlFor="reservation-first-name">
+                        First Name *
+                      </label>
                       <input
                         ref={inputRef_1}
-                        id="first-name"
+                        id="reservation-first-name"
                         name="first-name"
                         required
                         onChange={inputfieldOn}
@@ -1127,10 +1129,10 @@ export default function Home() {
 
                     {/* Reservation Section Grid Form Last Name */}
                     <div className="reservation-section__content__grid__form__last-name">
-                      <label htmlFor="last-name">Last Name *</label>
+                      <label htmlFor="reservation-last-name">Last Name *</label>
                       <input
                         ref={inputRef_2}
-                        id="last-name"
+                        id="reservation-last-name"
                         name="last-name"
                         required
                         onChange={inputfieldOn}
@@ -1143,11 +1145,12 @@ export default function Home() {
                   <div className="reservation-section__content__grid__form__email-address-phone">
                     {/* Reservation Section Grid Form Email Address */}
                     <div className="reservation-section__content__grid__form__email-address">
-                      <label htmlFor="email-address">Email Address *</label>
+                      <label htmlFor="reservation-email-address">
+                        Email Address *
+                      </label>
                       <input
                         ref={inputRef_3}
-                        id="email-address"
-                        name="email-address"
+                        id="reservation-email-address"
                         type="email"
                         required
                         onChange={inputfieldOn}
@@ -1226,12 +1229,12 @@ export default function Home() {
 
                   {/* Reservation Section Grid Form Note */}
                   <div className="reservation-section__content__grid__form__note">
-                    <label htmlFor="note">Note</label>
+                    <label htmlFor="reservation-note">Note</label>
                     <textarea
                       ref={inputRef_8}
                       row="10"
                       cols="58"
-                      id="note"
+                      id="reservation-note"
                       onChange={inputfieldOn}
                       onPaste={inputfieldOn}
                     ></textarea>
@@ -1383,8 +1386,8 @@ export default function Home() {
             <div className="footer-section__content__grid">
               {/* Footer Section Content Grid Logo */}
               <div className="footer-section__logo">
-                <Link href="/" onClick={scrollToTop}>
-                  <a className="logo">GSF</a>
+                <Link href="/" className="logo" onClick={scrollToTop}>
+                  GSF
                 </Link>
               </div>
 
