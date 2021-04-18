@@ -74,6 +74,79 @@ select {
   margin: 0 auto;
 }
 
+/**** Screen Loader Styles ****/
+
+#screen-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $color-dark;
+  position: fixed;
+  z-index: 100;
+
+  .screen-loader__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: red;
+
+    &__circle__1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border-top: 1px solid $color-white;
+      border-right: 1px solid $color-white;
+      border-radius: 50%;
+      animation: firstCircle 1s linear infinite forwards;
+      position: absolute;
+    }
+
+    &__circle__2 {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      border-left: 1px solid $color-white;
+      border-bottom: 1px solid $color-white;
+      border-radius: 50%;
+      animation: secondCircle 1s linear infinite forwards;
+      position: absolute;
+    }
+  }
+}
+
+// Whole Content Styles {
+#whole-content {
+  visibility: hidden;
+  opacity: 0;
+}
+
+// Screen Loader Animations
+
+@keyframes firstCircle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes secondCircle {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
 /**** Header Section Styles ****/
 
 #header-section {
