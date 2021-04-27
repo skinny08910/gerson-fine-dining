@@ -24,7 +24,7 @@ html,
 body {
   font-family: "Roboto", "Playfair Display", sans-serif, serif;
   font-size: 0.9em;
-  background-color: $color-body;
+  background-color: $color-white;
 }
 
 a {
@@ -76,55 +76,55 @@ select {
 
 /**** Screen Loader Styles ****/
 
-#screen-loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: $color-dark;
-  position: fixed;
-  z-index: 100;
+// #screen-loader {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+//   width: 100vw;
+//   background-color: $color-dark;
+//   position: fixed;
+//   z-index: 100;
 
-  .screen-loader__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: red;
+//   .screen-loader__container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: relative;
+//     background-color: red;
 
-    &__circle__1 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100px;
-      height: 100px;
-      margin: 0 auto;
-      border-top: 1px solid $color-white;
-      border-right: 1px solid $color-white;
-      border-radius: 50%;
-      animation: firstCircle 1s linear infinite forwards;
-      position: absolute;
-    }
+//     &__circle__1 {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       width: 100px;
+//       height: 100px;
+//       margin: 0 auto;
+//       border-top: 1px solid $color-white;
+//       border-right: 1px solid $color-white;
+//       border-radius: 50%;
+//       animation: firstCircle 1s linear infinite forwards;
+//       position: absolute;
+//     }
 
-    &__circle__2 {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto;
-      border-left: 1px solid $color-white;
-      border-bottom: 1px solid $color-white;
-      border-radius: 50%;
-      animation: secondCircle 1s linear infinite forwards;
-      position: absolute;
-    }
-  }
-}
+//     &__circle__2 {
+//       width: 80px;
+//       height: 80px;
+//       margin: 0 auto;
+//       border-left: 1px solid $color-white;
+//       border-bottom: 1px solid $color-white;
+//       border-radius: 50%;
+//       animation: secondCircle 1s linear infinite forwards;
+//       position: absolute;
+//     }
+//   }
+// }
 
 // Whole Content Styles {
-#whole-content {
-  visibility: hidden;
-  opacity: 0;
-}
+// #whole-content {
+//   visibility: hidden;
+//   opacity: 0;
+// }
 
 // Screen Loader Animations
 
@@ -474,8 +474,6 @@ select {
         display: flex;
         justify-content: space-between;
         position: absolute;
-        z-index: 30;
-        opacity: 1;
 
         .menu-section__menu-grid__item {
           color: $color-dark;
@@ -484,7 +482,6 @@ select {
           width: 22%;
           padding: 2em;
           border-radius: 10px;
-          // transition: all 0.4s ease-in-out;
 
           &__image {
             div {
@@ -501,6 +498,10 @@ select {
           &__info {
             line-height: 1.5rem;
           }
+        }
+        .menu-section__menu-grid__item--breakfast {
+          z-index: 30;
+          opacity: 1;
         }
       }
 
@@ -509,8 +510,6 @@ select {
         display: flex;
         justify-content: space-between;
         position: absolute;
-        z-index: 20;
-        opacity: 0;
 
         .menu-section__menu-grid__item {
           color: $color-dark;
@@ -519,7 +518,6 @@ select {
           width: 22%;
           padding: 2em;
           border-radius: 10px;
-          // transition: all 0.4s ease-in-out;
 
           &__image {
             div {
@@ -537,6 +535,11 @@ select {
             line-height: 1.5rem;
           }
         }
+
+        .menu-section__menu-grid__item--lunch {
+          z-index: 20;
+          opacity: 0;
+        }
       }
 
       // Menu Dinner Styles
@@ -544,8 +547,6 @@ select {
         display: flex;
         justify-content: space-between;
         position: absolute;
-        z-index: 10;
-        opacity: 0;
 
         .menu-section__menu-grid__item {
           color: $color-dark;
@@ -554,7 +555,6 @@ select {
           width: 22%;
           padding: 2em;
           border-radius: 10px;
-          // transition: all 0.4s ease-in-out;
 
           &__image {
             div {
@@ -571,6 +571,11 @@ select {
           &__info {
             line-height: 1.5rem;
           }
+        }
+
+        .menu-section__menu-grid__item--dinner {
+          z-index: 10;
+          opacity: 0;
         }
       }
     }
