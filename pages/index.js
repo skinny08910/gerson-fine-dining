@@ -8,7 +8,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // Font Awesome
-
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,52 +16,46 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 export default function Home() {
-  //**  Initiating the Refs for the menu sections
+  // Initiating the Refs for the menu sections
   const breakfastRef = React.useRef();
   const lunchRef = React.useRef();
   const dinnerRef = React.useRef();
 
-  //**  Initiating the Refs for the filter buttons
+  // Initiating the Refs for the menu filter buttons
   const breakfastFilterRef = React.useRef();
   const lunchFilterRef = React.useRef();
   const dinnerFilterRef = React.useRef();
 
-  //**  Initiating the Refs for the Screen Loader
+  // Initiating the Refs for the Screen Loader
   const screenLoaderRef = React.useRef();
 
-  //**  Initiating the Refs for the Whole Content
+  // Initiating the Refs for the Whole Content
   const wholeContentRef = React.useRef();
 
-  //****  Initiating Refs for the menu items
+  //  Initiating Refs for the menu items
 
   // Main Refs for the breakfast items
-
   const mainBreakfastMenuItemRef = React.useRef([]);
 
-  //****  Individual Refs for the  breakfast items
-
+  //  Individual Refs for the  breakfast items
   const breakfastMenuItemRef_1 = React.useRef();
   const breakfastMenuItemRef_2 = React.useRef();
   const breakfastMenuItemRef_3 = React.useRef();
   const breakfastMenuItemRef_4 = React.useRef();
 
   // Main Refs for the lunch items
-
   const mainLunchMenuItemRef = React.useRef([]);
 
-  //****  Individual Refs for the  lunch items
-
+  //  Individual Refs for the lunch items
   const lunchMenuItemRef_1 = React.useRef();
   const lunchMenuItemRef_2 = React.useRef();
   const lunchMenuItemRef_3 = React.useRef();
   const lunchMenuItemRef_4 = React.useRef();
 
   // Main Refs for the dinner items
-
   const mainDinnerMenuItemRef = React.useRef([]);
 
-  //****  Individual Refs for the  dinner items
-
+  //  Individual Refs for the  dinner items
   const dinnerMenuItemRef_1 = React.useRef();
   const dinnerMenuItemRef_2 = React.useRef();
   const dinnerMenuItemRef_3 = React.useRef();
@@ -70,21 +63,6 @@ export default function Home() {
 
   // ***** Hook for the active menu section
   const [menu, setMenu] = useState({
-    // breakfast: {
-    //   zIndex: 30,
-    //   opacity: 1,
-    // },
-
-    // lunch: {
-    //   zIndex: 20,
-    //   opacity: 0,
-    // },
-
-    // dinner: {
-    //   zIndex: 10,
-    //   opacity: 0,
-    // },
-
     breakfast: {
       active: true,
     },
@@ -99,10 +77,9 @@ export default function Home() {
   });
 
   // ***** Hook for the menu items section
-
   const [menuItem, setMenuItem] = useState([]);
 
-  //****  Function for the Breakfast filter
+  //  Function for the Breakfast filter
   const clickedBreakfast = () => {
     setMenu({
       breakfast: {
@@ -119,7 +96,7 @@ export default function Home() {
     });
   };
 
-  //****  Function for the Lunch filter
+  // Function for the Lunch filter
   const clickedLunch = () => {
     setMenu({
       breakfast: {
@@ -136,7 +113,7 @@ export default function Home() {
     });
   };
 
-  //****  Function for the Dinner filter
+  //  Function for the Dinner filter
   const clickedDinner = () => {
     setMenu({
       breakfast: {
@@ -191,7 +168,6 @@ export default function Home() {
   };
 
   // Function for each lunch menu items
-
   const eachLunchMenuItem = () => {
     mainLunchMenuItemRef.current.forEach((menuItem) => {
       menuItem.forEach(() => {
@@ -261,10 +237,9 @@ export default function Home() {
     });
   };
 
-  // useEffect for the menu section
-
+  /********* useEffect for the menu section *********/
   useEffect(() => {
-    // Putting the individuals menu Refs into the Global parrent Refs which are arrays
+    // Putting the individuals menu Refs into the Global parent Refs which are arrays
 
     // Breakfast Items
 
@@ -332,22 +307,9 @@ export default function Home() {
     if (menu.breakfast.active === true) {
       eachBreakfastMenuItem();
 
-      // breakfastRef.current.style.zIndex = 30;
-      // breakfastRef.current.style.opacity = 1;
-      // breakfastRef.current.style.transition =
-      //   "zIndex, opacity 0.4s ease-in-out";
-
       breakfastFilterRef.current.classList.add("active");
 
-      // lunchRef.current.style.zIndex = 20;
-      // lunchRef.current.style.opacity = 0;
-      // lunchRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
-
       lunchFilterRef.current.classList.remove("active");
-
-      // dinnerRef.current.style.zIndex = 10;
-      // dinnerRef.current.style.opacity = 0;
-      // dinnerRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
 
       dinnerFilterRef.current.classList.remove("active");
     }
@@ -357,22 +319,9 @@ export default function Home() {
     if (menu.lunch.active === true) {
       eachLunchMenuItem();
 
-      // breakfastRef.current.style.zIndex = 20;
-      // breakfastRef.current.style.opacity = 0;
-      // breakfastRef.current.style.transition =
-      // ("zIndex, opacity 0.4s ease-in-out");
-
       breakfastFilterRef.current.classList.remove("active");
 
-      // lunchRef.current.style.zIndex = 30;
-      // lunchRef.current.style.opacity = 1;
-      // lunchRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
-
       lunchFilterRef.current.classList.add("active");
-
-      // dinnerRef.current.style.zIndex = 10;
-      // dinnerRef.current.style.opacity = 0;
-      // dinnerRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
 
       dinnerFilterRef.current.classList.remove("active");
     }
@@ -382,22 +331,9 @@ export default function Home() {
     if (menu.dinner.active === true) {
       eachDinnerMenuItem();
 
-      // breakfastRef.current.style.zIndex = 20;
-      // breakfastRef.current.style.opacity = 0;
-      // breakfastRef.current.style.transition =
-      //   "zIndex, opacity 0.4s ease-in-out";
-
       breakfastFilterRef.current.classList.remove("active");
 
-      // lunchRef.current.style.zIndex = 10;
-      // lunchRef.current.style.opacity = 0;
-      // lunchRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
-
       lunchFilterRef.current.classList.remove("active");
-
-      // dinnerRef.current.style.zIndex = 30;
-      // dinnerRef.current.style.opacity = 1;
-      // dinnerRef.current.style.transition = "zIndex, opacity 0.4s ease-in-out";
 
       dinnerFilterRef.current.classList.add("active");
     }
@@ -413,7 +349,7 @@ export default function Home() {
     //   wholeContentRef.current.style.visibility = "visible";
     //   wholeContentRef.current.style.opacity = 1;
     //   wholeContentRef.current.style.transition = "all .7s ease-in-out .9s";
-    // }, 800);
+    // }, 200);
   });
 
   // ***** Hook for the inputfields
@@ -425,6 +361,7 @@ export default function Home() {
   });
 
   //****  Initiating Ref for the inputs and text area
+
   // Global Refs
   const inputRef = React.useRef([]);
 
@@ -465,7 +402,6 @@ export default function Home() {
   const inputRef_12 = React.useRef();
 
   // Function to for each input field
-
   const eachInput = () => {
     inputRef.current.forEach((input) => {
       input.forEach((index) => {
@@ -486,8 +422,9 @@ export default function Home() {
     });
   };
 
+  /********* UseEffect for the reservation and contact section *********/
   useEffect(() => {
-    // Putting the individual Ref into the Ref which is an array
+    // Putting the individuals input field Refs into the Global parent Refs which is an arrays
     let inputfield = [
       inputRef_1,
       inputRef_2,
@@ -509,6 +446,12 @@ export default function Home() {
     setInputfield(inputfield);
   }, []);
 
+  // Scroll to top function
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
+  /*********  UseEffect for the Animations *********/
   useEffect(() => {
     // Viewport helper
     let isInViewport = function (elem) {
@@ -529,8 +472,7 @@ export default function Home() {
     // Scrolling plugging for Gsap
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animations for the Header and Jumbo Section
-
+    // ----- Animations for the Header and Jumbo Section
     timeline
       .fromTo(
         ".navbar",
@@ -545,14 +487,13 @@ export default function Home() {
       .fromTo(
         ".jumbo-hero__img",
         { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1, delay: 0.4, ease: "power3.out" }
+        { autoAlpha: 1, duration: 1.5, delay: 0.3, ease: "power3.out" }
       )
       .fromTo(
         ".jumbo-hero__message-container",
         { autoAlpha: 0 },
         { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
       )
-      .addLabel("jumboText")
       .fromTo(
         ".jumbo-hero__title",
         {
@@ -591,14 +532,12 @@ export default function Home() {
         }
       );
 
-    // About Section Sroll Animation
-
+    // ----- About Section Sroll Animation
     let aboutTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".about-section__content",
-        start: "top 70%",
+        start: "65% 70%",
         end: "+=300",
-        markers: true,
       },
     });
 
@@ -606,14 +545,13 @@ export default function Home() {
       .fromTo(
         ".about-section__img",
         { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1, ease: "power3.out" }
+        { autoAlpha: 1, duration: 1.5, ease: "power3.out" }
       )
       .fromTo(
         ".about-section__text",
         { autoAlpha: 0 },
         { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
       )
-      .addLabel("aboutText")
       .fromTo(
         ".about-section__text-title",
         {
@@ -632,7 +570,7 @@ export default function Home() {
         {
           autoAlpha: 0,
           y: 50,
-          ease: "power2.out",
+          ease: "power3.out",
         },
         {
           autoAlpha: 1,
@@ -642,14 +580,12 @@ export default function Home() {
         }
       );
 
-    // Ingredient Section Sroll Animation
-
+    // ----- Ingredient Section Sroll Animation
     let ingredientTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".ingredient-section__content",
-        start: "top 75%",
+        start: "75% 75%",
         end: "+=300",
-        markers: true,
       },
     });
 
@@ -657,14 +593,13 @@ export default function Home() {
       .fromTo(
         ".ingredient-section__image",
         { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1, ease: "power2.out" }
+        { autoAlpha: 1, duration: 1.5, ease: "power3.out" }
       )
       .fromTo(
         ".ingredient-section__text",
         { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, ease: "power2.out" }
+        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
       )
-      .addLabel("ingredientText")
       .fromTo(
         ".ingredient-section__title",
         {
@@ -693,17 +628,16 @@ export default function Home() {
         }
       );
 
-    // Menu Section Sroll Animation
-
+    // ----- Menu Section Sroll Animation
     let menuTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".menu-section__content",
-        start: "75% 75%",
+        start: "95% 75%",
         end: "+=300",
-        markers: true,
       },
     });
 
+    // Getting the title and filter elements
     let menuTitle = document.querySelector(".menu-section__title");
 
     let menuFilter = document.querySelector(".menu-section__filter");
@@ -745,6 +679,22 @@ export default function Home() {
       breakfastAnimate();
     });
 
+    // window.addEventListener("load", () => {
+    //   menuTimeline
+    //     .fromTo(
+    //       ".menu-section__title",
+    //       { autoAlpha: 0 },
+    //       { autoAlpha: 1, duration: 1, ease: "power3.out" }
+    //     )
+    //     .fromTo(
+    //       ".menu-section__filter",
+    //       { autoAlpha: 0 },
+    //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+    //     );
+
+    //   breakfastAnimate();
+    // });
+
     // Function animations for the menus
 
     // Breakfast
@@ -759,7 +709,7 @@ export default function Home() {
         {
           autoAlpha: 1,
           y: 0,
-          stagger: 0.5,
+          stagger: 0.6,
           duration: 0.8,
           ease: "power3.out",
         }
@@ -778,7 +728,7 @@ export default function Home() {
         {
           autoAlpha: 1,
           y: 0,
-          stagger: 0.5,
+          stagger: 0.6,
           duration: 0.8,
           ease: "power3.out",
         }
@@ -796,7 +746,7 @@ export default function Home() {
         },
         {
           autoAlpha: 1,
-          stagger: 0.5,
+          stagger: 0.6,
           y: 0,
           duration: 0.8,
           ease: "power3.out",
@@ -804,15 +754,283 @@ export default function Home() {
       );
     };
 
+    // Adding the Animation functions to the menu filter
     breakfastFilterRef.current.addEventListener("click", breakfastAnimate);
     lunchFilterRef.current.addEventListener("click", lunchAnimate);
     dinnerFilterRef.current.addEventListener("click", dinnerAnimate);
-  });
 
-  // Scroll to top function
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
+    // ----- Review Section Sroll Animation
+    let reviewTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".review-section__content",
+        start: "75% 75%",
+        end: "+=300",
+      },
+    });
+
+    reviewTimeline
+      .fromTo(
+        ".review-section__content__title",
+        { autoAlpha: 0 },
+        { autoAlpha: 1, duration: 1, ease: "power3.out" }
+      )
+      .fromTo(
+        ".review-section__content__grid__container",
+        { autoAlpha: 0 },
+        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+      )
+      .fromTo(
+        ".review-section__content__grid__item__image",
+        {
+          autoAlpha: 0,
+        },
+        { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
+      )
+      .fromTo(
+        ".review-section__content__grid__item__name",
+        {
+          autoAlpha: 0,
+          y: 60,
+        },
+        { autoAlpha: 1, y: 0, duration: 0.6, ease: "power3.out" }
+      )
+      .fromTo(
+        ".review-section__content__grid__item__comment",
+        {
+          autoAlpha: 0,
+          y: 60,
+        },
+        { autoAlpha: 1, y: 0, duration: 0.5, ease: "power3.out" }
+      )
+      .fromTo(
+        ".review-section__content__grid__item__star__icon-container",
+        {
+          y: 60,
+          autoAlpha: 0,
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.2,
+          duration: 0.4,
+          ease: "power3.out",
+        }
+      )
+      .fromTo(
+        ".alice-carousel__next-btn",
+        { autoAlpha: 0 },
+        { autoAlpha: 1, duration: 0.4, ease: "power3.out" }
+      )
+      .fromTo(
+        ".alice-carousel__prev-btn",
+        { autoAlpha: 0 },
+        { autoAlpha: 1, duration: 0.5, ease: "power3.out" }
+      );
+
+    // ----- Reservation Section Sroll Animation
+    let reservationTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".reservation-section__content",
+        start: "50% 75%",
+        end: "+=300",
+      },
+    });
+
+    window.addEventListener("load", () => {
+      reservationTimeline
+        .fromTo(
+          ".reservation-section__content__title",
+          { autoAlpha: 0 },
+          { autoAlpha: 1, duration: 1, ease: "power3.out" }
+        )
+        .fromTo(
+          ".reservation-section__content__grid__image",
+          { autoAlpha: 0 },
+          { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+        )
+        .fromTo(
+          ".reservation-section__content__grid__form-container",
+          {
+            autoAlpha: 0,
+          },
+          { autoAlpha: 1, duration: 1, ease: "power3.out" }
+        )
+        .fromTo(
+          ".reservation-section__content__grid__form-container .reservation-section-label, .reservation-section-input, .reservation-section-select, .reservation-section-textarea",
+          {
+            autoAlpha: 0,
+            y: 50,
+          },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.2,
+            ease: "power3.out",
+          }
+        )
+        .fromTo(
+          ".reservation-section__content__grid__form__submit-button",
+          {
+            autoAlpha: 0,
+          },
+          { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
+        )
+        .fromTo(
+          ".reservation-section__content__grid__form__notice",
+          {
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            duration: 0.7,
+            delay: 0.2,
+            ease: "power3.out",
+          }
+        );
+    });
+
+    // ----- Contact Section Sroll Animation
+    let contactTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".contact-section__content",
+        start: "40% 75%",
+        end: "+=300",
+      },
+    });
+
+    window.addEventListener("load", () => {
+      contactTimeline
+        .fromTo(
+          ".contact-section__content__title",
+          { autoAlpha: 0 },
+          { autoAlpha: 1, duration: 1, ease: "power3.out" }
+        )
+        .fromTo(
+          ".contact-section__content__grid__image",
+          { autoAlpha: 0 },
+          { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+        )
+        .fromTo(
+          ".contact-section__content__grid__form-container",
+          {
+            autoAlpha: 0,
+          },
+          { autoAlpha: 1, duration: 1, ease: "power3.out" }
+        )
+        .fromTo(
+          ".contact-section__content__grid__form-container .contact-section-label, .contact-section-input, .contact-section-textarea",
+          {
+            autoAlpha: 0,
+            y: 50,
+          },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.2,
+            ease: "power3.out",
+          }
+        )
+        .fromTo(
+          ".contact-section__content__grid__form__submit-button",
+          {
+            autoAlpha: 0,
+          },
+          { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
+        )
+        .fromTo(
+          ".contact-section__content__grid__form__notice",
+          {
+            autoAlpha: 0,
+          },
+          { autoAlpha: 1, duration: 0.7, delay: 0.2, ease: "power3.out" }
+        );
+    });
+
+    // ----- Footer Section Sroll Animation
+    let footerTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".footer-section__content",
+        start: "20% 80%",
+        end: "+=100",
+      },
+    });
+
+    footerTimeline
+      .fromTo(
+        ".footer-section__content",
+        {
+          autoAlpha: 0,
+        },
+        { autoAlpha: 1, duration: 1, ease: "power3.out" }
+      )
+      .fromTo(
+        ".footer-section__content .logo",
+        {
+          autoAlpha: 0,
+        },
+        { autoAlpha: 1, duration: 0.4, ease: "power3.out" }
+      )
+      .fromTo(
+        ".footer-section__about-us-links__title",
+        { autoAlpha: 0 },
+        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+      )
+      .fromTo(
+        ".footer-section__about-us-links__menu",
+        {
+          autoAlpha: 0,
+        },
+        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+      )
+      .fromTo(
+        ".footer-section__about-us-links__review",
+        {
+          autoAlpha: 0,
+        },
+        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+      )
+      .fromTo(
+        ".footer-section__reservation-link__title",
+        {
+          autoAlpha: 0,
+        },
+        {
+          autoAlpha: 1,
+          duration: 0.6,
+          ease: "power3.out",
+        }
+      )
+      .fromTo(
+        ".footer-section__reservation-link__resevation",
+        {
+          autoAlpha: 0,
+        },
+        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+      )
+      .fromTo(
+        ".footer-section__contact-us__title",
+        {
+          autoAlpha: 0,
+        },
+        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+      )
+      .fromTo(
+        ".footer-section__contact-us__phone-email-address",
+        {
+          autoAlpha: 0,
+        },
+        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+      )
+      .fromTo(
+        ".footer-section__content__copyright",
+        {
+          autoAlpha: 0,
+        },
+        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+      );
+  });
 
   return (
     <>
@@ -1498,30 +1716,40 @@ export default function Home() {
                       </p>
 
                       <p className="review-section__content__grid__item__star">
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
                       </p>
                     </div>
 
@@ -1550,30 +1778,40 @@ export default function Home() {
                       </p>
 
                       <p className="review-section__content__grid__item__star">
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
                       </p>
                     </div>
 
@@ -1603,30 +1841,40 @@ export default function Home() {
                       </p>
 
                       <p className="review-section__content__grid__item__star">
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
                       </p>
                     </div>
 
@@ -1655,30 +1903,40 @@ export default function Home() {
                       </p>
 
                       <p className="review-section__content__grid__item__star">
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
 
-                        <FontAwesomeIcon
-                          className="review-section__content__grid__item__star__icon"
-                          icon={faStar}
-                        />
+                        <div className="review-section__content__grid__item__star__icon-container">
+                          <FontAwesomeIcon
+                            className="review-section__content__grid__item__star__icon"
+                            icon={faStar}
+                          />
+                        </div>
                       </p>
                     </div>
                   </AliceCarousel>
@@ -1726,7 +1984,10 @@ export default function Home() {
                     <div className="reservation-section__content__grid__form__first-last-name">
                       {/* Reservation Section Grid Form First Name */}
                       <div className="reservation-section__content__grid__form__first-name">
-                        <label htmlFor="reservation-first-name">
+                        <label
+                          htmlFor="reservation-first-name"
+                          className="reservation-section-label"
+                        >
                           First Name *
                         </label>
                         <input
@@ -1735,13 +1996,17 @@ export default function Home() {
                           name="first-name"
                           required
                           onChange={inputfieldOn}
-                          // onPaste={inputfieldOn}
+                          onPaste={inputfieldOn}
+                          className="reservation-section-input"
                         />
                       </div>
 
                       {/* Reservation Section Grid Form Last Name */}
                       <div className="reservation-section__content__grid__form__last-name">
-                        <label htmlFor="reservation-last-name">
+                        <label
+                          htmlFor="reservation-last-name"
+                          className="reservation-section-label"
+                        >
                           Last Name *
                         </label>
                         <input
@@ -1751,6 +2016,7 @@ export default function Home() {
                           required
                           onChange={inputfieldOn}
                           onPaste={inputfieldOn}
+                          className="reservation-section-input"
                         />
                       </div>
                     </div>
@@ -1759,7 +2025,10 @@ export default function Home() {
                     <div className="reservation-section__content__grid__form__email-address-phone">
                       {/* Reservation Section Grid Form Email Address */}
                       <div className="reservation-section__content__grid__form__email-address">
-                        <label htmlFor="reservation-email-address">
+                        <label
+                          htmlFor="reservation-email-address"
+                          className="reservation-section-label"
+                        >
                           Email Address *
                         </label>
                         <input
@@ -1769,12 +2038,18 @@ export default function Home() {
                           required
                           onChange={inputfieldOn}
                           onPaste={inputfieldOn}
+                          className="reservation-section-input"
                         />
                       </div>
 
                       {/* Reservation Section Grid Form Phone */}
                       <div className="reservation-section__content__grid__form__phone">
-                        <label htmlFor="email-address">Phone Number *</label>
+                        <label
+                          htmlFor="email-address"
+                          className="reservation-section-label"
+                        >
+                          Phone Number *
+                        </label>
                         <input
                           ref={inputRef_4}
                           id="email-address"
@@ -1783,6 +2058,7 @@ export default function Home() {
                           required
                           onChange={inputfieldOn}
                           onPaste={inputfieldOn}
+                          className="reservation-section-input"
                         />
                       </div>
                     </div>
@@ -1791,7 +2067,12 @@ export default function Home() {
                     <div className="reservation-section__content__grid__form__date-time-number">
                       {/* Reservation Section Grid Form Date */}
                       <div className="reservation-section__content__grid__form__date">
-                        <label htmlFor="date">Date *</label>
+                        <label
+                          htmlFor="date"
+                          className="reservation-section-label"
+                        >
+                          Date *
+                        </label>
                         <input
                           ref={inputRef_5}
                           id="date"
@@ -1801,12 +2082,18 @@ export default function Home() {
                           required
                           onChange={inputfieldOn}
                           onPaste={inputfieldOn}
+                          className="reservation-section-input"
                         />
                       </div>
 
                       {/* Reservation Section Grid Form Time */}
                       <div className="reservation-section__content__grid__form__time">
-                        <label htmlFor="time">Time *</label>
+                        <label
+                          htmlFor="time"
+                          className="reservation-section-label"
+                        >
+                          Time *
+                        </label>
                         <input
                           ref={inputRef_6}
                           id="time"
@@ -1815,12 +2102,16 @@ export default function Home() {
                           placeholder="00/00 am/pm"
                           onChange={inputfieldOn}
                           onPaste={inputfieldOn}
+                          className="reservation-section-input"
                         />
                       </div>
 
                       {/* Reservation Section Grid Form Number of people */}
                       <div className="reservation-section__content__grid__form__number">
-                        <label htmlFor="number-of-people">
+                        <label
+                          htmlFor="number-of-people"
+                          className="reservation-section-label"
+                        >
                           Number of people*
                         </label>
                         <select
@@ -1830,6 +2121,7 @@ export default function Home() {
                           required
                           onChange={inputfieldOn}
                           onPaste={inputfieldOn}
+                          className="reservation-section-select"
                         >
                           <option>Select</option>
                           <option>1</option>
@@ -1843,7 +2135,12 @@ export default function Home() {
 
                     {/* Reservation Section Grid Form Note */}
                     <div className="reservation-section__content__grid__form__note">
-                      <label htmlFor="reservation-note">Note</label>
+                      <label
+                        htmlFor="reservation-note"
+                        className="reservation-section-label"
+                      >
+                        Note
+                      </label>
                       <textarea
                         ref={inputRef_8}
                         row="10"
@@ -1851,6 +2148,7 @@ export default function Home() {
                         id="reservation-note"
                         onChange={inputfieldOn}
                         onPaste={inputfieldOn}
+                        className="reservation-section-textarea"
                       ></textarea>
                     </div>
 
@@ -1898,7 +2196,12 @@ export default function Home() {
                     <div className="contact-section__content__grid__form__first-last-name">
                       {/* Contact Section Grid Form First Name */}
                       <div className="contact-section__content__grid__form__first-name">
-                        <label htmlFor="first-name">First Name *</label>
+                        <label
+                          htmlFor="first-name"
+                          className="contact-section-label"
+                        >
+                          First Name *
+                        </label>
                         <input
                           ref={inputRef_9}
                           id="first-name"
@@ -1906,12 +2209,19 @@ export default function Home() {
                           required
                           onChange={inputfieldOn}
                           onPaste={inputfieldOn}
+                          onPaste={inputfieldOn}
+                          className="contact-section-input"
                         />
                       </div>
 
                       {/* Contact Section Grid Form Last Name */}
                       <div className="contact-section__content__grid__form__last-name">
-                        <label htmlFor="last-name">Last Name *</label>
+                        <label
+                          htmlFor="last-name"
+                          className="contact-section-label"
+                        >
+                          Last Name *
+                        </label>
                         <input
                           ref={inputRef_10}
                           id="last-name"
@@ -1919,13 +2229,20 @@ export default function Home() {
                           required
                           onChange={inputfieldOn}
                           onPaste={inputfieldOn}
+                          onPaste={inputfieldOn}
+                          className="contact-section-input"
                         />
                       </div>
                     </div>
 
                     {/* Contact Section Grid Form Email Address */}
                     <div className="contact-section__content__grid__form__email-address">
-                      <label htmlFor="email-address">Email Address *</label>
+                      <label
+                        htmlFor="email-address"
+                        className="contact-section-label"
+                      >
+                        Email Address *
+                      </label>
                       <input
                         ref={inputRef_11}
                         id="email-address"
@@ -1934,12 +2251,15 @@ export default function Home() {
                         required
                         onChange={inputfieldOn}
                         onPaste={inputfieldOn}
+                        className="contact-section-input"
                       />
                     </div>
 
                     {/* Contact Section Grid Form Note */}
                     <div className="contact-section__content__grid__form__note">
-                      <label htmlFor="note">Note</label>
+                      <label htmlFor="note" className="contact-section-label">
+                        Note
+                      </label>
                       <textarea
                         ref={inputRef_12}
                         row="10"
@@ -1947,6 +2267,7 @@ export default function Home() {
                         id="note"
                         onChange={inputfieldOn}
                         onPaste={inputfieldOn}
+                        className="contact-section-textarea"
                       ></textarea>
                     </div>
 
