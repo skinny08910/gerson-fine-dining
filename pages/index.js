@@ -550,7 +550,7 @@ export default function Home() {
       .fromTo(
         ".about-section__text",
         { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+        { autoAlpha: 1, duration: 0.6, delay: 1, ease: "power3.out" }
       )
       .fromTo(
         ".about-section__text-title",
@@ -598,7 +598,7 @@ export default function Home() {
       .fromTo(
         ".ingredient-section__text",
         { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+        { autoAlpha: 1, duration: 0.6, delay: 1, ease: "power3.out" }
       )
       .fromTo(
         ".ingredient-section__title",
@@ -678,22 +678,6 @@ export default function Home() {
 
       breakfastAnimate();
     });
-
-    // window.addEventListener("load", () => {
-    //   menuTimeline
-    //     .fromTo(
-    //       ".menu-section__title",
-    //       { autoAlpha: 0 },
-    //       { autoAlpha: 1, duration: 1, ease: "power3.out" }
-    //     )
-    //     .fromTo(
-    //       ".menu-section__filter",
-    //       { autoAlpha: 0 },
-    //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-    //     );
-
-    //   breakfastAnimate();
-    // });
 
     // Function animations for the menus
 
@@ -792,7 +776,7 @@ export default function Home() {
           autoAlpha: 0,
           y: 60,
         },
-        { autoAlpha: 1, y: 0, duration: 0.6, ease: "power3.out" }
+        { autoAlpha: 1, y: 0, duration: 0.6, delay: 1, ease: "power3.out" }
       )
       .fromTo(
         ".review-section__content__grid__item__comment",
@@ -853,7 +837,7 @@ export default function Home() {
           {
             autoAlpha: 0,
           },
-          { autoAlpha: 1, duration: 1, ease: "power3.out" }
+          { autoAlpha: 1, duration: 1, delay: 1, ease: "power3.out" }
         )
         .fromTo(
           ".reservation-section__content__grid__form-container .reservation-section-label, .reservation-section-input, .reservation-section-select, .reservation-section-textarea",
@@ -916,7 +900,7 @@ export default function Home() {
           {
             autoAlpha: 0,
           },
-          { autoAlpha: 1, duration: 1, ease: "power3.out" }
+          { autoAlpha: 1, duration: 1, delay: 1, ease: "power3.out" }
         )
         .fromTo(
           ".contact-section__content__grid__form-container .contact-section-label, .contact-section-input, .contact-section-textarea",
