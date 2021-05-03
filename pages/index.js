@@ -451,570 +451,570 @@ export default function Home() {
     scroll.scrollToTop();
   };
 
-  /*********  UseEffect for the Animations *********/
-  useEffect(() => {
-    // Viewport helper
-    let isInViewport = function (elem) {
-      let bounding = elem.getBoundingClientRect();
-      return (
-        bounding.top >= 0 &&
-        bounding.left >= 0 &&
-        bounding.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight) &&
-        bounding.right <=
-          (window.innerWidth || document.documentElement.clientWidth)
-      );
-    };
+  // /*********  UseEffect for the Animations *********/
+  // useEffect(() => {
+  //   // Viewport helper
+  //   let isInViewport = function (elem) {
+  //     let bounding = elem.getBoundingClientRect();
+  //     return (
+  //       bounding.top >= 0 &&
+  //       bounding.left >= 0 &&
+  //       bounding.bottom <=
+  //         (window.innerHeight || document.documentElement.clientHeight) &&
+  //       bounding.right <=
+  //         (window.innerWidth || document.documentElement.clientWidth)
+  //     );
+  //   };
 
-    // Timeline
-    let timeline = gsap.timeline();
+  //   // Timeline
+  //   let timeline = gsap.timeline();
 
-    // Scrolling plugging for Gsap
-    gsap.registerPlugin(ScrollTrigger);
+  //   // Scrolling plugging for Gsap
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    // ----- Animations for the Header and Jumbo Section
-    timeline
-      .fromTo(
-        ".navbar",
-        { autoAlpha: 0 },
-        {
-          autoAlpha: 1,
-          duration: 1,
-          delay: 1,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".jumbo-hero__img",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1.5, delay: 0.3, ease: "power3.out" }
-      )
-      .fromTo(
-        ".jumbo-hero__message-container",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".jumbo-hero__title",
-        {
-          autoAlpha: 0,
-          y: 50,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".jumbo-hero__message",
-        {
-          autoAlpha: 0,
-          y: 50,
-          ease: "power3.out",
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".jumbo-hero__text-btn",
-        {
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          ease: "power3.out",
-        }
-      );
+  //   // ----- Animations for the Header and Jumbo Section
+  //   timeline
+  //     .fromTo(
+  //       ".navbar",
+  //       { autoAlpha: 0 },
+  //       {
+  //         autoAlpha: 1,
+  //         duration: 1,
+  //         delay: 1,
+  //         ease: "power3.out",
+  //       }
+  //     )
+  //     .fromTo(
+  //       ".jumbo-hero__img",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 1.5, delay: 0.3, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".jumbo-hero__message-container",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".jumbo-hero__title",
+  //       {
+  //         autoAlpha: 0,
+  //         y: 50,
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         y: 0,
+  //         duration: 0.8,
+  //         ease: "power3.out",
+  //       }
+  //     )
+  //     .fromTo(
+  //       ".jumbo-hero__message",
+  //       {
+  //         autoAlpha: 0,
+  //         y: 50,
+  //         ease: "power3.out",
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         y: 0,
+  //         duration: 0.5,
+  //         ease: "power3.out",
+  //       }
+  //     )
+  //     .fromTo(
+  //       ".jumbo-hero__text-btn",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         ease: "power3.out",
+  //       }
+  //     );
 
-    // ----- About Section Sroll Animation
-    let aboutTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-section__content",
-        start: "65% 70%",
-        end: "+=300",
-      },
-    });
+  //   // ----- About Section Sroll Animation
+  //   let aboutTimeline = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".about-section__content",
+  //       start: "65% 70%",
+  //       end: "+=300",
+  //     },
+  //   });
 
-    aboutTimeline
-      .fromTo(
-        ".about-section__img",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1.5, ease: "power3.out" }
-      )
-      .fromTo(
-        ".about-section__text",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, delay: 1, ease: "power3.out" }
-      )
-      .fromTo(
-        ".about-section__text-title",
-        {
-          autoAlpha: 0,
-          y: 50,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".about-section__text-info",
-        {
-          autoAlpha: 0,
-          y: 50,
-          ease: "power3.out",
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        }
-      );
+  //   aboutTimeline
+  //     .fromTo(
+  //       ".about-section__img",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 1.5, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".about-section__text",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 0.6, delay: 1, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".about-section__text-title",
+  //       {
+  //         autoAlpha: 0,
+  //         y: 50,
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         y: 0,
+  //         duration: 0.8,
+  //         ease: "power3.out",
+  //       }
+  //     )
+  //     .fromTo(
+  //       ".about-section__text-info",
+  //       {
+  //         autoAlpha: 0,
+  //         y: 50,
+  //         ease: "power3.out",
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         y: 0,
+  //         duration: 0.5,
+  //         ease: "power3.out",
+  //       }
+  //     );
 
-    // ----- Ingredient Section Sroll Animation
-    let ingredientTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".ingredient-section__content",
-        start: "75% 75%",
-        end: "+=300",
-      },
-    });
+  //   // ----- Ingredient Section Sroll Animation
+  //   let ingredientTimeline = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".ingredient-section__content",
+  //       start: "75% 75%",
+  //       end: "+=300",
+  //     },
+  //   });
 
-    ingredientTimeline
-      .fromTo(
-        ".ingredient-section__image",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1.5, ease: "power3.out" }
-      )
-      .fromTo(
-        ".ingredient-section__text",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, delay: 1, ease: "power3.out" }
-      )
-      .fromTo(
-        ".ingredient-section__title",
-        {
-          autoAlpha: 0,
-          y: 50,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".ingredient-section__info",
-        {
-          autoAlpha: 0,
-          y: 50,
-          ease: "power3.out",
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        }
-      );
+  //   ingredientTimeline
+  //     .fromTo(
+  //       ".ingredient-section__image",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 1.5, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".ingredient-section__text",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 0.6, delay: 1, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".ingredient-section__title",
+  //       {
+  //         autoAlpha: 0,
+  //         y: 50,
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         y: 0,
+  //         duration: 0.8,
+  //         ease: "power3.out",
+  //       }
+  //     )
+  //     .fromTo(
+  //       ".ingredient-section__info",
+  //       {
+  //         autoAlpha: 0,
+  //         y: 50,
+  //         ease: "power3.out",
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         y: 0,
+  //         duration: 0.5,
+  //         ease: "power3.out",
+  //       }
+  //     );
 
-    // ----- Menu Section Sroll Animation
-    let menuTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".menu-section__content",
-        start: "95% 75%",
-        end: "+=300",
-      },
-    });
+  //   // ----- Menu Section Sroll Animation
+  //   let menuTimeline = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".menu-section__content",
+  //       start: "95% 75%",
+  //       end: "+=300",
+  //     },
+  //   });
 
-    // Getting the title and filter elements
-    let menuTitle = document.querySelector(".menu-section__title");
+  //   // Getting the title and filter elements
+  //   let menuTitle = document.querySelector(".menu-section__title");
 
-    let menuFilter = document.querySelector(".menu-section__filter");
+  //   let menuFilter = document.querySelector(".menu-section__filter");
 
-    // Call the function only once
+  //   // Call the function only once
 
-    let callOnce = () => {
-      // kill it as soon as it was called
-      callOnce = function () {};
+  //   let callOnce = () => {
+  //     // kill it as soon as it was called
+  //     callOnce = function () {};
 
-      if (isInViewport(menuTitle, menuFilter)) {
-        return menuTimeline
-          .fromTo(
-            ".menu-section__title",
-            { autoAlpha: 0 },
-            { autoAlpha: 1, duration: 1, ease: "power3.out" }
-          )
-          .fromTo(
-            ".menu-section__filter",
-            { autoAlpha: 0 },
-            { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-          );
-      }
-    };
+  //     if (isInViewport(menuTitle, menuFilter)) {
+  //       return menuTimeline
+  //         .fromTo(
+  //           ".menu-section__title",
+  //           { autoAlpha: 0 },
+  //           { autoAlpha: 1, duration: 1, ease: "power3.out" }
+  //         )
+  //         .fromTo(
+  //           ".menu-section__filter",
+  //           { autoAlpha: 0 },
+  //           { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //         );
+  //     }
+  //   };
 
-    window.addEventListener("load", () => {
-      menuTimeline
-        .fromTo(
-          ".menu-section__title",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 1, ease: "power3.out" }
-        )
-        .fromTo(
-          ".menu-section__filter",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-        );
+  //   window.addEventListener("load", () => {
+  //     menuTimeline
+  //       .fromTo(
+  //         ".menu-section__title",
+  //         { autoAlpha: 0 },
+  //         { autoAlpha: 1, duration: 1, ease: "power3.out" }
+  //       )
+  //       .fromTo(
+  //         ".menu-section__filter",
+  //         { autoAlpha: 0 },
+  //         { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //       );
 
-      breakfastAnimate();
-    });
+  //     breakfastAnimate();
+  //   });
 
-    // Function animations for the menus
+  //   // Function animations for the menus
 
-    // Breakfast
+  //   // Breakfast
 
-    let breakfastAnimate = () => {
-      menuTimeline.fromTo(
-        ".menu-section__menu-grid__item--breakfast",
-        {
-          y: 80,
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          stagger: 0.6,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      );
-    };
+  //   let breakfastAnimate = () => {
+  //     menuTimeline.fromTo(
+  //       ".menu-section__menu-grid__item--breakfast",
+  //       {
+  //         y: 80,
+  //         autoAlpha: 0,
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         y: 0,
+  //         stagger: 0.6,
+  //         duration: 0.8,
+  //         ease: "power3.out",
+  //       }
+  //     );
+  //   };
 
-    // Lunch
+  //   // Lunch
 
-    let lunchAnimate = () => {
-      menuTimeline.fromTo(
-        ".menu-section__menu-grid__item--lunch",
-        {
-          y: 80,
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          stagger: 0.6,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      );
-    };
+  //   let lunchAnimate = () => {
+  //     menuTimeline.fromTo(
+  //       ".menu-section__menu-grid__item--lunch",
+  //       {
+  //         y: 80,
+  //         autoAlpha: 0,
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         y: 0,
+  //         stagger: 0.6,
+  //         duration: 0.8,
+  //         ease: "power3.out",
+  //       }
+  //     );
+  //   };
 
-    // Dinner
+  //   // Dinner
 
-    let dinnerAnimate = () => {
-      menuTimeline.fromTo(
-        ".menu-section__menu-grid__item--dinner",
-        {
-          y: 80,
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          stagger: 0.6,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      );
-    };
+  //   let dinnerAnimate = () => {
+  //     menuTimeline.fromTo(
+  //       ".menu-section__menu-grid__item--dinner",
+  //       {
+  //         y: 80,
+  //         autoAlpha: 0,
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         stagger: 0.6,
+  //         y: 0,
+  //         duration: 0.8,
+  //         ease: "power3.out",
+  //       }
+  //     );
+  //   };
 
-    // Adding the Animation functions to the menu filter
-    breakfastFilterRef.current.addEventListener("click", breakfastAnimate);
-    lunchFilterRef.current.addEventListener("click", lunchAnimate);
-    dinnerFilterRef.current.addEventListener("click", dinnerAnimate);
+  //   // Adding the Animation functions to the menu filter
+  //   breakfastFilterRef.current.addEventListener("click", breakfastAnimate);
+  //   lunchFilterRef.current.addEventListener("click", lunchAnimate);
+  //   dinnerFilterRef.current.addEventListener("click", dinnerAnimate);
 
-    // ----- Review Section Sroll Animation
-    let reviewTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".review-section__content",
-        start: "75% 75%",
-        end: "+=300",
-      },
-    });
+  //   // ----- Review Section Sroll Animation
+  //   let reviewTimeline = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".review-section__content",
+  //       start: "75% 75%",
+  //       end: "+=300",
+  //     },
+  //   });
 
-    reviewTimeline
-      .fromTo(
-        ".review-section__content__title",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1, ease: "power3.out" }
-      )
-      .fromTo(
-        ".review-section__content__grid__container",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".review-section__content__grid__item__image",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
-      )
-      .fromTo(
-        ".review-section__content__grid__item__name",
-        {
-          autoAlpha: 0,
-          y: 60,
-        },
-        { autoAlpha: 1, y: 0, duration: 0.6, delay: 1, ease: "power3.out" }
-      )
-      .fromTo(
-        ".review-section__content__grid__item__comment",
-        {
-          autoAlpha: 0,
-          y: 60,
-        },
-        { autoAlpha: 1, y: 0, duration: 0.5, ease: "power3.out" }
-      )
-      .fromTo(
-        ".review-section__content__grid__item__star__icon-container",
-        {
-          y: 60,
-          autoAlpha: 0,
-        },
-        {
-          y: 0,
-          autoAlpha: 1,
-          stagger: 0.2,
-          duration: 0.4,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".alice-carousel__next-btn",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.4, ease: "power3.out" }
-      )
-      .fromTo(
-        ".alice-carousel__prev-btn",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.5, ease: "power3.out" }
-      );
+  //   reviewTimeline
+  //     .fromTo(
+  //       ".review-section__content__title",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 1, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".review-section__content__grid__container",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".review-section__content__grid__item__image",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".review-section__content__grid__item__name",
+  //       {
+  //         autoAlpha: 0,
+  //         y: 60,
+  //       },
+  //       { autoAlpha: 1, y: 0, duration: 0.6, delay: 1, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".review-section__content__grid__item__comment",
+  //       {
+  //         autoAlpha: 0,
+  //         y: 60,
+  //       },
+  //       { autoAlpha: 1, y: 0, duration: 0.5, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".review-section__content__grid__item__star__icon-container",
+  //       {
+  //         y: 60,
+  //         autoAlpha: 0,
+  //       },
+  //       {
+  //         y: 0,
+  //         autoAlpha: 1,
+  //         stagger: 0.2,
+  //         duration: 0.4,
+  //         ease: "power3.out",
+  //       }
+  //     )
+  //     .fromTo(
+  //       ".alice-carousel__next-btn",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 0.4, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".alice-carousel__prev-btn",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 0.5, ease: "power3.out" }
+  //     );
 
-    // ----- Reservation Section Sroll Animation
-    let reservationTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".reservation-section__content",
-        start: "50% 75%",
-        end: "+=300",
-      },
-    });
+  //   // ----- Reservation Section Sroll Animation
+  //   let reservationTimeline = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".reservation-section__content",
+  //       start: "50% 75%",
+  //       end: "+=300",
+  //     },
+  //   });
 
-    window.addEventListener("load", () => {
-      reservationTimeline
-        .fromTo(
-          ".reservation-section__content__title",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 1, ease: "power3.out" }
-        )
-        .fromTo(
-          ".reservation-section__content__grid__image",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-        )
-        .fromTo(
-          ".reservation-section__content__grid__form-container",
-          {
-            autoAlpha: 0,
-          },
-          { autoAlpha: 1, duration: 1, delay: 1, ease: "power3.out" }
-        )
-        .fromTo(
-          ".reservation-section__content__grid__form-container .reservation-section-label, .reservation-section-input, .reservation-section-select, .reservation-section-textarea",
-          {
-            autoAlpha: 0,
-            y: 50,
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.7,
-            stagger: 0.2,
-            ease: "power3.out",
-          }
-        )
-        .fromTo(
-          ".reservation-section__content__grid__form__submit-button",
-          {
-            autoAlpha: 0,
-          },
-          { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
-        )
-        .fromTo(
-          ".reservation-section__content__grid__form__notice",
-          {
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            duration: 0.7,
-            delay: 0.2,
-            ease: "power3.out",
-          }
-        );
-    });
+  //   window.addEventListener("load", () => {
+  //     reservationTimeline
+  //       .fromTo(
+  //         ".reservation-section__content__title",
+  //         { autoAlpha: 0 },
+  //         { autoAlpha: 1, duration: 1, ease: "power3.out" }
+  //       )
+  //       .fromTo(
+  //         ".reservation-section__content__grid__image",
+  //         { autoAlpha: 0 },
+  //         { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //       )
+  //       .fromTo(
+  //         ".reservation-section__content__grid__form-container",
+  //         {
+  //           autoAlpha: 0,
+  //         },
+  //         { autoAlpha: 1, duration: 1, delay: 1, ease: "power3.out" }
+  //       )
+  //       .fromTo(
+  //         ".reservation-section__content__grid__form-container .reservation-section-label, .reservation-section-input, .reservation-section-select, .reservation-section-textarea",
+  //         {
+  //           autoAlpha: 0,
+  //           y: 50,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           y: 0,
+  //           duration: 0.7,
+  //           stagger: 0.2,
+  //           ease: "power3.out",
+  //         }
+  //       )
+  //       .fromTo(
+  //         ".reservation-section__content__grid__form__submit-button",
+  //         {
+  //           autoAlpha: 0,
+  //         },
+  //         { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
+  //       )
+  //       .fromTo(
+  //         ".reservation-section__content__grid__form__notice",
+  //         {
+  //           autoAlpha: 0,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           duration: 0.7,
+  //           delay: 0.2,
+  //           ease: "power3.out",
+  //         }
+  //       );
+  //   });
 
-    // ----- Contact Section Sroll Animation
-    let contactTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".contact-section__content",
-        start: "40% 75%",
-        end: "+=300",
-      },
-    });
+  //   // ----- Contact Section Sroll Animation
+  //   let contactTimeline = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".contact-section__content",
+  //       start: "40% 75%",
+  //       end: "+=300",
+  //     },
+  //   });
 
-    window.addEventListener("load", () => {
-      contactTimeline
-        .fromTo(
-          ".contact-section__content__title",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 1, ease: "power3.out" }
-        )
-        .fromTo(
-          ".contact-section__content__grid__image",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-        )
-        .fromTo(
-          ".contact-section__content__grid__form-container",
-          {
-            autoAlpha: 0,
-          },
-          { autoAlpha: 1, duration: 1, delay: 1, ease: "power3.out" }
-        )
-        .fromTo(
-          ".contact-section__content__grid__form-container .contact-section-label, .contact-section-input, .contact-section-textarea",
-          {
-            autoAlpha: 0,
-            y: 50,
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.7,
-            stagger: 0.2,
-            ease: "power3.out",
-          }
-        )
-        .fromTo(
-          ".contact-section__content__grid__form__submit-button",
-          {
-            autoAlpha: 0,
-          },
-          { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
-        )
-        .fromTo(
-          ".contact-section__content__grid__form__notice",
-          {
-            autoAlpha: 0,
-          },
-          { autoAlpha: 1, duration: 0.7, delay: 0.2, ease: "power3.out" }
-        );
-    });
+  //   window.addEventListener("load", () => {
+  //     contactTimeline
+  //       .fromTo(
+  //         ".contact-section__content__title",
+  //         { autoAlpha: 0 },
+  //         { autoAlpha: 1, duration: 1, ease: "power3.out" }
+  //       )
+  //       .fromTo(
+  //         ".contact-section__content__grid__image",
+  //         { autoAlpha: 0 },
+  //         { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //       )
+  //       .fromTo(
+  //         ".contact-section__content__grid__form-container",
+  //         {
+  //           autoAlpha: 0,
+  //         },
+  //         { autoAlpha: 1, duration: 1, delay: 1, ease: "power3.out" }
+  //       )
+  //       .fromTo(
+  //         ".contact-section__content__grid__form-container .contact-section-label, .contact-section-input, .contact-section-textarea",
+  //         {
+  //           autoAlpha: 0,
+  //           y: 50,
+  //         },
+  //         {
+  //           autoAlpha: 1,
+  //           y: 0,
+  //           duration: 0.7,
+  //           stagger: 0.2,
+  //           ease: "power3.out",
+  //         }
+  //       )
+  //       .fromTo(
+  //         ".contact-section__content__grid__form__submit-button",
+  //         {
+  //           autoAlpha: 0,
+  //         },
+  //         { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
+  //       )
+  //       .fromTo(
+  //         ".contact-section__content__grid__form__notice",
+  //         {
+  //           autoAlpha: 0,
+  //         },
+  //         { autoAlpha: 1, duration: 0.7, delay: 0.2, ease: "power3.out" }
+  //       );
+  //   });
 
-    // ----- Footer Section Sroll Animation
-    let footerTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".footer-section__content",
-        start: "20% 80%",
-        end: "+=100",
-      },
-    });
+  //   // ----- Footer Section Sroll Animation
+  //   let footerTimeline = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".footer-section__content",
+  //       start: "20% 80%",
+  //       end: "+=100",
+  //     },
+  //   });
 
-    footerTimeline
-      .fromTo(
-        ".footer-section__content",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 1, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__content .logo",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.4, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__about-us-links__title",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__about-us-links__menu",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__about-us-links__review",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__reservation-link__title",
-        {
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          duration: 0.6,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".footer-section__reservation-link__resevation",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__contact-us__title",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__contact-us__phone-email-address",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__content__copyright",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      );
-  });
+  //   footerTimeline
+  //     .fromTo(
+  //       ".footer-section__content",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       { autoAlpha: 1, duration: 1, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".footer-section__content .logo",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       { autoAlpha: 1, duration: 0.4, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".footer-section__about-us-links__title",
+  //       { autoAlpha: 0 },
+  //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".footer-section__about-us-links__menu",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".footer-section__about-us-links__review",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".footer-section__reservation-link__title",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       {
+  //         autoAlpha: 1,
+  //         duration: 0.6,
+  //         ease: "power3.out",
+  //       }
+  //     )
+  //     .fromTo(
+  //       ".footer-section__reservation-link__resevation",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".footer-section__contact-us__title",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".footer-section__contact-us__phone-email-address",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //     )
+  //     .fromTo(
+  //       ".footer-section__content__copyright",
+  //       {
+  //         autoAlpha: 0,
+  //       },
+  //       { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
+  //     );
+  // });
 
   return (
     <>
@@ -1093,14 +1093,14 @@ export default function Home() {
 
             <nav className="navbar">
               <div className="navbar__logo">
-                <Link href="/" className="logo">
+                <Link href="/" to="GSF" className="logo">
                   GSF
                 </Link>
               </div>
 
               <ul className="navbar__links">
                 <li>
-                  <Link href="/" className="navbar__link">
+                  <Link href="/" to="Home" className="navbar__link">
                     Home
                   </Link>
                 </li>
@@ -1180,14 +1180,108 @@ export default function Home() {
                   </Link>
                 </li>
               </ul>
+
+              {/* Hamburger Menu */}
+              <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </nav>
           </div>
         </header>
 
-        {/* Jumbo Section Timeline */}
+        {/***********************************  Mobile Menu Section */}
+        <div id="mobile-menu">
+          {/* Global Container */}
+          <div className="container">
+            {/* Navbar Link */}
+            <ul className="navbar__links">
+              <li>
+                <Link href="/" to="Home" className="navbar__link">
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="#about-section"
+                  activeClass="active"
+                  to="about-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="navbar__link"
+                >
+                  About Us
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="#menu-section"
+                  activeClass="active"
+                  to="menu-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="navbar__link"
+                >
+                  Our Menu
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="#review-section"
+                  activeClass="active"
+                  to="review-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="navbar__link"
+                >
+                  Reviews
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="#reservation-section"
+                  activeClass="active"
+                  to="reservation-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="navbar__link navbar__link--reservation"
+                >
+                  Reservations
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="#contact-section"
+                  activeClass="active"
+                  to="contact-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                  className="navbar__link"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
 
         {/***********************************  Jumbo Section */}
-
         <section id="jumbo-section">
           {/* Global Container */}
           <div className="container">
@@ -2029,14 +2123,14 @@ export default function Home() {
                       {/* Reservation Section Grid Form Phone */}
                       <div className="reservation-section__content__grid__form__phone">
                         <label
-                          htmlFor="email-address"
+                          htmlFor="reservation-email-address"
                           className="reservation-section-label"
                         >
                           Phone Number *
                         </label>
                         <input
                           ref={inputRef_4}
-                          id="email-address"
+                          id="reservation-email-address"
                           name="email-address"
                           type="number"
                           required
@@ -2222,14 +2316,14 @@ export default function Home() {
                     {/* Contact Section Grid Form Email Address */}
                     <div className="contact-section__content__grid__form__email-address">
                       <label
-                        htmlFor="email-address"
+                        htmlFor="contact-email-address"
                         className="contact-section-label"
                       >
                         Email Address *
                       </label>
                       <input
                         ref={inputRef_11}
-                        id="email-address"
+                        id="contact-email-address"
                         name="email-address"
                         type="email"
                         required

@@ -196,6 +196,73 @@ select {
         }
       }
     }
+
+    .hambuger {
+      display: none;
+      background-color: $color-dark;
+      border: 1px solid $color-grey;
+      width: 100px;
+      height: 100px;
+
+      span {
+        width: 100px;
+        height: 10px;
+        background-color: $color-white;
+      }
+    }
+  }
+}
+
+/**** Mobile Menu Section Styles ****/
+
+#mobile-menu {
+  display: none;
+  background-color: $color-dark;
+
+  // Navbar Styles
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+
+    &__logo {
+      width: 20%;
+
+      .logo {
+        color: $color-white;
+        font-size: 2rem;
+        font-weight: 500;
+      }
+    }
+
+    &__links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 50%;
+
+      .navbar__link {
+        color: $color-white;
+        font-weight: 300;
+        transition: color 0.3s ease-in-out;
+
+        &--reservation {
+          color: $color-white;
+          background-color: $color-dark;
+          padding: 0.6rem 1.2rem;
+          border: 1px solid $color-white;
+          border-radius: 50px;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            color: $color-dark;
+            background-color: $color-white;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -1156,5 +1223,23 @@ select {
     &__copyright {
       text-align: center;
     }
+  }
+}
+
+/***** Media Queries ********/
+
+// Phone
+@media only screen and (max-width: 600px) {
+  // Global Container
+
+  /**** Header Section Styles ****/
+  #header-section {
+    .navbar__links {
+      display: none;
+    }
+  }
+
+  #mobile-menu {
+    display: block;
   }
 }
