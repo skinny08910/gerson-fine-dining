@@ -1182,7 +1182,7 @@ export default function Home() {
               </ul>
 
               {/* Hamburger Menu */}
-              <div class="hamburger">
+              <div class="navbar__hamburger">
                 <span></span>
                 <span></span>
                 <span></span>

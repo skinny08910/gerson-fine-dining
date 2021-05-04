@@ -9,6 +9,7 @@ $color-grey: #32303b;
 $color-independence: #4c4b63;
 $color-spanish-gray: #949396;
 $color-body: #d1d1d1;
+$color-mobile-menu: #1c1c1c;
 
 // Global Styles
 
@@ -197,17 +198,25 @@ select {
       }
     }
 
-    .hambuger {
+    // Hamburger
+    &__hamburger {
       display: none;
+      align-self: flex-start;
       background-color: $color-dark;
-      border: 1px solid $color-grey;
-      width: 100px;
-      height: 100px;
+      width: 40px;
+      height: 20px;
+      cursor: pointer;
 
       span {
-        width: 100px;
-        height: 10px;
+        display: block;
+        width: inherit;
+        height: 3px;
+        border-radius: 2px;
         background-color: $color-white;
+
+        &:not(:last-child) {
+          margin-bottom: 0.4rem;
+        }
       }
     }
   }
@@ -217,49 +226,51 @@ select {
 
 #mobile-menu {
   display: none;
+  padding: 1.5rem 0;
+  width: 51%;
+  height: 100vh;
   background-color: $color-dark;
+  border: 1px solid $color-grey;
+  border-radius: 10px;
+  position: absolute;
+  right: -1%;
+  z-index: 10;
 
   // Navbar Styles
 
-  .navbar {
+  .navbar__links {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 0;
+    align-items: flex-start;
+    width: 50%;
 
-    &__logo {
-      width: 20%;
-
-      .logo {
-        color: $color-white;
-        font-size: 2rem;
-        font-weight: 500;
+    li {
+      &:not(:last-child) {
+        margin-bottom: 1.6rem;
       }
     }
 
-    &__links {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 50%;
+    // .navbar__link--reservation {
+    //   margin-bottom: 4rem;
+    // }
 
-      .navbar__link {
+    .navbar__link {
+      color: $color-white;
+      font-weight: 300;
+      transition: color 0.3s ease-in-out;
+
+      &--reservation {
         color: $color-white;
-        font-weight: 300;
-        transition: color 0.3s ease-in-out;
+        background-color: $color-dark;
+        padding: 0.6rem 1.2rem;
+        border: 1px solid $color-white;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
 
-        &--reservation {
-          color: $color-white;
-          background-color: $color-dark;
-          padding: 0.6rem 1.2rem;
-          border: 1px solid $color-white;
-          border-radius: 50px;
-          transition: all 0.3s ease-in-out;
-
-          &:hover {
-            color: $color-dark;
-            background-color: $color-white;
-          }
+        &:hover {
+          color: $color-dark;
+          background-color: $color-white;
         }
       }
     }
@@ -1231,11 +1242,20 @@ select {
 // Phone
 @media only screen and (max-width: 600px) {
   // Global Container
+  .container {
+    width: 90%;
+  }
 
   /**** Header Section Styles ****/
   #header-section {
-    .navbar__links {
-      display: none;
+    .navbar {
+      .navbar__links {
+        display: none;
+      }
+
+      .navbar__hamburger {
+        display: block;
+      }
     }
   }
 
