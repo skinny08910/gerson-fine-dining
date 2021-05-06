@@ -251,10 +251,6 @@ select {
       }
     }
 
-    // .navbar__link--reservation {
-    //   margin-bottom: 4rem;
-    // }
-
     .navbar__link {
       color: $color-white;
       font-weight: 300;
@@ -1248,6 +1244,7 @@ select {
 
   /**** Header Section Styles ****/
   #header-section {
+    // Header Section Navbar
     .navbar {
       .navbar__links {
         display: none;
@@ -1259,7 +1256,327 @@ select {
     }
   }
 
+  // Header Section Mobile Menu
   #mobile-menu {
-    display: block;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  /**** Jumbo Section Styles ****/
+  #jumbo-section {
+    // Jumbo Section Text
+    .jumbo-hero__text {
+      flex-direction: column;
+      gap: 100px;
+
+      // Jumbo Section Message Container
+      .jumbo-hero__message-container {
+        width: 100%;
+
+        // Jumbo Section Title
+        .jumbo-hero__title {
+          font-size: 3.3rem;
+        }
+      }
+
+      // Jumbo Section Img
+      .jumbo-hero__img {
+        height: 290px;
+        width: 100%;
+      }
+    }
+  }
+
+  /**** About Us Section Styles ****/
+  #about-section {
+    // About Us Section Content
+    .about-section__content {
+      flex-direction: column;
+      gap: 90px;
+
+      // About Us Section Img
+      .about-section__img {
+        width: 100%;
+      }
+
+      // About Us Section Text
+      .about-section__text {
+        width: 100%;
+        margin-right: 0;
+        top: 40%;
+
+        // About Us Section Title
+        .about-section__text-title {
+          font-size: 3.3rem;
+          margin-left: 0;
+        }
+
+        // About Us Section Info
+        .about-section__text-info {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  /**** Ingredient Section Styles ****/
+  #ingredient-section {
+    padding-bottom: 2rem;
+
+    // Ingredient Section Content
+    .ingredient-section__content {
+      flex-direction: column;
+      gap: 90px;
+
+      // Ingredient Section Text
+      .ingredient-section__text {
+        width: 100%;
+        margin-left: 0;
+        top: 40%;
+
+        // Ingredient Section Title
+        .ingredient-section__title {
+          font-size: 3.3rem;
+        }
+      }
+
+      // Ingredient Section Img
+      .ingredient-section__img-container {
+        width: 100%;
+        position: static;
+      }
+    }
+  }
+
+  /**** Menu Section Styles ****/
+  #menu-section {
+    height: 1880px;
+
+    // Menu Section Content
+    .menu-section__content {
+      .menu-section__title {
+        font-size: 3.3rem;
+      }
+
+      // Menu Section Filter
+      .menu-section__filter {
+        justify-content: space-around;
+        width: 80%;
+        margin: 0 auto 5em auto;
+      }
+
+      // Menu Section Grid
+      .menu-section__menu-grid {
+        width: 100%;
+
+        // Breakfast Menu
+        .menu-section__menu-grid__breakfast {
+          display: grid;
+          grid-template-columns: 1fr;
+          width: 100%;
+          gap: 20px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        // Lunch Menu
+        .menu-section__menu-grid__lunch {
+          display: grid;
+          grid-template-columns: 1fr;
+          width: 100%;
+          gap: 20px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        // Dinner Menu
+        .menu-section__menu-grid__dinner {
+          display: grid;
+          grid-template-columns: 1fr;
+          width: 100%;
+          gap: 20px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  /**** Review Section Styles ****/
+  #review-section {
+    // Review Section Content
+    .review-section__content {
+      // Review Section Title
+      .review-section__content__title {
+        font-size: 3.3rem;
+      }
+
+      // Review Section Grid
+      .review-section__content__grid {
+        .review-section__content__grid__container {
+          width: 100%;
+          height: 340px;
+        }
+
+        .alice-carousel__prev-btn {
+          left: 2%;
+
+          .alice-carousel__prev-btn-item {
+            color: $color-white;
+            background-color: $color-dark;
+          }
+        }
+
+        .alice-carousel__next-btn {
+          right: 2%;
+
+          .alice-carousel__next-btn-item {
+            color: $color-white;
+            background-color: $color-dark;
+          }
+        }
+      }
+    }
+  }
+
+  /**** Reservation Section Styles ****/
+  #reservation-section {
+    // Reservation Section Content
+    .reservation-section__content {
+      // Reservation Section Title
+      .reservation-section__content__title {
+        font-size: 3.3rem;
+      }
+
+      // Reservation Section Content Grid
+      .reservation-section__content__grid {
+        flex-direction: column;
+
+        // Reservation Section Content Grid Img
+        .reservation-section__content__grid__image {
+          width: 100%;
+        }
+
+        // Reservation Section Content Grid Form Container
+        .reservation-section__content__grid__form-container {
+          width: 100%;
+          margin: 15em 0 0 0;
+
+          // Reservation Section Content Grid Form
+          .reservation-section__content__grid__form {
+            // Reservation Section Content Grid Form First last name
+            .reservation-section__content__grid__form__first-last-name {
+              .reservation-section__content__grid__form__last-name {
+                margin-left: 2em;
+              }
+            }
+
+            // Reservation Section Content Grid Form Email Address
+            .reservation-section__content__grid__form__email-address-phone {
+              .reservation-section__content__grid__form__phone {
+                margin-left: 2em;
+              }
+            }
+
+            // Reservation Section Content Grid Form Date Time Number
+            .reservation-section__content__grid__form__date-time-number {
+              .reservation-section__content__grid__form__time {
+                margin-left: 2em;
+              }
+
+              .reservation-section__content__grid__form__number {
+                margin-left: 2em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /**** Contact Section Styles ****/
+  #contact-section {
+    .contact-section__content {
+      .contact-section__content__title {
+        font-size: 3.3rem;
+        padding-top: 2em;
+      }
+
+      .contact-section__content__grid {
+        flex-direction: column;
+
+        .contact-section__content__grid__form-container {
+          width: 100%;
+          margin: 15em 0 0 0;
+
+          .contact-section__content__grid__form {
+            // Contact Section Content Grid Form First last name
+            .contact-section__content__grid__form__first-last-name {
+              .contact-section__content__grid__form__last-name {
+                margin-left: 2em;
+              }
+            }
+
+            // Contact Section Content Grid Form Email Address
+            .contact-section__content__grid__form__email-address {
+              width: 100%;
+            }
+          }
+        }
+
+        // Contact Section Content Grid Img
+        .contact-section__content__grid__image {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /**** Footer Section Styles ****/
+  #footer-section {
+    // Footer Section Content
+    .footer-section__content {
+      // Footer Section Content Grid
+      .footer-section__content__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        // Footer Section About Us Links
+        .footer-section__about-us-links {
+          text-align: right;
+          margin-bottom: 2em;
+        }
+
+        // Footer Section Contact Us
+        .footer-section__contact-us {
+          text-align: right;
+        }
+      }
+    }
   }
 }
