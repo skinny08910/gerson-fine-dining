@@ -1239,8 +1239,8 @@ select {
 
 /***** Media Queries ********/
 
-// iPad Pro
-@media only screen and (min-width: 900px), (max-width: 1024px) {
+// Laptop
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
   // Global Container
   .container {
     width: 90%;
@@ -1262,6 +1262,109 @@ select {
 
         div {
           height: 490px;
+          width: 100%;
+
+          div {
+            img {
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /**** Menu Section Styles ****/
+  #menu-section {
+    // Menu Section Content
+    .menu-section__content {
+      // Menu Section Filter
+      .menu-section__filter {
+        width: 30%;
+      }
+
+      // Menu Section Grid
+      .menu-section__menu-grid {
+        width: 100%;
+
+        // Breakfast Menu
+        .menu-section__menu-grid__breakfast {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          width: 100%;
+          gap: 30px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        // Lunch Menu
+        .menu-section__menu-grid__lunch {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          width: 100%;
+          gap: 30px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        // Dinner Menu
+        .menu-section__menu-grid__dinner {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          width: 100%;
+          gap: 30px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// iPad Pro
+@media only screen and (min-width: 900px) and (max-width: 1024px) {
+  // Global Container
+  .container {
+    width: 90%;
+  }
+
+  /**** Jumbo Section Styles ****/
+  #jumbo-section {
+    // Jumbo Section Text
+    .jumbo-hero__text {
+      gap: 20px;
+      // Jumbo Section Message Container
+      .jumbo-hero__message-container {
+        width: 50%;
+      }
+
+      // Jumbo Section Img
+      .jumbo-hero__img {
+        width: 50%;
+
+        div {
+          height: 500px;
           width: 100%;
 
           div {
