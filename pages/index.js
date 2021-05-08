@@ -1336,15 +1336,14 @@ export default function Home() {
 
               {/* Jumbo Image */}
 
-              <div
-                className="jumbo-hero__img"
-                style={{ position: "relative", objectFit: "cover" }}
-              >
-                <Image
-                  src="/img/jumbo-img.png"
-                  layout="fill"
-                  alt="Image of a celery soup."
-                />
+              <div className="jumbo-hero__img">
+                <div style={{ position: "relative", objectFit: "contain" }}>
+                  <Image
+                    src="/img/jumbo-img.png"
+                    layout="fill"
+                    alt="Image of a celery soup."
+                  />
+                </div>
               </div>
             </div>
           </div>

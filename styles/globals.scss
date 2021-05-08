@@ -227,13 +227,13 @@ select {
 #mobile-menu {
   display: none;
   padding: 1.5rem 0;
-  width: 51%;
+  width: 50%;
   height: 100vh;
   background-color: $color-dark;
   border: 1px solid $color-grey;
   border-radius: 10px;
   position: absolute;
-  right: -1%;
+  right: 0;
   z-index: 10;
 
   // Navbar Styles
@@ -328,8 +328,12 @@ select {
     // Jumbo Image
 
     .jumbo-hero__img {
-      height: 550px;
       width: 50%;
+
+      div {
+        height: 610px;
+        width: 100%;
+      }
     }
   }
 }
@@ -1235,6 +1239,386 @@ select {
 
 /***** Media Queries ********/
 
+// iPad Pro
+@media only screen and (min-width: 900px), (max-width: 1024px) {
+  // Global Container
+  .container {
+    width: 90%;
+  }
+
+  /**** Jumbo Section Styles ****/
+  #jumbo-section {
+    // Jumbo Section Text
+    .jumbo-hero__text {
+      gap: 20px;
+      // Jumbo Section Message Container
+      .jumbo-hero__message-container {
+        width: 50%;
+      }
+
+      // Jumbo Section Img
+      .jumbo-hero__img {
+        width: 50%;
+
+        div {
+          height: 490px;
+          width: 100%;
+
+          div {
+            img {
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /**** About Section Styles ****/
+  #about-section {
+    // About Section Content
+    .about-section__content {
+      // About Section Img
+      .about-section__img {
+        width: 60%;
+      }
+    }
+  }
+
+  /**** Ingredient Section Styles ****/
+  #ingredient-section {
+    // Ingredient Section Content
+    .ingredient-section__content {
+      // Ingredient Section Text
+      .ingredient-section__text {
+        height: 460px;
+      }
+
+      // Ingredient Section Img
+      .ingredient-section__img-container {
+        width: 60%;
+      }
+    }
+  }
+
+  /**** Menu Section Styles ****/
+  #menu-section {
+    height: 1100px;
+
+    // Menu Section Content
+    .menu-section__content {
+      // Menu Section Filter
+      .menu-section__filter {
+        width: 40%;
+      }
+
+      // Menu Section Grid
+      .menu-section__menu-grid {
+        width: 100%;
+
+        // Breakfast Menu
+        .menu-section__menu-grid__breakfast {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          width: 100%;
+          gap: 30px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        // Lunch Menu
+        .menu-section__menu-grid__lunch {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          width: 100%;
+          gap: 20px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        // Dinner Menu
+        .menu-section__menu-grid__dinner {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          width: 100%;
+          gap: 20px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  /**** Review Section Styles ****/
+  #review-section {
+    // Review Section Content
+    .review-section__content {
+      // Review Section Grid
+      .review-section__content__grid {
+        .review-section__content__grid__container {
+          width: 70%;
+          height: 340px;
+        }
+      }
+    }
+  }
+
+  /**** Reservation Section Styles ****/
+  #reservation-section {
+    // Reservation Section Content
+    .reservation-section__content {
+      // Reservation Section Content Grid
+      .reservation-section__content__grid {
+        width: 100%;
+
+        // Reservation Section Content Grid Img
+        .reservation-section__content__grid__image {
+          width: 60%;
+        }
+
+        // Reservation Section Content Grid Form Container
+        .reservation-section__content__grid__form-container {
+          width: 50%;
+          margin-right: 8em;
+        }
+      }
+    }
+  }
+
+  /**** Contact Section Styles ****/
+  #contact-section {
+    .contact-section__content {
+      .contact-section__content__grid {
+        .contact-section__content__grid__form-container {
+          width: 50%;
+          margin-left: 8em;
+        }
+
+        // Contact Section Content Grid Img
+        .contact-section__content__grid__image {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
+// iPad and Tablet
+@media only screen and (max-width: 900px) {
+  // Global Container
+  .container {
+    width: 90%;
+  }
+
+  /**** Header Section Styles ****/
+  #header-section {
+    // Header Section Navbar
+    .navbar {
+      .navbar__links {
+        width: 65%;
+      }
+    }
+  }
+
+  /**** Jumbo Section Styles ****/
+  #jumbo-section {
+    // Jumbo Section Text
+    .jumbo-hero__text {
+      gap: 20px;
+      // Jumbo Section Message Container
+      .jumbo-hero__message-container {
+        width: 50%;
+      }
+
+      // Jumbo Section Img
+      .jumbo-hero__img {
+        width: 50%;
+
+        div {
+          height: 400px;
+          width: 100%;
+
+          div {
+            img {
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /**** About Section Styles ****/
+  #about-section {
+    // About Section Content
+    .about-section__content {
+      // About Section Img
+      .about-section__img {
+        width: 60%;
+      }
+    }
+  }
+
+  /**** Ingredient Section Styles ****/
+  #ingredient-section {
+    // Ingredient Section Content
+    .ingredient-section__content {
+      // Ingredient Section Text
+      .ingredient-section__text {
+        height: 460px;
+      }
+
+      // Ingredient Section Img
+      .ingredient-section__img-container {
+        width: 60%;
+      }
+    }
+  }
+
+  /**** Menu Section Styles ****/
+  #menu-section {
+    height: 1100px;
+
+    // Menu Section Content
+    .menu-section__content {
+      // Menu Section Filter
+      .menu-section__filter {
+        width: 50%;
+      }
+
+      // Menu Section Grid
+      .menu-section__menu-grid {
+        width: 100%;
+
+        // Breakfast Menu
+        .menu-section__menu-grid__breakfast {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          width: 100%;
+          gap: 30px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        // Lunch Menu
+        .menu-section__menu-grid__lunch {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          width: 100%;
+          gap: 20px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        // Dinner Menu
+        .menu-section__menu-grid__dinner {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          width: 100%;
+          gap: 20px;
+
+          .menu-section__menu-grid__item {
+            width: 100%;
+          }
+
+          .menu-section__menu-grid__item__image {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  /**** Review Section Styles ****/
+  #review-section {
+    // Review Section Content
+    .review-section__content {
+      // Review Section Grid
+      .review-section__content__grid {
+        .review-section__content__grid__container {
+          width: 70%;
+          height: 340px;
+        }
+      }
+    }
+  }
+
+  /**** Reservation Section Styles ****/
+  #reservation-section {
+    // Reservation Section Content
+    .reservation-section__content {
+      // Reservation Section Content Grid
+      .reservation-section__content__grid {
+        width: 100%;
+
+        // Reservation Section Content Grid Img
+        .reservation-section__content__grid__image {
+          width: 60%;
+        }
+
+        // Reservation Section Content Grid Form Container
+        .reservation-section__content__grid__form-container {
+          width: 50%;
+          margin-right: 8em;
+        }
+      }
+    }
+  }
+
+  /**** Contact Section Styles ****/
+  #contact-section {
+    .contact-section__content {
+      .contact-section__content__grid {
+        .contact-section__content__grid__form-container {
+          width: 50%;
+          margin-left: 8em;
+        }
+
+        // Contact Section Content Grid Img
+        .contact-section__content__grid__image {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
 // Phone
 @media only screen and (max-width: 600px) {
   // Global Container
@@ -1284,8 +1668,17 @@ select {
 
       // Jumbo Section Img
       .jumbo-hero__img {
-        height: 290px;
         width: 100%;
+
+        div {
+          height: 400px;
+
+          div {
+            img {
+              object-fit: contain;
+            }
+          }
+        }
       }
     }
   }
@@ -1364,7 +1757,7 @@ select {
       // Menu Section Filter
       .menu-section__filter {
         justify-content: space-around;
-        width: 80%;
+        width: 90%;
         margin: 0 auto 5em auto;
       }
 
@@ -1443,7 +1836,7 @@ select {
         }
 
         .alice-carousel__prev-btn {
-          left: 2%;
+          left: 5%;
 
           .alice-carousel__prev-btn-item {
             color: $color-white;
@@ -1452,7 +1845,7 @@ select {
         }
 
         .alice-carousel__next-btn {
-          right: 2%;
+          right: 5%;
 
           .alice-carousel__next-btn-item {
             color: $color-white;
