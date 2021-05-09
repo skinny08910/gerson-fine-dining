@@ -77,55 +77,55 @@ select {
 
 /**** Screen Loader Styles ****/
 
-// #screen-loader {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100vh;
-//   width: 100vw;
-//   background-color: $color-dark;
-//   position: fixed;
-//   z-index: 100;
+#screen-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $color-dark;
+  position: fixed;
+  z-index: 100;
 
-//   .screen-loader__container {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     position: relative;
-//     background-color: red;
+  .screen-loader__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: red;
 
-//     &__circle__1 {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       width: 100px;
-//       height: 100px;
-//       margin: 0 auto;
-//       border-top: 1px solid $color-white;
-//       border-right: 1px solid $color-white;
-//       border-radius: 50%;
-//       animation: firstCircle 1s linear infinite forwards;
-//       position: absolute;
-//     }
+    &__circle__1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border-top: 1px solid $color-white;
+      border-right: 1px solid $color-white;
+      border-radius: 50%;
+      animation: firstCircle 1s linear infinite forwards;
+      position: absolute;
+    }
 
-//     &__circle__2 {
-//       width: 80px;
-//       height: 80px;
-//       margin: 0 auto;
-//       border-left: 1px solid $color-white;
-//       border-bottom: 1px solid $color-white;
-//       border-radius: 50%;
-//       animation: secondCircle 1s linear infinite forwards;
-//       position: absolute;
-//     }
-//   }
-// }
+    &__circle__2 {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      border-left: 1px solid $color-white;
+      border-bottom: 1px solid $color-white;
+      border-radius: 50%;
+      animation: secondCircle 1s linear infinite forwards;
+      position: absolute;
+    }
+  }
+}
 
 // // Whole Content Styles
-// #whole-content {
-//   visibility: hidden;
-//   opacity: 0;
-// }
+#whole-content {
+  visibility: hidden;
+  opacity: 0;
+}
 
 // Screen Loader Circle Animations
 
@@ -1255,6 +1255,7 @@ select {
 
   /**** Jumbo Section Styles ****/
   #jumbo-section {
+    padding: 5em 0;
     // Jumbo Section Text
     .jumbo-hero__text {
       gap: 20px;
@@ -1419,7 +1420,7 @@ select {
     .menu-section__content {
       // Menu Section Filter
       .menu-section__filter {
-        width: 40%;
+        width: 35%;
       }
 
       // Menu Section Grid
@@ -1618,7 +1619,7 @@ select {
     .menu-section__content {
       // Menu Section Filter
       .menu-section__filter {
-        width: 50%;
+        width: 40%;
       }
 
       // Menu Section Grid
@@ -1710,6 +1711,38 @@ select {
         .reservation-section__content__grid__form-container {
           width: 50%;
           margin-right: 8em;
+
+          // Reservation Section Content Grid Form
+          .reservation-section__content__grid__form {
+            // Reservation Section Content Grid Form Date Time Number
+            .reservation-section__content__grid__form__date-time-number {
+              .reservation-section__content__grid__form__date {
+                width: 33%;
+
+                input {
+                  width: 100%;
+                }
+              }
+
+              .reservation-section__content__grid__form__time {
+                width: 33%;
+                margin-left: 2em;
+
+                input {
+                  width: 100%;
+                }
+              }
+
+              .reservation-section__content__grid__form__number {
+                width: 33%;
+                margin-left: 2em;
+
+                input {
+                  width: 100%;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -1765,14 +1798,16 @@ select {
 
   /**** Jumbo Section Styles ****/
   #jumbo-section {
+    padding: 6em 0;
     // Jumbo Section Text
     .jumbo-hero__text {
       flex-direction: column;
-      gap: 100px;
+      gap: 50px;
 
       // Jumbo Section Message Container
       .jumbo-hero__message-container {
         width: 100%;
+        order: 2;
 
         // Jumbo Section Title
         .jumbo-hero__title {
@@ -1783,6 +1818,8 @@ select {
       // Jumbo Section Img
       .jumbo-hero__img {
         width: 100%;
+        order: 1;
+        margin-top: -100px;
 
         div {
           height: 400px;
@@ -1946,7 +1983,7 @@ select {
       .review-section__content__grid {
         .review-section__content__grid__container {
           width: 100%;
-          height: 340px;
+          height: 360px;
         }
 
         .alice-carousel__prev-btn {
@@ -1955,6 +1992,11 @@ select {
           .alice-carousel__prev-btn-item {
             color: $color-white;
             background-color: $color-dark;
+
+            &:hover {
+              color: $color-white;
+              background-color: $color-dark;
+            }
           }
         }
 
@@ -1964,6 +2006,11 @@ select {
           .alice-carousel__next-btn-item {
             color: $color-white;
             background-color: $color-dark;
+
+            &:hover {
+              color: $color-white;
+              background-color: $color-dark;
+            }
           }
         }
       }
@@ -2011,12 +2058,30 @@ select {
 
             // Reservation Section Content Grid Form Date Time Number
             .reservation-section__content__grid__form__date-time-number {
+              .reservation-section__content__grid__form__date {
+                width: 30%;
+
+                input {
+                  width: 100%;
+                }
+              }
+
               .reservation-section__content__grid__form__time {
+                width: 30%;
                 margin-left: 2em;
+
+                input {
+                  width: 100%;
+                }
               }
 
               .reservation-section__content__grid__form__number {
+                width: 30%;
                 margin-left: 2em;
+
+                input {
+                  width: 100%;
+                }
               }
             }
           }
