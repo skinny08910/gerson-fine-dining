@@ -991,6 +991,19 @@ export default function Home() {
 
   // UseEffect for the Mobile Menu
   useEffect(() => {
+    // Viewport helper
+    let isInViewport = function (elem) {
+      let bounding = elem.getBoundingClientRect();
+      return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
+      );
+    };
+
     // ----- Mobile Menu Section Toggle Animation
 
     let mobileMenuTimeline = gsap.timeline();
@@ -1026,9 +1039,13 @@ export default function Home() {
 
     // Adding the Event Listener to the hamburger element
     hamburgerRef.current.addEventListener("click", () => {
-      mobileMenuRef.current.classList.toggle("active");
+      if (isInViewport(mobileMenuRef.current)) {
+        mobileMenuRef.current.classList.add("active");
 
-      mobileMenuAnimate();
+        mobileMenuAnimate();
+      } else {
+        mobileMenuRef.current.classList.remove("active");
+      }
     });
 
     navbarLinks.forEach((link) => {

@@ -231,7 +231,8 @@ select {
   height: 100vh;
   background-color: $color-dark;
   border: 1px solid $color-grey;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   position: absolute;
   right: 0;
   z-index: 10;
@@ -331,8 +332,14 @@ select {
       width: 50%;
 
       div {
-        height: 610px;
+        height: 600px;
         width: 100%;
+
+        div {
+          img {
+            object-fit: contain;
+          }
+        }
       }
     }
   }
@@ -1538,6 +1545,10 @@ select {
   #header-section {
     // Header Section Navbar
     .navbar {
+      // Header Logo
+      .navbar__logo {
+        width: 40%;
+      }
       .navbar__links {
         width: 65%;
       }
@@ -1980,7 +1991,7 @@ select {
         // Reservation Section Content Grid Form Container
         .reservation-section__content__grid__form-container {
           width: 100%;
-          margin: 15em 0 0 0;
+          margin: 16em 0 0 0;
 
           // Reservation Section Content Grid Form
           .reservation-section__content__grid__form {
@@ -2027,7 +2038,7 @@ select {
 
         .contact-section__content__grid__form-container {
           width: 100%;
-          margin: 15em 0 0 0;
+          margin: 16em 0 0 0;
 
           .contact-section__content__grid__form {
             // Contact Section Content Grid Form First last name
