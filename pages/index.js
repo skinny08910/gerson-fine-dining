@@ -349,7 +349,7 @@ export default function Home() {
         screenLoaderRef.current.style.display = "none";
         screenLoaderRef.current.style.transition = "all .4s ease-in-out";
       });
-    }, 1500);
+    }, 2500);
 
     if (
       window.addEventListener("load", () => {
