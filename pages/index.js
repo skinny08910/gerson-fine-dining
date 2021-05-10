@@ -349,13 +349,17 @@ export default function Home() {
         screenLoaderRef.current.style.display = "none";
         screenLoaderRef.current.style.transition = "all .4s ease-in-out";
       });
-    }, 100);
+    }, 1500);
 
-    setTimeout(() => {
-      window.addEventListener("DOMContentLoaded", () => {
-        wholeContentRef.current.style.opacity = 1;
-      });
-    }, 300);
+    if (
+      window.addEventListener("load", () => {
+        screenLoaderRef.current.style.opacity = 0;
+        screenLoaderRef.current.style.display = "none";
+        screenLoaderRef.current.style.transition = "all .4s ease-in-out";
+      })
+    ) {
+      wholeContentRef.current.style.opacity = 1;
+    }
   });
 
   // ***** Hook for the inputfields
