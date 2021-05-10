@@ -346,14 +346,16 @@ export default function Home() {
 
     setTimeout(() => {
       window.addEventListener("load", () => {
-        screenLoaderRef.current.style.visibility = "hidden";
-        screenLoaderRef.current.style.transition = "all .7s ease-in-out";
+        screenLoaderRef.current.style.opacity = 0;
+        screenLoaderRef.current.style.transition = "all .4s ease-in-out";
       });
     }, 100);
 
-    wholeContentRef.current.style.visibility = "visible";
-    wholeContentRef.current.style.opacity = 1;
-    wholeContentRef.current.style.transition = "all .7s ease-in-out 2s";
+    setTimeout(() => {
+      window.addEventListener("load", () => {
+        wholeContentRef.current.style.opacity = 1;
+      });
+    }, 300);
   });
 
   // ***** Hook for the inputfields
@@ -475,6 +477,11 @@ export default function Home() {
     gsap.registerPlugin(ScrollTrigger);
     // ----- Animations for the Header and Jumbo Section
     timeline
+      .to("#whole-content", {
+        autoAlpha: 1,
+        delay: 1,
+        ease: "power3.out",
+      })
       .fromTo(
         ".navbar",
         { autoAlpha: 0 },
