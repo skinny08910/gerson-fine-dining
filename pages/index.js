@@ -343,16 +343,16 @@ export default function Home() {
     }
 
     // Function for the screen loader
-
     setTimeout(() => {
-      window.addEventListener("load", () => {
+      window.addEventListener("DOMContentLoaded", () => {
         screenLoaderRef.current.style.opacity = 0;
+        screenLoaderRef.current.style.display = "none";
         screenLoaderRef.current.style.transition = "all .4s ease-in-out";
       });
     }, 100);
 
     setTimeout(() => {
-      window.addEventListener("load", () => {
+      window.addEventListener("DOMContentLoaded", () => {
         wholeContentRef.current.style.opacity = 1;
       });
     }, 300);
