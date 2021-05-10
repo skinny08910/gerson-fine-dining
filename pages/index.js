@@ -344,7 +344,7 @@ export default function Home() {
 
     // Function for the screen loader
     setTimeout(() => {
-      window.addEventListener("DOMContentLoaded", () => {
+      window.addEventListener("load", () => {
         screenLoaderRef.current.style.opacity = 0;
         screenLoaderRef.current.style.display = "none";
         screenLoaderRef.current.style.transition = "all .4s ease-in-out";
