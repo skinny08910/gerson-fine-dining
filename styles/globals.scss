@@ -86,7 +86,6 @@ select {
   background-color: $color-dark;
   position: fixed;
   z-index: 100;
-  opacity: 1;
 
   .screen-loader__container {
     display: flex;
@@ -559,6 +558,8 @@ select {
         display: flex;
         justify-content: space-between;
         position: absolute;
+        z-index: 30;
+        opacity: 1;
 
         .menu-section__menu-grid__item {
           color: $color-dark;
@@ -583,10 +584,6 @@ select {
           &__info {
             line-height: 1.5rem;
           }
-        }
-        .menu-section__menu-grid__item--breakfast {
-          z-index: 30;
-          opacity: 1;
         }
       }
 
@@ -595,6 +592,8 @@ select {
         display: flex;
         justify-content: space-between;
         position: absolute;
+        z-index: 20;
+        opacity: 0;
 
         .menu-section__menu-grid__item {
           color: $color-dark;
@@ -619,11 +618,6 @@ select {
           &__info {
             line-height: 1.5rem;
           }
-        }
-
-        .menu-section__menu-grid__item--lunch {
-          z-index: 20;
-          opacity: 0;
         }
       }
 
@@ -632,6 +626,8 @@ select {
         display: flex;
         justify-content: space-between;
         position: absolute;
+        z-index: 10;
+        opacity: 0;
 
         .menu-section__menu-grid__item {
           color: $color-dark;
@@ -656,11 +652,6 @@ select {
           &__info {
             line-height: 1.5rem;
           }
-        }
-
-        .menu-section__menu-grid__item--dinner {
-          z-index: 10;
-          opacity: 0;
         }
       }
     }
@@ -1244,7 +1235,7 @@ select {
   }
 }
 
-/***** Media Queries ********/
+/***** Media Queries ************************************************************************************************/
 
 // Laptop
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
@@ -1362,6 +1353,160 @@ select {
           .menu-section__menu-grid__item__image {
             display: flex;
             justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  /**** Reservation Section Styles ****/
+  #reservation-section {
+    margin-bottom: -10px;
+  }
+
+  /**** Contact Section Styles ****/
+  #contact-section {
+    margin-bottom: -10px;
+  }
+
+  /**** Review Section Styles ****/
+  #review-section {
+    margin-bottom: -10px;
+  }
+}
+
+// Laptop Small
+@media only screen and (max-width: 1199px) {
+  // Global Container
+  .container {
+    width: 90%;
+  }
+
+  /**** Header Section Styles ****/
+  #header-section {
+    margin-bottom: -10px;
+  }
+
+  /**** Jumbo Section Styles ****/
+  #jumbo-section {
+    padding: 5em 0;
+    margin-bottom: -10px;
+
+    // Jumbo Section Text
+    .jumbo-hero__text {
+      gap: 20px;
+      // Jumbo Section Message Container
+      .jumbo-hero__message-container {
+        width: 50%;
+      }
+
+      // Jumbo Section Img
+      .jumbo-hero__img {
+        width: 50%;
+
+        div {
+          height: 490px;
+          width: 100%;
+
+          div {
+            img {
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /**** About Section Styles ****/
+  #about-section {
+    margin-bottom: -10px;
+  }
+
+  /**** Ingredient Section Styles ****/
+  #ingredient-section {
+    margin-bottom: -10px;
+  }
+
+  /**** Menu Section Styles ****/
+  #menu-section {
+    margin-bottom: -10px;
+
+    // Menu Section Content
+    .menu-section__content {
+      // Menu Section Filter
+      .menu-section__filter {
+        width: 30%;
+      }
+
+      // Menu Section Grid
+      .menu-section__menu-grid {
+        width: 100%;
+
+        // Breakfast Menu
+        .menu-section__menu-grid__breakfast {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          width: 100%;
+          gap: 30px;
+
+          .menu-section__menu-grid__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .menu-section__menu-grid__item__image {
+              div {
+                width: 150px;
+                height: 150px;
+              }
+            }
+          }
+        }
+
+        // Lunch Menu
+        .menu-section__menu-grid__lunch {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          width: 100%;
+          gap: 30px;
+
+          .menu-section__menu-grid__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+
+            .menu-section__menu-grid__item__image {
+              div {
+                width: 150px;
+                height: 150px;
+              }
+            }
+          }
+        }
+
+        // Dinner Menu
+        .menu-section__menu-grid__dinner {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          width: 100%;
+          gap: 30px;
+
+          .menu-section__menu-grid__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+
+            .menu-section__menu-grid__item__image {
+              div {
+                width: 150px;
+                height: 150px;
+              }
+            }
           }
         }
       }
@@ -1890,7 +2035,9 @@ select {
 
   /**** Jumbo Section Styles ****/
   #jumbo-section {
+    height: 900px;
     padding: 6em 0;
+
     // Jumbo Section Text
     .jumbo-hero__text {
       flex-direction: column;
@@ -1928,6 +2075,9 @@ select {
 
   /**** About Us Section Styles ****/
   #about-section {
+    height: 900px;
+    padding: 6em 0;
+
     // About Us Section Content
     .about-section__content {
       flex-direction: column;
@@ -1942,7 +2092,8 @@ select {
       .about-section__text {
         width: 100%;
         margin-right: 0;
-        top: 40%;
+        height: 200px;
+        position: static;
 
         // About Us Section Title
         .about-section__text-title {
@@ -1960,7 +2111,8 @@ select {
 
   /**** Ingredient Section Styles ****/
   #ingredient-section {
-    padding-bottom: 2rem;
+    height: 1100px;
+    padding: 6em 0;
 
     // Ingredient Section Content
     .ingredient-section__content {
@@ -1971,7 +2123,7 @@ select {
       .ingredient-section__text {
         width: 100%;
         margin-left: 0;
-        top: 40%;
+        position: static;
 
         // Ingredient Section Title
         .ingredient-section__title {
@@ -2064,11 +2216,15 @@ select {
 
   /**** Review Section Styles ****/
   #review-section {
+    height: 800px;
+    padding: 4em 0;
+
     // Review Section Content
     .review-section__content {
       // Review Section Title
       .review-section__content__title {
         font-size: 3.3rem;
+        margin-top: -40px;
       }
 
       // Review Section Grid
@@ -2111,6 +2267,9 @@ select {
 
   /**** Reservation Section Styles ****/
   #reservation-section {
+    height: 1600px;
+    padding: 6em 0;
+
     // Reservation Section Content
     .reservation-section__content {
       // Reservation Section Title
@@ -2121,16 +2280,20 @@ select {
       // Reservation Section Content Grid
       .reservation-section__content__grid {
         flex-direction: column;
+        gap: 30px;
 
         // Reservation Section Content Grid Img
         .reservation-section__content__grid__image {
+          height: 500px;
           width: 100%;
+          position: static;
         }
 
         // Reservation Section Content Grid Form Container
         .reservation-section__content__grid__form-container {
           width: 100%;
-          margin: 16em 0 0 0;
+          margin-right: 0;
+          position: static;
 
           // Reservation Section Content Grid Form
           .reservation-section__content__grid__form {
@@ -2184,6 +2347,9 @@ select {
 
   /**** Contact Section Styles ****/
   #contact-section {
+    height: 1500px;
+    padding: 6em 0;
+
     .contact-section__content {
       .contact-section__content__title {
         font-size: 3.3rem;
@@ -2192,10 +2358,13 @@ select {
 
       .contact-section__content__grid {
         flex-direction: column;
+        gap: 30px;
 
         .contact-section__content__grid__form-container {
           width: 100%;
-          margin: 16em 0 0 0;
+          margin-left: 0;
+          position: static;
+          order: 2;
 
           .contact-section__content__grid__form {
             // Contact Section Content Grid Form First last name
@@ -2215,6 +2384,9 @@ select {
         // Contact Section Content Grid Img
         .contact-section__content__grid__image {
           width: 100%;
+          height: 500px;
+          position: static;
+          order: 1;
         }
       }
     }

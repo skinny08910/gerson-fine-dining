@@ -34,33 +34,6 @@ export default function Home() {
 
   //  Initiating Refs for the menu items
 
-  // Main Refs for the breakfast items
-  const mainBreakfastMenuItemRef = React.useRef([]);
-
-  //  Individual Refs for the  breakfast items
-  const breakfastMenuItemRef_1 = React.useRef();
-  const breakfastMenuItemRef_2 = React.useRef();
-  const breakfastMenuItemRef_3 = React.useRef();
-  const breakfastMenuItemRef_4 = React.useRef();
-
-  // Main Refs for the lunch items
-  const mainLunchMenuItemRef = React.useRef([]);
-
-  //  Individual Refs for the lunch items
-  const lunchMenuItemRef_1 = React.useRef();
-  const lunchMenuItemRef_2 = React.useRef();
-  const lunchMenuItemRef_3 = React.useRef();
-  const lunchMenuItemRef_4 = React.useRef();
-
-  // Main Refs for the dinner items
-  const mainDinnerMenuItemRef = React.useRef([]);
-
-  //  Individual Refs for the  dinner items
-  const dinnerMenuItemRef_1 = React.useRef();
-  const dinnerMenuItemRef_2 = React.useRef();
-  const dinnerMenuItemRef_3 = React.useRef();
-  const dinnerMenuItemRef_4 = React.useRef();
-
   // Refs for the Mobile Menu
   const mobileMenuRef = React.useRef();
   const hamburgerRef = React.useRef();
@@ -79,9 +52,6 @@ export default function Home() {
       active: false,
     },
   });
-
-  // ***** Hook for the menu items section
-  const [menuItem, setMenuItem] = useState([]);
 
   //  Function for the Breakfast filter
   const clickedBreakfast = () => {
@@ -134,232 +104,81 @@ export default function Home() {
     });
   };
 
-  // Function for each breakfast menu items
-  const eachBreakfastMenuItem = () => {
-    mainBreakfastMenuItemRef.current.forEach((menuItem) => {
-      menuItem.forEach(() => {
-        return (
-          // Breakfast menu items
-          (breakfastMenuItemRef_1.current.style.zIndex = 30),
-          (breakfastMenuItemRef_2.current.style.zIndex = 30),
-          (breakfastMenuItemRef_3.current.style.zIndex = 30),
-          (breakfastMenuItemRef_4.current.style.zIndex = 30),
-          (breakfastMenuItemRef_1.current.style.display = ""),
-          (breakfastMenuItemRef_2.current.style.display = ""),
-          (breakfastMenuItemRef_3.current.style.display = ""),
-          (breakfastMenuItemRef_4.current.style.display = ""),
-          // Lunch menu items
-          (lunchMenuItemRef_1.current.style.zIndex = 20),
-          (lunchMenuItemRef_2.current.style.zIndex = 20),
-          (lunchMenuItemRef_3.current.style.zIndex = 20),
-          (lunchMenuItemRef_4.current.style.zIndex = 20),
-          (lunchMenuItemRef_1.current.style.display = "none"),
-          (lunchMenuItemRef_2.current.style.display = "none"),
-          (lunchMenuItemRef_3.current.style.display = "none"),
-          (lunchMenuItemRef_4.current.style.display = "none"),
-          // Dinner menu items
-          (dinnerMenuItemRef_1.current.style.zIndex = 10),
-          (dinnerMenuItemRef_2.current.style.zIndex = 10),
-          (dinnerMenuItemRef_3.current.style.zIndex = 10),
-          (dinnerMenuItemRef_4.current.style.zIndex = 10),
-          (dinnerMenuItemRef_1.current.style.display = "none"),
-          (dinnerMenuItemRef_2.current.style.display = "none"),
-          (dinnerMenuItemRef_3.current.style.display = "none"),
-          (dinnerMenuItemRef_4.current.style.display = "none")
-        );
-      });
-    });
-  };
-
-  // Function for each lunch menu items
-  const eachLunchMenuItem = () => {
-    mainLunchMenuItemRef.current.forEach((menuItem) => {
-      menuItem.forEach(() => {
-        // Breakfast menu items
-        (breakfastMenuItemRef_1.current.style.zIndex = 20),
-          (breakfastMenuItemRef_2.current.style.zIndex = 20),
-          (breakfastMenuItemRef_3.current.style.zIndex = 20),
-          (breakfastMenuItemRef_4.current.style.zIndex = 20),
-          (breakfastMenuItemRef_1.current.style.display = "none"),
-          (breakfastMenuItemRef_2.current.style.display = "none"),
-          (breakfastMenuItemRef_3.current.style.display = "none"),
-          (breakfastMenuItemRef_4.current.style.display = "none"),
-          // Lunch menu items
-          (lunchMenuItemRef_1.current.style.zIndex = 30),
-          (lunchMenuItemRef_2.current.style.zIndex = 30),
-          (lunchMenuItemRef_3.current.style.zIndex = 30),
-          (lunchMenuItemRef_4.current.style.zIndex = 30),
-          (lunchMenuItemRef_1.current.style.display = ""),
-          (lunchMenuItemRef_2.current.style.display = ""),
-          (lunchMenuItemRef_3.current.style.display = ""),
-          (lunchMenuItemRef_4.current.style.display = ""),
-          // Dinner menu items
-          (dinnerMenuItemRef_1.current.style.zIndex = 10),
-          (dinnerMenuItemRef_2.current.style.zIndex = 10),
-          (dinnerMenuItemRef_3.current.style.zIndex = 10),
-          (dinnerMenuItemRef_4.current.style.zIndex = 10),
-          (dinnerMenuItemRef_1.current.style.display = "none"),
-          (dinnerMenuItemRef_2.current.style.display = "none"),
-          (dinnerMenuItemRef_3.current.style.display = "none"),
-          (dinnerMenuItemRef_4.current.style.display = "none");
-      });
-    });
-  };
-
-  // Function for each dinner menu items
-  const eachDinnerMenuItem = () => {
-    mainDinnerMenuItemRef.current.forEach((menuItem) => {
-      menuItem.forEach(() => {
-        // Breakfast menu items
-        (breakfastMenuItemRef_1.current.style.zIndex = 20),
-          (breakfastMenuItemRef_2.current.style.zIndex = 20),
-          (breakfastMenuItemRef_3.current.style.zIndex = 20),
-          (breakfastMenuItemRef_4.current.style.zIndex = 20),
-          (breakfastMenuItemRef_1.current.style.display = "none"),
-          (breakfastMenuItemRef_2.current.style.display = "none"),
-          (breakfastMenuItemRef_3.current.style.display = "none"),
-          (breakfastMenuItemRef_4.current.style.display = "none"),
-          // Lunch menu items
-          (lunchMenuItemRef_1.current.style.zIndex = 10),
-          (lunchMenuItemRef_2.current.style.zIndex = 10),
-          (lunchMenuItemRef_3.current.style.zIndex = 10),
-          (lunchMenuItemRef_4.current.style.zIndex = 10),
-          (lunchMenuItemRef_1.current.style.display = "none"),
-          (lunchMenuItemRef_2.current.style.display = "none"),
-          (lunchMenuItemRef_3.current.style.display = "none"),
-          (lunchMenuItemRef_4.current.style.display = "none"),
-          // Dinner menu items
-          (dinnerMenuItemRef_1.current.style.zIndex = 30),
-          (dinnerMenuItemRef_2.current.style.zIndex = 30),
-          (dinnerMenuItemRef_3.current.style.zIndex = 30),
-          (dinnerMenuItemRef_4.current.style.zIndex = 30),
-          (dinnerMenuItemRef_1.current.style.display = ""),
-          (dinnerMenuItemRef_2.current.style.display = ""),
-          (dinnerMenuItemRef_3.current.style.display = ""),
-          (dinnerMenuItemRef_4.current.style.display = "");
-      });
-    });
-  };
-
   /********* useEffect for the menu section *********/
   useEffect(() => {
-    // Putting the individuals menu Refs into the Global parent Refs which are arrays
-
-    // Breakfast Items
-
-    let breakfastMenuItems = [
-      breakfastMenuItemRef_1,
-      breakfastMenuItemRef_2,
-      breakfastMenuItemRef_3,
-      breakfastMenuItemRef_4,
-      lunchMenuItemRef_1,
-      lunchMenuItemRef_2,
-      lunchMenuItemRef_3,
-      lunchMenuItemRef_4,
-      dinnerMenuItemRef_1,
-      dinnerMenuItemRef_2,
-      dinnerMenuItemRef_3,
-      dinnerMenuItemRef_4,
-    ];
-
-    // Lunch Items
-
-    let lunchMenuItems = [
-      breakfastMenuItemRef_1,
-      breakfastMenuItemRef_2,
-      breakfastMenuItemRef_3,
-      breakfastMenuItemRef_4,
-      lunchMenuItemRef_1,
-      lunchMenuItemRef_2,
-      lunchMenuItemRef_3,
-      lunchMenuItemRef_4,
-      dinnerMenuItemRef_1,
-      dinnerMenuItemRef_2,
-      dinnerMenuItemRef_3,
-      dinnerMenuItemRef_4,
-    ];
-
-    // Dinner Items
-
-    let dinnerMenuItems = [
-      breakfastMenuItemRef_1,
-      breakfastMenuItemRef_2,
-      breakfastMenuItemRef_3,
-      breakfastMenuItemRef_4,
-      lunchMenuItemRef_1,
-      lunchMenuItemRef_2,
-      lunchMenuItemRef_3,
-      lunchMenuItemRef_4,
-      dinnerMenuItemRef_1,
-      dinnerMenuItemRef_2,
-      dinnerMenuItemRef_3,
-      dinnerMenuItemRef_4,
-    ];
-
-    mainBreakfastMenuItemRef.current = new Array(breakfastMenuItems);
-    mainLunchMenuItemRef.current = new Array(lunchMenuItems);
-    mainDinnerMenuItemRef.current = new Array(dinnerMenuItems);
-
-    // Setting the state
-    setMenuItem(
-      mainBreakfastMenuItemRef,
-      mainLunchMenuItemRef,
-      mainDinnerMenuItemRef
-    );
-
     // If statement for the Breakfast filter
     if (menu.breakfast.active === true) {
-      eachBreakfastMenuItem();
+      breakfastRef.current.style.opacity = 1;
+      breakfastRef.current.style.zIdex = 30;
+      breakfastRef.current.style.transition = "all .5s ease-in-out";
 
       breakfastFilterRef.current.classList.add("active");
-
       lunchFilterRef.current.classList.remove("active");
-
       dinnerFilterRef.current.classList.remove("active");
+
+      lunchRef.current.style.opacity = 0;
+      lunchRef.current.style.transition = "all .5s ease-in-out";
+      lunchRef.current.style.zIdex = 20;
+
+      dinnerRef.current.style.opacity = 0;
+      dinnerRef.current.style.transition = "all .5s ease-in-out";
+      dinnerRef.current.style.zIdex = 10;
     }
 
     // If Statement for the Lunch filter
 
     if (menu.lunch.active === true) {
-      eachLunchMenuItem();
+      breakfastRef.current.style.opacity = 0;
+      breakfastRef.current.style.zIdex = 20;
+      breakfastRef.current.style.transition = "all .5s ease-in-out";
 
       breakfastFilterRef.current.classList.remove("active");
-
       lunchFilterRef.current.classList.add("active");
-
       dinnerFilterRef.current.classList.remove("active");
+
+      lunchRef.current.style.opacity = 1;
+      lunchRef.current.style.transition = "all .5s ease-in-out";
+      lunchRef.current.style.zIdex = 30;
+
+      dinnerRef.current.style.opacity = 0;
+      dinnerRef.current.style.transition = "all .5s ease-in-out";
+      dinnerRef.current.style.zIdex = 10;
     }
 
     // If Statement for the Dinner filter
 
     if (menu.dinner.active === true) {
-      eachDinnerMenuItem();
+      breakfastRef.current.style.opacity = 0;
+      breakfastRef.current.style.zIdex = 20;
+      breakfastRef.current.style.transition = "all .5s ease-in-out";
 
       breakfastFilterRef.current.classList.remove("active");
-
       lunchFilterRef.current.classList.remove("active");
-
       dinnerFilterRef.current.classList.add("active");
+
+      lunchRef.current.style.opacity = 0;
+      lunchRef.current.style.transition = "all .5s ease-in-out";
+      lunchRef.current.style.zIdex = 10;
+
+      dinnerRef.current.style.opacity = 1;
+      dinnerRef.current.style.transition = "all .5s ease-in-out";
+      dinnerRef.current.style.zIdex = 30;
     }
 
     // Function for the screen loader
-    setTimeout(() => {
-      window.addEventListener("load", () => {
+    let screenLoader = () => {
+      setTimeout(() => {
         screenLoaderRef.current.style.opacity = 0;
         screenLoaderRef.current.style.display = "none";
         screenLoaderRef.current.style.transition = "all .4s ease-in-out";
-      });
-    }, 2500);
 
-    if (
-      window.addEventListener("load", () => {
-        screenLoaderRef.current.style.opacity = 0;
-        screenLoaderRef.current.style.display = "none";
-        screenLoaderRef.current.style.transition = "all .4s ease-in-out";
-      })
-    ) {
-      wholeContentRef.current.style.opacity = 1;
-    }
+        wholeContentRef.current.style.opacity = 1;
+        wholeContentRef.current.style.transition =
+          "opacity .9s ease-in-out .4s";
+      }, 1200);
+    };
+
+    screenLoader();
   });
 
   // ***** Hook for the inputfields
@@ -461,545 +280,6 @@ export default function Home() {
     scroll.scrollToTop();
   };
 
-  // /*********  UseEffect for the Animations *********/
-  useEffect(() => {
-    // Viewport helper
-    let isInViewport = function (elem) {
-      let bounding = elem.getBoundingClientRect();
-      return (
-        bounding.top >= 0 &&
-        bounding.left >= 0 &&
-        bounding.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight) &&
-        bounding.right <=
-          (window.innerWidth || document.documentElement.clientWidth)
-      );
-    };
-    // Timeline
-    let timeline = gsap.timeline();
-    // Scrolling plugging for Gsap
-    gsap.registerPlugin(ScrollTrigger);
-    // ----- Animations for the Header and Jumbo Section
-    timeline
-      .to("#whole-content", {
-        autoAlpha: 1,
-        delay: 1,
-        ease: "power3.out",
-      })
-      .fromTo(
-        ".navbar",
-        { autoAlpha: 0 },
-        {
-          autoAlpha: 1,
-          duration: 1,
-          delay: 1,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".jumbo-hero__img",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1.5, delay: 0.3, ease: "power3.out" }
-      )
-      .fromTo(
-        ".jumbo-hero__message-container",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".jumbo-hero__title",
-        {
-          autoAlpha: 0,
-          y: 50,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".jumbo-hero__message",
-        {
-          autoAlpha: 0,
-          y: 50,
-          ease: "power3.out",
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".jumbo-hero__text-btn",
-        {
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          ease: "power3.out",
-        }
-      );
-    // ----- About Section Sroll Animation
-    let aboutTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".about-section__content",
-        start: "65% 70%",
-        end: "+=300",
-      },
-    });
-    aboutTimeline
-      .fromTo(
-        ".about-section__img",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1.5, ease: "power3.out" }
-      )
-      .fromTo(
-        ".about-section__text",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, delay: 1, ease: "power3.out" }
-      )
-      .fromTo(
-        ".about-section__text-title",
-        {
-          autoAlpha: 0,
-          y: 50,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".about-section__text-info",
-        {
-          autoAlpha: 0,
-          y: 50,
-          ease: "power3.out",
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        }
-      );
-    // ----- Ingredient Section Sroll Animation
-    let ingredientTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".ingredient-section__content",
-        start: "75% 75%",
-        end: "+=300",
-      },
-    });
-    ingredientTimeline
-      .fromTo(
-        ".ingredient-section__image",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1.5, ease: "power3.out" }
-      )
-      .fromTo(
-        ".ingredient-section__text",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, delay: 1, ease: "power3.out" }
-      )
-      .fromTo(
-        ".ingredient-section__title",
-        {
-          autoAlpha: 0,
-          y: 50,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".ingredient-section__info",
-        {
-          autoAlpha: 0,
-          y: 50,
-          ease: "power3.out",
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        }
-      );
-    // ----- Menu Section Sroll Animation
-    let menuTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".menu-section__content",
-        start: "95% 75%",
-        end: "+=300",
-      },
-    });
-    // Getting the title and filter elements
-    let menuTitle = document.querySelector(".menu-section__title");
-    let menuFilter = document.querySelector(".menu-section__filter");
-    // Call the function only once
-    let callOnce = () => {
-      // kill it as soon as it was called
-      callOnce = function () {};
-      if (isInViewport(menuTitle, menuFilter)) {
-        return menuTimeline
-          .fromTo(
-            ".menu-section__title",
-            { autoAlpha: 0 },
-            { autoAlpha: 1, duration: 1, ease: "power3.out" }
-          )
-          .fromTo(
-            ".menu-section__filter",
-            { autoAlpha: 0 },
-            { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-          );
-      }
-    };
-    window.addEventListener("load", () => {
-      menuTimeline
-        .fromTo(
-          ".menu-section__title",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 1, ease: "power3.out" }
-        )
-        .fromTo(
-          ".menu-section__filter",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-        );
-      breakfastAnimate();
-    });
-    // Function animations for the menus
-    // Breakfast
-    let breakfastAnimate = () => {
-      menuTimeline.fromTo(
-        ".menu-section__menu-grid__item--breakfast",
-        {
-          y: 80,
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          stagger: 0.6,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      );
-    };
-    // Lunch
-    let lunchAnimate = () => {
-      menuTimeline.fromTo(
-        ".menu-section__menu-grid__item--lunch",
-        {
-          y: 80,
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          stagger: 0.6,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      );
-    };
-    // Dinner
-    let dinnerAnimate = () => {
-      menuTimeline.fromTo(
-        ".menu-section__menu-grid__item--dinner",
-        {
-          y: 80,
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          stagger: 0.6,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        }
-      );
-    };
-    // Adding the Animation functions to the menu filter
-    breakfastFilterRef.current.addEventListener("click", breakfastAnimate);
-    lunchFilterRef.current.addEventListener("click", lunchAnimate);
-    dinnerFilterRef.current.addEventListener("click", dinnerAnimate);
-    // ----- Review Section Sroll Animation
-    let reviewTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".review-section__content",
-        start: "75% 75%",
-        end: "+=300",
-      },
-    });
-    reviewTimeline
-      .fromTo(
-        ".review-section__content__title",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1, ease: "power3.out" }
-      )
-      .fromTo(
-        ".review-section__content__grid__container",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".review-section__content__grid__item__image",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
-      )
-      .fromTo(
-        ".review-section__content__grid__item__name",
-        {
-          autoAlpha: 0,
-          y: 60,
-        },
-        { autoAlpha: 1, y: 0, duration: 0.6, delay: 1, ease: "power3.out" }
-      )
-      .fromTo(
-        ".review-section__content__grid__item__comment",
-        {
-          autoAlpha: 0,
-          y: 60,
-        },
-        { autoAlpha: 1, y: 0, duration: 0.5, ease: "power3.out" }
-      )
-      .fromTo(
-        ".review-section__content__grid__item__star__icon-container",
-        {
-          y: 60,
-          autoAlpha: 0,
-        },
-        {
-          y: 0,
-          autoAlpha: 1,
-          stagger: 0.2,
-          duration: 0.4,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".alice-carousel__next-btn",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.4, ease: "power3.out" }
-      )
-      .fromTo(
-        ".alice-carousel__prev-btn",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.5, ease: "power3.out" }
-      );
-    // ----- Reservation Section Sroll Animation
-    let reservationTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".reservation-section__content",
-        start: "50% 75%",
-        end: "+=300",
-      },
-    });
-    window.addEventListener("load", () => {
-      reservationTimeline
-        .fromTo(
-          ".reservation-section__content__title",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 1, ease: "power3.out" }
-        )
-        .fromTo(
-          ".reservation-section__content__grid__image",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-        )
-        .fromTo(
-          ".reservation-section__content__grid__form-container",
-          {
-            autoAlpha: 0,
-          },
-          { autoAlpha: 1, duration: 1, delay: 1, ease: "power3.out" }
-        )
-        .fromTo(
-          ".reservation-section__content__grid__form-container .reservation-section-label, .reservation-section-input, .reservation-section-select, .reservation-section-textarea",
-          {
-            autoAlpha: 0,
-            y: 50,
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.7,
-            stagger: 0.2,
-            ease: "power3.out",
-          }
-        )
-        .fromTo(
-          ".reservation-section__content__grid__form__submit-button",
-          {
-            autoAlpha: 0,
-          },
-          { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
-        )
-        .fromTo(
-          ".reservation-section__content__grid__form__notice",
-          {
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            duration: 0.7,
-            delay: 0.2,
-            ease: "power3.out",
-          }
-        );
-    });
-    // ----- Contact Section Sroll Animation
-    let contactTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".contact-section__content",
-        start: "40% 75%",
-        end: "+=300",
-      },
-    });
-    window.addEventListener("load", () => {
-      contactTimeline
-        .fromTo(
-          ".contact-section__content__title",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 1, ease: "power3.out" }
-        )
-        .fromTo(
-          ".contact-section__content__grid__image",
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-        )
-        .fromTo(
-          ".contact-section__content__grid__form-container",
-          {
-            autoAlpha: 0,
-          },
-          { autoAlpha: 1, duration: 1, delay: 1, ease: "power3.out" }
-        )
-        .fromTo(
-          ".contact-section__content__grid__form-container .contact-section-label, .contact-section-input, .contact-section-textarea",
-          {
-            autoAlpha: 0,
-            y: 50,
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.7,
-            stagger: 0.2,
-            ease: "power3.out",
-          }
-        )
-        .fromTo(
-          ".contact-section__content__grid__form__submit-button",
-          {
-            autoAlpha: 0,
-          },
-          { autoAlpha: 1, duration: 0.7, ease: "power3.out" }
-        )
-        .fromTo(
-          ".contact-section__content__grid__form__notice",
-          {
-            autoAlpha: 0,
-          },
-          { autoAlpha: 1, duration: 0.7, delay: 0.2, ease: "power3.out" }
-        );
-    });
-    // ----- Footer Section Sroll Animation
-    let footerTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".footer-section__content",
-        start: "20% 80%",
-        end: "+=100",
-      },
-    });
-    footerTimeline
-      .fromTo(
-        ".footer-section__content",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 1, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__content .logo",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.4, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__about-us-links__title",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__about-us-links__menu",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__about-us-links__review",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__reservation-link__title",
-        {
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          duration: 0.6,
-          ease: "power3.out",
-        }
-      )
-      .fromTo(
-        ".footer-section__reservation-link__resevation",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__contact-us__title",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__contact-us__phone-email-address",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      )
-      .fromTo(
-        ".footer-section__content__copyright",
-        {
-          autoAlpha: 0,
-        },
-        { autoAlpha: 1, duration: 0.6, ease: "power3.out" }
-      );
-  });
-
   // UseEffect for the Mobile Menu
   useEffect(() => {
     // Viewport helper
@@ -1026,7 +306,7 @@ export default function Home() {
           { autoAlpha: 0 },
           {
             autoAlpha: 1,
-            duration: 0.6,
+            duration: 0.5,
             ease: "power3.out",
           }
         )
@@ -1036,7 +316,7 @@ export default function Home() {
           {
             autoAlpha: 1,
             y: 0,
-            duration: 1,
+            duration: 0.5,
             stagger: 0.2,
             ease: "power3.out",
           }
@@ -1495,10 +775,7 @@ export default function Home() {
                   ref={breakfastRef}
                 >
                   {/**** Menu Section Breakfast Menu Grid Item - 1 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--breakfast"
-                    ref={breakfastMenuItemRef_1}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1520,10 +797,7 @@ export default function Home() {
                   </div>
 
                   {/**** Menu Section Breakfast Menu Grid Item - 2 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--breakfast"
-                    ref={breakfastMenuItemRef_2}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1544,10 +818,7 @@ export default function Home() {
                   </div>
 
                   {/**** Menu Section Breakfast Menu Grid Item - 3 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--breakfast"
-                    ref={breakfastMenuItemRef_3}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1568,10 +839,7 @@ export default function Home() {
                   </div>
 
                   {/**** Menu Section Breakfast Menu Grid Item - 4 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--breakfast"
-                    ref={breakfastMenuItemRef_4}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1595,10 +863,7 @@ export default function Home() {
                 {/* Menu Section Lunch */}
                 <div className="menu-section__menu-grid__lunch" ref={lunchRef}>
                   {/**** Menu Section Lunch Menu Grid Item - 1 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--lunch"
-                    ref={lunchMenuItemRef_1}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1620,10 +885,7 @@ export default function Home() {
                   </div>
 
                   {/**** Menu Section Lunch Menu Grid Item - 2 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--lunch"
-                    ref={lunchMenuItemRef_2}
-                  >
+                  <div className="menu-section__menu-grid__item ">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1645,10 +907,7 @@ export default function Home() {
                   </div>
 
                   {/**** Menu Section Lunch Menu Grid Item - 3 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--lunch"
-                    ref={lunchMenuItemRef_3}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1669,10 +928,7 @@ export default function Home() {
                   </div>
 
                   {/**** Menu Section Lunch Menu Grid Item - 4 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--lunch"
-                    ref={lunchMenuItemRef_4}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1700,10 +956,7 @@ export default function Home() {
                   ref={dinnerRef}
                 >
                   {/**** Menu Section Dinner Menu Grid Item - 1 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--dinner"
-                    ref={dinnerMenuItemRef_1}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1724,10 +977,7 @@ export default function Home() {
                   </div>
 
                   {/**** Menu Section Dinner Menu Grid Item - 2 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--dinner"
-                    ref={dinnerMenuItemRef_2}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1748,10 +998,7 @@ export default function Home() {
                   </div>
 
                   {/**** Menu Section Dinner Menu Grid Item - 3 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--dinner"
-                    ref={dinnerMenuItemRef_3}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
@@ -1773,10 +1020,7 @@ export default function Home() {
                   </div>
 
                   {/**** Menu Section Dinner Menu Grid Item - 4 ****/}
-                  <div
-                    className="menu-section__menu-grid__item menu-section__menu-grid__item--dinner"
-                    ref={dinnerMenuItemRef_4}
-                  >
+                  <div className="menu-section__menu-grid__item">
                     <div className="menu-section__menu-grid__item__image">
                       <div style={{ position: "relative", objectFit: "cover" }}>
                         <Image
