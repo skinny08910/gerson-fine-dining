@@ -1404,14 +1404,14 @@ export default function Home() {
                       {/* Reservation Section Grid Form Email Address */}
                       <div className="reservation-section__content__grid__form__email-address">
                         <label
-                          htmlFor="reservation-email-address"
+                          htmlFor="email-address"
                           className="reservation-section-label"
                         >
                           Email Address *
                         </label>
                         <input
                           ref={inputRef_3}
-                          id="reservation-email-address"
+                          id="email-address"
                           type="email"
                           required
                           onChange={inputfieldOn}
